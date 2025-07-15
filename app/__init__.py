@@ -20,6 +20,9 @@ def create_app():
     template_dir = os.path.join(base_dir, 'templates')
     static_dir = os.path.join(base_dir, 'static')
 
+    # Asegurar que /data existe (Render permite escribir ahí)
+    os.makedirs('/data', exist_ok=True)
+
     app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
     app.config.from_object(Config)
     
