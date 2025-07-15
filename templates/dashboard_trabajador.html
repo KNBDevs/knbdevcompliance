@@ -1,0 +1,36 @@
+{% extends 'base_trabajador.html' %}
+
+{% block title %}Panel de Fichaje{% endblock %}
+
+{% block content %}
+<div class="max-w-xl mx-auto text-center space-y-6">
+
+    <h1 class="text-3xl font-bold">Hola, {{ trabajador.nombre }} 👋</h1>
+
+    <div class="text-xl">
+        Hoy es <strong>{{ now.strftime('%A, %d de %B de %Y') }}</strong>
+    </div>
+
+    <div class="text-5xl font-mono" id="clock">
+        --:--:--
+    </div>
+
+    <form action="{{ url_for('fichaje.fichar') }}" method="POST">
+        <button type="submit"
+            class="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg text-xl shadow">
+            🕓 Fichar ahora
+        </button>
+    </form>
+</div>
+
+<script>
+    function updateClock() {
+        const now = new Date();
+        const time = now.toLocaleTimeString('es-ES', { hour12: false });
+        document.getElementById('clock').textContent = time;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+</script>
+{% endblock %}

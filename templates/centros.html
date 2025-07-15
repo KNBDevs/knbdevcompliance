@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+{% block title %}Centros de Trabajo{% endblock %}
+
+{% block content %}
+
+<h2 class="text-2xl font-semibold mb-6"
+    data-i18n="{% if mostrar_inactivos %}centros.listado.eliminados{% else %}centros.listado.titulo{% endif %}">
+    {% if mostrar_inactivos %}Centros eliminados{% else %}Centros de Trabajo{% endif %}
+</h2>
+
+
+<form method="get" action="{{ url_for('centros.lista_centros') }}"
+    class="flex flex-wrap justify-between items-center mb-4 gap-4">
+    <div class="flex items-center gap-4">
+        <button type="button" onclick="document.getElementById('modalCentro').classList.remove('hidden')"
+            class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700" data-i18n="centros.listado.nuevo">
+            + Nuevo centro
+        </button>
+
+
+        {% if current_user.rol == 'admin' %}
+        <div class="flex items-center gap-2 text-sm">
+            <span data-i18n="centros.listado.filtro_empresa">Empresa:</span>
+            <select name="empresa_filtro" onchange="this.form.submit()"
+                class="p-1 border rounded dark:bg-gray-700 dark:border-gray-600">
+                <option value="" data-i18n="centros.listado.todas">Todas</option>
+                {% for empresa in empresas %}
+                <option value="{{ empresa.id }}" {% if empresa.id==empresa_filtro_id %}selected{% endif %}>
+                    {{ empresa.nombre }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        {% endif %}
+    </div>
+
+    <div class="flex items-center gap-4">
+        {% if mostrar_inactivos %}
+        <a href="{{ url_for('centros.lista_centros') }}" class="text-blue-600 hover:underline text-sm whitespace-nowrap"
+            data-i18n="centros.listado.volver_activos">
+            ← Volver a centros activos
+        </a>
+        {% endif %}
+
+        <label class="flex items-center gap-1 text-sm ml-2">
+            <input type="checkbox" name="inactivos" value="1" onchange="this.form.submit()" {% if mostrar_inactivos
+                %}checked{% endif %}>
+            <span data-i18n="centros.listado.mostrar_eliminados">Mostrar eliminados</span>
+        </label>
+    </div>
+</form>
+
+<!-- Tabla -->
+<div class="overflow-x-auto">
+    <table class="min-w-full bg-white dark:bg-gray-800 rounded shadow">
+        <thead>
+            <tr>
+                {% set sort = request.args.get('sort', 'id') %}
+                {% set order = request.args.get('order', 'asc') %}
+                {% set inactivos_param = 1 if mostrar_inactivos else 0 %}
+                {% set empresa_filtro = empresa_filtro_id if empresa_filtro_id else '' %}
+
+                {% macro sort_icon(column) -%}
+                {% if sort == column %}
+                {% if order == 'asc' %}
+                ▲
+                {% else %}
+                ▼
+                {% endif %}
+                {% endif %}
+                {%- endmacro %}
+
+                <th class="px-4 py-2 text-left">
+                    <a href="{{ url_for('centros.lista_centros', sort='nombre', order='desc' if sort == 'nombre' and order == 'asc' else 'asc', inactivos=inactivos_param, empresa_filtro=empresa_filtro) }}"
+                        class="flex items-center gap-1">
+                        <span data-i18n="centros.tabla.nombre">Nombre del Centro</span>
+                        {{ sort_icon('nombre') }}
+                    </a>
+                </th>
+                <th class="px-4 py-2 text-left">
+                    <a href="{{ url_for('centros.lista_centros', sort='empresa', order='desc' if sort == 'empresa' and order == 'asc' else 'asc', inactivos=inactivos_param, empresa_filtro=empresa_filtro) }}"
+                        class="flex items-center gap-1">
+                        <span data-i18n="centros.tabla.empresa">Empresa</span>
+                        {{ sort_icon('empresa') }}
+                    </a>
+                </th>
+                <th class="px-4 py-2 text-left" data-i18n="centros.tabla.acciones">
+                    Acciones
+                </th>
+            </tr>
+        </thead>
+
+
+        <tbody class="text-sm divide-y divide-gray-200 dark:divide-gray-700">
+            {% for centro in centros %}
+            <tr>
+                <td class="px-4 py-2 text-blue-600 hover:underline cursor-pointer"
+                    onclick="toggleAccionesDesdeElemento(this)" data-id="{{ centro.id }}">
+                    {{ centro.nombre }}
+                </td>
+                <td class="px-4 py-2">{{ centro.empresa.nombre }}</td>
+                <td class="px-4 py-2">
+                    <a href="{{ url_for('centros.ver_plantilla', centro_id=centro.id) }}"
+                        class="text-blue-600 hover:underline" data-i18n="centros.tabla.ver_plantilla">
+                        Ver plantilla
+                    </a>
+                </td>
+            </tr>
+
+            <!-- Acordeón -->
+            <tr id="acciones-{{ centro.id }}" class="hidden bg-gray-100 dark:bg-gray-900">
+                <td colspan="3" class="px-4 py-2">
+                    <div class="flex gap-4 items-center">
+                        {% if mostrar_inactivos %}
+                        <form method="POST" action="{{ url_for('centros.restaurar_centro', centro_id=centro.id) }}">
+                            <button type="submit"
+                                class="text-green-600 hover:text-green-800 text-sm flex items-center gap-1"
+                                data-i18n="centros.restaurar">
+                                ♻️ Restaurar
+                            </button>
+                        </form>
+                        <form method="POST" action="{{ url_for('centros.eliminar_definitivo', centro_id=centro.id) }}"
+                            onsubmit="return confirm('¿Eliminar definitivamente este centro? Esta acción no se puede deshacer.');">
+                            <button type="submit"
+                                class="text-red-800 hover:text-red-900 text-sm flex items-center gap-1 ml-2"
+                                data-i18n="centros.eliminar_def">
+                                ❌ Eliminar definitivamente
+                            </button>
+                        </form>
+                        {% else %}
+                        <form method="POST" action="{{ url_for('centros.borrar_centro', centro_id=centro.id) }}"
+                            onsubmit="return confirm('¿Marcar como eliminado este centro?');">
+                            <button type="submit"
+                                class="text-red-600 hover:text-red-800 text-sm flex items-center gap-1"
+                                data-i18n="centros.eliminar">
+                                🗑️ Eliminar
+                            </button>
+                        </form>
+                        <button class="text-blue-600 hover:text-blue-800 text-sm flex items-center gap-1"
+                            data-id="{{ centro.id }}" data-nombre="{{ centro.nombre|escape }}"
+                            data-empresa="{{ centro.empresa_id }}"
+                            data-email="{{ centro.email|default('', true)|escape }}"
+                            data-telefono="{{ centro.telefono|default('', true)|escape }}"
+                            data-direccion="{{ centro.direccion|default('', true)|escape }}"
+                            data-codigo-postal="{{ centro.codigo_postal|default('', true)|escape }}"
+                            data-ccc="{{ centro.ccc|default('', true)|escape }}"
+                            data-cif="{{ centro.cif|default('', true)|escape }}"
+                            data-responsable="{{ centro.responsable|default('', true)|escape }}"
+                            data-sector="{{ centro.sector|default('', true)|escape }}"
+                            data-fecha="{{ centro.fecha_creacion.strftime('%d/%m/%Y %H:%M') if centro.fecha_creacion else '' }}"
+                            onclick="cargarDatosEditarCentro(this)" data-i18n="centros.editar">
+                            ✏️ Editar
+                        </button>
+                        {% endif %}
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+
+            {% if centros|length == 0 %}
+            <tr>
+                <td colspan="3" class="text-center text-gray-500 py-4" data-i18n="centros.listado.vacio">
+                    No hay centros registrados para esta empresa.
+                </td>
+            </tr>
+
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+{% include 'partials/centros_modal_crear.html' %}
+{% include 'partials/centros_drawer_editar.html' %}
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/centros.js') }}"></script>
+{% endblock %}

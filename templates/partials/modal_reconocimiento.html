@@ -1,0 +1,37 @@
+<div id="modal-reconocimiento" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center px-4">
+  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg w-full max-w-md p-6">
+    <h3 class="text-lg font-semibold mb-4" data-i18n="reconocimientos.modal.titulo">
+      Registrar Reconocimiento Médico
+    </h3>
+    <form id="form-reconocimiento">
+      <input type="hidden" id="trabajador-id" name="trabajador_id">
+      <p class="text-sm mb-2">
+        <span data-i18n="reconocimientos.modal.trabajador">Trabajador:</span>
+        <span id="nombre-trabajador" class="font-semibold"></span>
+      </p>
+
+      <label for="fecha" class="block text-sm font-medium" data-i18n="reconocimientos.modal.fecha">
+        Fecha:
+      </label>
+      <input type="date" id="fecha" name="fecha" required class="mt-1 w-full border border-gray-300 rounded px-3 py-2 text-sm">
+
+      <label for="observaciones" class="block text-sm font-medium mt-4" data-i18n="reconocimientos.modal.observaciones">
+        Observaciones:
+      </label>
+      <textarea id="observaciones" name="observaciones" rows="3" class="mt-1 w-full border border-gray-300 rounded px-3 py-2 text-sm"></textarea>
+
+      <div class="mt-6 flex justify-end gap-2">
+        <button type="button" onclick="cerrarModalReconocimiento()"
+                class="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded"
+                data-i18n="reconocimientos.modal.cancelar">
+          Cancelar
+        </button>
+        <button type="submit"
+                class="px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded"
+                data-i18n="reconocimientos.modal.guardar">
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

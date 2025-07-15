@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _('sidebar.horarios') }}{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-semibold mb-6" data-i18n="sidebar.horarios">
+  Horarios
+</h2>
+
+{% set sort = request.args.get('sort') %}
+{% set order = request.args.get('order', 'asc') %}
+
+{% macro sort_icon(col) -%}
+  {% if sort == col %}
+    {% if order == 'asc' %}▲{% else %}▼{% endif %}
+  {% endif %}
+{%- endmacro %}
+
+<table class="min-w-full bg-white dark:bg-gray-800 shadow rounded">
+  <thead>
+    <tr class="bg-gray-100 dark:bg-gray-700 text-left text-sm font-semibold text-gray-700 dark:text-gray-200">
+      <th class="py-3 px-4">
+        <a href="{{ url_for('horarios.lista_horarios', sort='nombre', order='desc' if sort == 'nombre' and order == 'asc' else 'asc') }}"
+           class="flex items-center gap-1">
+          <span data-i18n="trabajadores.tabla.nombre">Nombre</span>
+          {{ sort_icon('nombre') }}
+        </a>
+      </th>
+      <th class="py-3 px-4">
+        <a href="{{ url_for('horarios.lista_horarios', sort='centro', order='desc' if sort == 'centro' and order == 'asc' else 'asc') }}"
+           class="flex items-center gap-1">
+          <span data-i18n="trabajadores.tabla.centro">Centro</span>
+          {{ sort_icon('centro') }}
+        </a>
+      </th>
+      <th class="py-3 px-4" data-i18n="trabajadores.tabla.acciones">Acciones</th>
+    </tr>
+  </thead>
+  <tbody class="text-sm divide-y divide-gray-200 dark:divide-gray-700">
+    {% for trabajador in trabajadores %}
+    <tr>
+      <td class="py-3 px-4">{{ trabajador.nombre }}</td>
+      <td class="py-3 px-4">{{ trabajador.centro.nombre if trabajador.centro else '—' }}</td>
+      <td class="py-3 px-4">
+        <a href="{{ url_for('horarios.gestionar_horario', trabajador_id=trabajador.id) }}"
+           class="inline-block px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm"
+           data-i18n="trabajadores.tabla.horario">
+          Horario
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

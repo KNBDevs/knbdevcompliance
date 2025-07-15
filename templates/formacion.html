@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block title %}{{ _('formacion.titulo') }}{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-6 text-center md:text-left" data-i18n="formacion.titulo">
+    {{ _('formacion.titulo') }}
+</h2>
+
+<!-- Selector de centros -->
+<div class="mb-4">
+    <label for="centro-select" class="block mb-2 font-semibold" data-i18n="formacion.filtro_label">
+        {{ _('formacion.filtro_label') }}
+    </label>
+    <select id="centro-select" class="w-full sm:w-64 border-gray-300 rounded px-3 py-2 text-sm"
+        onchange="filtrarCentro()">
+        <option value="" data-i18n="formacion.filtro_todos">
+            {{ _('formacion.filtro_todos') }}
+        </option>
+        {% for centro in centros %}
+        <option value="{{ centro.id }}">{{ centro.nombre }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+<!-- Tabla de trabajadores -->
+<div class="overflow-x-auto">
+    <table class="min-w-full bg-white dark:bg-gray-800 rounded shadow text-sm" id="tabla-trabajadores">
+        <thead class="bg-gray-100 dark:bg-gray-700">
+            <tr>
+                <th class="px-4 py-2 text-left" data-i18n="formacion.tabla.trabajador">
+                    {{ _('formacion.tabla.trabajador') }}
+                </th>
+                <th class="px-4 py-2 text-left" data-i18n="formacion.tabla.dni">
+                    {{ _('formacion.tabla.dni') }}
+                </th>
+                <th class="px-4 py-2 text-left" data-i18n="formacion.tabla.email">
+                    {{ _('formacion.tabla.email') }}
+                </th>
+                <th class="px-4 py-2 text-left" data-i18n="formacion.tabla.centro">
+                    {{ _('formacion.tabla.centro') }}
+                </th>
+                <th class="px-4 py-2 text-left" data-i18n="formacion.tabla.cursos">
+                    {{ _('formacion.tabla.cursos') }}
+                </th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+            {% for t in trabajadores %}
+            <tr data-centro="{{ t.centro.id if t.centro }}">
+                <td class="px-4 py-2">{{ t.nombre }}</td>
+                <td class="px-4 py-2">{{ t.dni }}</td>
+                <td class="px-4 py-2">{{ t.email }}</td>
+                <td class="px-4 py-2">{{ t.centro.nombre if t.centro else '-' }}</td>
+                <td class="px-4 py-2 text-left space-x-1">
+                    {% for relacion in t.cursos_asociados %}
+                    <div class="relative group inline-block">
+                        <span 
+                            class="text-xl cursor-help tooltip-icon" 
+                            data-nombre="{{ relacion.curso.nombre }}" 
+                            data-fecha="{{ relacion.fecha_asignacion.strftime('%d/%m/%Y %H:%M') }}"
+                        >
+                            {{ relacion.curso.icono }}
+                        </span>
+                        <div class="tooltip-text absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2.5 py-1 rounded-md bg-white text-gray-800 shadow-md border border-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50 whitespace-nowrap pointer-events-none text-xs font-normal">
+                            <!-- Se llena vía JS -->
+                        </div>
+                    </div>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% include 'partials/modal_curso.html' %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/formacion.js') }}"></script>
+<script src="{{ url_for('static', filename='js/modal_curso.js') }}"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const tooltips = document.querySelectorAll('.tooltip-icon');
+
+    tooltips.forEach(icon => {
+        const nombre = icon.dataset.nombre;
+        const fecha = icon.dataset.fecha;
+        const template = window.translations?.formacion?.tooltip?.asignado || "Asignado el {fecha}";
+
+        const contenido = `
+            <div class="font-semibold" style="font-size:10px;">${nombre}</div>
+            <div style="font-size:9px; color:#6B7280;">${template.replace('{fecha}', fecha)}</div>
+        `;
+
+        const container = icon.parentElement.querySelector('.tooltip-text');
+        if (container) container.innerHTML = contenido;
+    });
+});
+</script>
+{% endblock %}

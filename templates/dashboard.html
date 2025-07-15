@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _('dashboard.titulo') }}{% endblock %}
+
+{% block content %}
+
+<h2 class="text-2xl font-semibold mb-6" data-i18n="dashboard.titulo">Panel de Control</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+
+  {% if datos.empresas is defined %}
+  <div class="p-4 rounded shadow bg-white dark:bg-gray-800">
+    <h3 class="text-sm font-medium mb-1" data-i18n="dashboard.empresas">Empresas registradas</h3>
+    <p class="text-2xl font-bold text-blue-600 dark:text-blue-400">{{ datos.empresas }}</p>
+  </div>
+  {% endif %}
+
+  {% if datos.centros is defined %}
+  <div class="p-4 rounded shadow bg-white dark:bg-gray-800">
+    <h3 class="text-sm font-medium mb-1" data-i18n="dashboard.centros">Centros activos</h3>
+    <p class="text-2xl font-bold text-green-600 dark:text-green-400">{{ datos.centros }}</p>
+  </div>
+  {% endif %}
+
+  {% if datos.trabajadores is defined %}
+  <div class="p-4 rounded shadow bg-white dark:bg-gray-800">
+    <h3 class="text-sm font-medium mb-1" data-i18n="dashboard.trabajadores">Trabajadores registrados</h3>
+    <p class="text-2xl font-bold text-purple-600 dark:text-purple-400">{{ datos.trabajadores }}</p>
+  </div>
+  {% endif %}
+
+  {% if datos.usuarios is defined %}
+  <div class="p-4 rounded shadow bg-white dark:bg-gray-800">
+    <h3 class="text-sm font-medium mb-1" data-i18n="dashboard.usuarios">Usuarios administradores</h3>
+    <p class="text-2xl font-bold text-yellow-600 dark:text-yellow-400">{{ datos.usuarios }}</p>
+  </div>
+  {% endif %}
+
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+  {% if datos.fichajes_hoy is defined %}
+  <div class="p-4 rounded shadow bg-white dark:bg-gray-800">
+    <h3 class="text-lg font-medium mb-2" data-i18n="dashboard.hoy.titulo">Fichajes de hoy</h3>
+    <p class="text-sm mb-1">
+      <span data-i18n="dashboard.hoy.hechos">Hechos:</span>
+      <span class="font-bold text-green-600">{{ datos.fichajes_hoy }}</span>
+    </p>
+    <p class="text-sm">
+      <span data-i18n="dashboard.hoy.pendientes">Pendientes:</span>
+      <span class="font-bold text-red-600">{{ datos.pendientes_hoy }}</span>
+    </p>
+  </div>
+  {% endif %}
+
+  {% if datos.top_puntualidad is defined %}
+  <div class="p-4 rounded shadow bg-white dark:bg-gray-800">
+    <h3 class="text-lg font-medium mb-2" data-i18n="dashboard.top_puntualidad">Top 3 Puntualidad (semana)</h3>
+    <ul class="text-sm space-y-1">
+      {% for t in datos.top_puntualidad %}
+      <li>{{ t.nombre }} - <span class="text-green-600">+{{ t.minutos_antes }} <span data-i18n="dashboard.puntuales">fichajes puntuales</span></span></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+</div>
+
+<div class="space-y-6">
+
+  {% if datos.fichajes_recientes is defined %}
+  <div class="p-4 rounded shadow bg-white dark:bg-gray-800">
+    <h3 class="text-xl font-medium mb-2" data-i18n="dashboard.fichajes_recientes">Tus últimos fichajes</h3>
+    <ul class="divide-y divide-gray-300 dark:divide-gray-700 text-sm">
+      {% for fichaje in datos.fichajes_recientes %}
+      <li class="py-2 flex justify-between">
+        <span>{{ fichaje.fecha.strftime('%d/%m/%Y') }}</span>
+        <span class="font-mono">{{ fichaje.hora.strftime('%H:%M') }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if datos.sin_horario is defined and datos.sin_horario|length > 0 %}
+  <div class="p-4 rounded shadow bg-white dark:bg-gray-800">
+    <h3 class="text-lg font-medium mb-2" data-i18n="dashboard.sin_horario">Trabajadores sin horario asignado</h3>
+    <ul class="text-sm">
+      {% for t in datos.sin_horario %}
+      <li class="text-orange-500">{{ t.nombre }} ({{ t.dni }})</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if datos.grafico_fechas is defined and datos.grafico_valores is defined %}
+  <div class="p-4 rounded shadow bg-white dark:bg-gray-800">
+    <h3 class="text-xl font-medium mb-2" data-i18n="dashboard.grafico_titulo">Fichajes últimos 7 días</h3>
+    <div class="w-full h-[300px]">
+      <canvas id="graficoFichajesSemana" class="w-full h-full"
+              data-labels='{{ datos.grafico_fechas | tojson }}'
+              data-values='{{ datos.grafico_valores | tojson }}'></canvas>
+    </div>
+  </div>
+  {% endif %}
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+{% endblock %}

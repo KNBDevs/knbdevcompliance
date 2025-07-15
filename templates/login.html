@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="login.title">Login - Control Horario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CSS vía CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.css') }}">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        };
+    </script>
+
+    <!-- Iconos Heroicons (opcional) -->
+    <script src="https://unpkg.com/@heroicons/vue@2.0.13/outline/index.umd.js"></script>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+
+</head>
+
+<body class="h-full bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition duration-300">
+
+    <div class="flex items-center justify-center h-screen px-4">
+        <div class="w-full max-w-sm bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md space-y-6">
+
+            <!-- Encabezado -->
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-semibold" data-i18n="login.title">Fichaje</h1>
+                <div class="flex items-center space-x-2">
+                    <select id="modeSelector"
+                        class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm">
+                        <option value="light" data-i18n="mode.light">☀️</option>
+                        <option value="dark" data-i18n="mode.dark">🌙</option>
+                        <option value="tired" data-i18n="mode.tired">💤</option>
+                    </select>
+                    {% include 'partials/language.html' %}
+                </div>
+            </div>
+
+            <!-- Fichaje PIN -->
+            <form id="fichajeForm" method="POST" action="{{ url_for('fichaje.fichar') }}">
+                <label for="dni5" class="block text-sm mb-1" data-i18n="login.dni_label">
+                    Introduce tus 5 dígitos del DNI/NIE
+                </label>
+                <input type="text" id="dni5" name="dni5" maxlength="5" required autofocus
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-center text-xl tracking-widest"
+                    data-i18n-placeholder="login.dni_placeholder" placeholder="_____">
+            </form>
+
+            <!-- Botón Login Admin -->
+            <button id="toggleAdminLogin" type="button"
+                class="w-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-100 py-2 px-4 rounded text-sm"
+                data-i18n="login.admin_toggle">
+                Login Administración
+            </button>
+
+            <!-- Login Admin oculto -->
+            <div id="adminLoginForm" class="hidden">
+                <form action="{{ url_for('auth.login') }}" method="POST" class="space-y-4 mt-4">
+                    <div>
+                        <label for="email" class="block text-sm mb-1" data-i18n="login.email_label">
+                            Correo electrónico
+                        </label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700"
+                            data-i18n-placeholder="login.email_placeholder" placeholder="email@ejemplo.com">
+                    </div>
+                    <div>
+                        <label for="password" class="block text-sm mb-1" data-i18n="login.password_label">
+                            Contraseña
+                        </label>
+                        <input type="password" id="password" name="password" required
+                            class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700"
+                            data-i18n-placeholder="login.password_placeholder" placeholder="••••••••">
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        data-i18n="login.submit">
+                        Entrar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de feedback -->
+    <div id="fichajeModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md max-w-sm text-center">
+            <h2 id="modalTitle" class="text-lg font-semibold mb-2"></h2>
+            <p id="modalMessage" class="text-sm"></p>
+            <button id="modalOkButton" onclick="cerrarModal()"
+                class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                OK
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+<script>
+    const loginUrl = "{{ url_for('fichaje.login') }}";
+</script>
+<script src="{{ url_for('static', filename='js/themeMode.js') }}"></script>
+<script src="{{ url_for('static', filename='js/lang.js') }}"></script>
+<script src="{{ url_for('static', filename='js/langMenu.js') }}"></script>
+<script src="{{ url_for('static', filename='js/fichaje_trabajador.js') }}"></script>
+
+
+</body>
+
+</html>

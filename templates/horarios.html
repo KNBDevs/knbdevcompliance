@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% block title %}Horario de {{ trabajador.nombre }}{% endblock %}
+{% block content %}
+
+<div class="text-center mb-6">
+    <h2 class="text-3xl font-semibold" data-i18n="horarios.titulo"
+        data-i18n-params='{"name": "{{ trabajador.nombre }}"}'>
+        Horario de {{ trabajador.nombre }}
+    </h2>
+
+    <p class="text-gray-500" data-i18n="horarios.subtitulo">
+        Edita los tramos horarios del trabajador para cada día de la semana.
+    </p>
+</div>
+
+<div class="flex justify-center px-4">
+    <form method="POST" class="w-full max-w-4xl space-y-6 bg-white dark:bg-gray-800 p-6 rounded shadow"
+        id="form-horario">
+
+        <div class="flex flex-col md:flex-row gap-8 mt-4">
+            <div class="flex-1 space-y-6">
+                <div>
+                    <label for="max_semanal" class="block font-semibold mb-2" data-i18n="horarios.horas_label">
+                        Horas semanales
+                    </label>
+                    <input type="number" id="max_semanal" name="max_semanal" min="1" max="168" step="0.25" value=""
+                        class="p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700 w-40" />
+                    <p class="text-sm text-gray-500 mt-1" data-i18n="horarios.horas_hint">
+                        Si se superan las horas, se mostrarán como extras.
+                    </p>
+                </div>
+
+                <div>
+                    <label class="font-semibold" data-i18n="horarios.copiar_label">
+                        Copiar horario del lunes a otros días:
+                    </label>
+                    <div class="flex gap-2 mt-2 flex-wrap">
+                        {% for dia in dias[1:] %}
+                        <label class="flex items-center space-x-1">
+                            <input type="checkbox" name="copiar_a_{{ dia }}" class="copy-checkbox" value="{{ dia }}">
+                            <span class="capitalize" data-i18n="dias.{{ dia }}">{{ dia }}</span>
+                        </label>
+                        {% endfor %}
+                    </div>
+                    <button type="button" id="btn-copiar" class="mt-2 px-4 py-1 bg-gray-300 rounded hover:bg-gray-400"
+                        data-i18n="horarios.boton_copiar">Copiar</button>
+                </div>
+            </div>
+
+            <div class="w-full md:w-96 hidden md:block">
+                <h3 class="text-xl font-semibold mb-4" data-i18n="horarios.vista_mensual">Vista mensual del horario</h3>
+                <div id="calendarioHorario" class="bg-white dark:bg-gray-800 p-4 rounded shadow"></div>
+            </div>
+        </div>
+
+        <div id="popupTramos"
+            class="hidden absolute z-50 bg-white border border-gray-300 rounded p-3 shadow-lg text-sm"></div>
+
+        {% for dia in dias %}
+        <div class="border rounded shadow-sm bg-white dark:bg-gray-800">
+            <button type="button"
+                class="w-full flex justify-between items-center p-3 font-semibold capitalize bg-gray-100 dark:bg-gray-700 hover:bg-gray-200"
+                onclick="document.getElementById('panel_{{ dia }}').classList.toggle('hidden')">
+                <span data-i18n="dias.{{ dia }}">{{ dia }}</span>
+                <span class="text-sm text-gray-500" data-i18n="horarios.editar_dia">Editar</span>
+            </button>
+
+            <div id="panel_{{ dia }}" class="p-4 space-y-3 hidden">
+                <div class="flex justify-between items-center">
+                    <label class="text-sm">
+                        <input type="checkbox" id="partido_{{ dia }}">
+                        <span data-i18n="horarios.turno_partido">Turno partido</span>
+                    </label>
+                    <button type="button" onclick="borrarHorarioDia('{{ dia }}')"
+                        class="text-sm text-red-600 hover:underline" data-i18n="horarios.borrar_dia">
+                        Borrar horario del día
+                    </button>
+                </div>
+
+                <div class="overflow-x-auto">
+
+                    {% set sort = request.args.get('sort') %}
+                    {% set order = request.args.get('order', 'asc') %}
+
+                    {% macro sort_icon(col) -%}
+                    {% if sort == col %}
+                    {% if order == 'asc' %}▲{% else %}▼{% endif %}
+                    {% endif %}
+                    {%- endmacro %}
+
+                    <table class="w-full text-sm text-left border-t">
+                        <thead>
+                            <tr>
+                                <th class="py-2 pr-4" data-i18n="horarios.tramo">Tramo</th>
+                                <th class="py-2 pr-4" data-i18n="horarios.entrada">Entrada</th>
+                                <th class="py-2 pr-4" data-i18n="horarios.salida">Salida</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 pr-4">1</td>
+                                <td>
+                                    <input type="time" name="{{ dia }}_entrada"
+                                        value="{{ horarios[dia].hora_entrada.strftime('%H:%M') if horarios.get(dia) and horarios[dia].hora_entrada else '' }}"
+                                        class="p-1 rounded border w-full" />
+                                </td>
+                                <td>
+                                    <input type="time" name="{{ dia }}_salida"
+                                        value="{{ horarios[dia].hora_salida.strftime('%H:%M') if horarios.get(dia) and horarios[dia].hora_salida else '' }}"
+                                        class="p-1 rounded border w-full" />
+                                </td>
+                            </tr>
+                            <tr id="tramo2_{{ dia }}" class="hidden">
+                                <td class="py-2 pr-4">2</td>
+                                <td><input type="time" name="{{ dia }}_entrada_2" class="p-1 rounded border w-full" />
+                                </td>
+                                <td><input type="time" name="{{ dia }}_salida_2" class="p-1 rounded border w-full" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="mt-6">
+            <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                data-i18n="horarios.guardar">
+                Guardar horarios
+            </button>
+        </div>
+    </form>
+</div>
+
+<div id="modalHoras" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+    <div class="bg-white p-6 rounded shadow-xl max-w-md text-center space-y-4">
+        <h2 class="text-xl font-semibold" data-i18n="horarios.advertencia">Advertencia de exceso de horas</h2>
+        <p id="mensajeModal" class="text-gray-700" data-i18n="horarios.mensaje_exceso">
+            El horario supera el máximo de horas semanales asignadas.
+        </p>
+        <button onclick="cerrarModal()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            data-i18n="horarios.entendido">
+            Entendido
+        </button>
+    </div>
+</div>
+
+<div id="modalFaltante" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+    <div class="bg-white p-6 rounded shadow-xl max-w-md text-center space-y-4">
+        <h2 class="text-xl font-semibold text-red-600" data-i18n="horarios.campo_obligatorio_titulo">Campo obligatorio
+        </h2>
+        <p class="text-gray-700" data-i18n="horarios.campo_obligatorio_texto">
+            Debes especificar un número de horas semanales antes de guardar.
+        </p>
+        <button onclick="cerrarModalFaltante()" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            data-i18n="horarios.entendido">
+            Entendido
+        </button>
+    </div>
+</div>
+
+<script type="module" src="{{ url_for('static', filename='js/horarios.js') }}"></script>
+
+{% endblock %}

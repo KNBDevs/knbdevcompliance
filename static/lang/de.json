@@ -1,0 +1,407 @@
+{
+  "login": {
+    "title": "Anmeldung",
+    "dni_label": "Gib die letzten 5 Ziffern von DNI/NIE ein",
+    "dni_placeholder": "_____",
+    "admin_toggle": "Admin‑Login",
+    "email_label": "E‑Mail‑Adresse",
+    "email_placeholder": "email@beispiel.com",
+    "password_label": "Passwort",
+    "password_placeholder": "••••••••",
+    "submit": "Einloggen",
+    "ok": "OK"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "empresas": "Unternehmen",
+    "centros": "Zentren",
+    "trabajadores": "Mitarbeiter",
+    "otras_opciones": "⚙️ Weitere Optionen",
+    "horarios": "📅 Zeitpläne",
+    "fichajes": "📌 Zeiterfassungen",
+    "permisos": "🌴 Genehmigungen",
+    "prevencion": "⚠️ Prävention",
+    "importar_trabajadores": "📥 Importieren",
+    "exportar": "📤 Exportieren",
+    "salir": "🚪 Abmelden"
+  },
+  "header": {
+    "title": "Zeiterfassung"
+  },
+  "dashboard": {
+    "titulo": "Dashboard",
+    "empresas": "Registrierte Firmen",
+    "centros": "Aktive Standorte",
+    "trabajadores": "Registrierte Mitarbeiter",
+    "usuarios": "Administrator-Benutzer",
+    "hoy": {
+      "titulo": "Heutige Stempelungen",
+      "hechos": "Erledigt:",
+      "pendientes": "Ausstehend:"
+    },
+    "chart": {
+      "label_fichajes": "Stempelungen"
+    },
+    "top_puntualidad": "Top 3 Pünktlichkeit (Woche)",
+    "puntuales": "pünktliche Stempelungen",
+    "fichajes_recientes": "Deine letzten Stempelungen",
+    "sin_horario": "Mitarbeiter ohne Zeitplan",
+    "grafico_titulo": "Stempelungen der letzten 7 Tage"
+  },
+  "empresas": {
+    "listado": {
+      "titulo": "Registrierte Firmen",
+      "eliminadas": "Gelöschte Firmen",
+      "nueva": "+ Neue Firma",
+      "mostrar_eliminadas": "Gelöschte anzeigen"
+    },
+    "tabla": {
+      "nombre": "Name",
+      "cif": "Steuernummer",
+      "ccc": "Bankverbindung"
+    },
+    "acciones": {
+      "restaurar": "♻️ Wiederherstellen",
+      "eliminar_def": "❌ Endgültig löschen",
+      "eliminar": "🗑️ Löschen",
+      "editar": "✏️ Bearbeiten"
+    },
+    "drawer": {
+      "nombre": "Name",
+      "titulo": "Firma bearbeiten",
+      "contacto": "Kontakt",
+      "administrador": "Administrator",
+      "telefono": "Telefon",
+      "email": "E-Mail",
+      "sede_fiscal": "Hauptsitz",
+      "codigo_postal": "Postleitzahl",
+      "iban": "IBAN",
+      "guardar": "Speichern",
+      "cancelar": "Abbrechen"
+    },
+    "modal": {
+      "titulo": "Neue Firma registrieren"
+    }
+  },
+  "centros": {
+    "listado": {
+      "titulo": "Arbeitsstandorte",
+      "eliminados": "Gelöschte Standorte",
+      "volver_activos": "← Zurück zu aktiven Standorten",
+      "mostrar_eliminados": "Gelöschte anzeigen",
+      "filtro_empresa": "Firma",
+      "todas": "Alle",
+      "nuevo": "+ Neuer Standort",
+      "vacio": "Keine Standorte für dieses Unternehmen registriert."
+    },
+    "tabla": {
+      "nombre": "Standortname",
+      "empresa": "Firma",
+      "acciones": "Aktionen",
+      "ver_plantilla": "Plan anzeigen"
+    },
+    "acciones": {
+      "restaurar": "♻️ Wiederherstellen",
+      "eliminar_def": "❌ Endgültig löschen",
+      "eliminar": "🗑️ Löschen",
+      "editar": "✏️ Bearbeiten"
+    },
+    "modal": {
+      "titulo": "Neuer Standort",
+      "cancelar": "Abbrechen",
+      "guardar": "Speichern"
+    },
+    "drawer": {
+      "titulo": "Standort bearbeiten",
+      "nombre": "Name",
+      "empresa": "Firma",
+      "email": "E-Mail",
+      "telefono": "Telefon",
+      "direccion": "Adresse",
+      "codigo_postal": "Postleitzahl",
+      "ccc": "Bankverbindung",
+      "cif": "Steuernummer",
+      "responsable": "Verantwortlicher",
+      "sector": "Branche",
+      "fecha": "Erstellungsdatum",
+      "cancelar": "Abbrechen",
+      "guardar": "Änderungen speichern",
+      "select": "Auswählen...",
+      "sector_hosteleria": "Gastronomie",
+      "sector_textil": "Textilhandel",
+      "sector_construccion": "Bau",
+      "sector_panaderia": "Bäckerei"
+    }
+  },
+  "trabajadores": {
+    "listado": {
+      "titulo": "Mitarbeiter",
+      "eliminados": "Gelöschte Mitarbeiter",
+      "nuevo": "+ Neuer Mitarbeiter",
+      "volver_activos": "← Zurück zu Mitarbeitern",
+      "mostrar_eliminados": "Gelöschte anzeigen",
+      "solo_sin_centro": "Nur ohne Zentrum",
+      "filtro_centro": "Zentrum:",
+      "todos_centros": "Alle",
+      "buscar_placeholder": "Mitarbeiter suchen...",
+      "vacio": "Keine Mitarbeiter registriert."
+    },
+    "tabla": {
+      "nombre": "Name",
+      "email": "E-Mail",
+      "telefono": "Telefon",
+      "centro": "Zentrum",
+      "pin": "PIN",
+      "acciones": "Aktionen",
+      "horario": "Arbeitszeitplan"
+    },
+    "acciones": {
+      "seleccionar": "-- Auswählen --",
+      "horario": "📅 Zeitplan",
+      "fichajes": "📌 Arbeitszeiten",
+      "permiso": "🌴 Urlaub",
+      "formacion": "📚 Schulung",
+      "reconocimiento": "🩺 Medizinische Untersuchung",
+      "eliminar": "🗑️ Löschen",
+      "restaurar": "♻️ Wiederherstellen",
+      "borrar_def": "🗑️ Endgültig löschen",
+      "editar": "✏️ Bearbeiten"
+    },
+    "drawer": {
+      "titulo": "Mitarbeiter bearbeiten",
+      "nombre": "Name",
+      "dni": "DNI / NIE",
+      "nass": "Sozialversicherungsnummer",
+      "nacionalidad": "Land",
+      "genero": "Geschlecht",
+      "iban": "IBAN",
+      "email": "E-Mail",
+      "telefono": "Telefon",
+      "centro": "Standort",
+      "cancelar": "Abbrechen",
+      "guardar": "Änderungen speichern",
+      "select": "Auswählen...",
+      "masculino": "Männlich",
+      "femenino": "Weiblich"
+    },
+    "modal": {
+      "titulo": "Neuer Mitarbeiter"
+    },
+    "sin_centro": {
+      "asignar": "Standort zuweisen",
+      "sin_resultados": "Keine Mitarbeiter ohne Standort gefunden."
+    }
+  },
+  "horarios": {
+    "titulo": "Zeitplan von {name}",
+    "subtitulo": "Bearbeite die Arbeitszeiten pro Wochentag.",
+    "horas_label": "Wochenstunden",
+    "horas_hint": "Überschüssige Stunden werden als Überstunden angezeigt.",
+    "copiar_label": "Montag auf andere Tage kopieren:",
+    "boton_copiar": "Kopieren",
+    "vista_mensual": "Monatsansicht",
+    "editar_dia": "Bearbeiten",
+    "turno_partido": "Geteilte Schicht",
+    "borrar_dia": "Tag löschen",
+    "tramo": "Abschnitt",
+    "entrada": "Eintritt",
+    "salida": "Austritt",
+    "guardar": "Zeitpläne speichern",
+    "advertencia": "Warnung wegen Überschreitung",
+    "mensaje_exceso": "Zeitplan überschreitet erlaubte Wochenstunden.",
+    "entendido": "Verstanden",
+    "campo_obligatorio_titulo": "Pflichtfeld",
+    "campo_obligatorio_texto": "Bitte Wochenstunden angeben, bevor du speicherst."
+  },
+  "dias": {
+    "lunes": "Montag",
+    "martes": "Dienstag",
+    "miércoles": "Mittwoch",
+    "jueves": "Donnerstag",
+    "viernes": "Freitag",
+    "sábado": "Samstag",
+    "domingo": "Sonntag"
+  },
+  "fichajes": {
+    "titulo_general": "📌 Stempelungsliste",
+    "titulo_individual": "📌 Stempelungen von {nombre}",
+    "exportar_todos": "📤 Alle exportieren (CSV)",
+    "exportar_individual": "📤 Exportiere {nombre} (CSV)",
+    "vacio": "Keine Stempelungen vorhanden.",
+    "historial": "Stempelungsverlauf",
+    "tabla": {
+      "fecha": "Datum",
+      "hora": "Uhrzeit",
+      "tipo": "Typ",
+      "trabajador": "Mitarbeiter",
+      "centro": "Standort"
+    },
+    "tipos": {
+      "Entrada": "Einstempeln",
+      "Salida": "Ausstempeln"
+    }
+  },
+  "permisos": {
+    "titulo_nuevo": "Neue Genehmigung",
+    "titulo_nuevo_para": "Neue Genehmigung für {name}",
+    "form": {
+      "inicio": "Startdatum",
+      "fin": "Enddatum",
+      "justificacion": "Begründung",
+      "boton": "Genehmigung erstellen"
+    },
+    "titulo_gestion": "Genehmigungen verwalten",
+    "titulo_lista": "Genehmigungen und Urlaub",
+    "solicitudes": "Anträge",
+    "historial": "Urlaubsanträge",
+    "tabla": {
+      "trabajador": "Mitarbeiter",
+      "desde": "Von",
+      "hasta": "Bis",
+      "justificacion": "Begründung",
+      "estado": "Status",
+      "acciones": "Aktionen"
+    },
+    "acciones": {
+      "aprobar": "Genehmigen",
+      "rechazar": "Ablehnen",
+      "no_disponible": "Nicht verfügbar"
+    },
+    "estados": {
+      "pendiente": "Ausstehend",
+      "aceptada": "Genehmigt",
+      "rechazada": "Abgelehnt"
+    }
+  },
+  "importar_trabajadores": {
+    "titulo": "Mitarbeiter importieren",
+    "archivo": "Excel-Datei",
+    "ayuda_archivo": "Nur .xlsx-Dateien mit gültigen Spalten werden akzeptiert.",
+    "centro": "Arbeitszentrum",
+    "boton_importar": "Importieren",
+    "descargar_plantilla": "Vorlage herunterladen"
+  },
+  "exportar": {
+    "titulo": "Exportieren",
+    "titulo_pagina": "📤 Daten exportieren",
+    "fechas": {
+      "desde": "Von:",
+      "hasta": "Bis:",
+      "centro": "Arbeitsstandort:"
+    },
+    "fichajes": {
+      "titulo": "📌 Stempelungen exportieren",
+      "boton": "CSV der Stempelungen herunterladen"
+    },
+    "horarios": {
+      "titulo": "📅 Arbeitszeiten exportieren",
+      "boton": "CSV der Arbeitszeiten herunterladen"
+    },
+    "permisos": {
+      "titulo": "🌴 Genehmigungen exportieren",
+      "boton": "CSV der Genehmigungen herunterladen"
+    },
+    "selector": {
+      "opcional": "Optional"
+    }
+  },
+  "prevencion": {
+    "titulo": "Gefahrenprävention-Panel",
+    "alimentos": {
+      "titulo": "Lebensmittelhandler",
+      "descripcion": "Überwachung der Mitarbeiter mit gültigem Zertifikat für den sicheren Umgang mit Lebensmitteln."
+    },
+    "riesgos": {
+      "titulo": "Arbeitsschutz",
+      "descripcion": "Verfolgung der Pflichtschulung zur Gefahrenprävention für jeden Mitarbeiter je nach Position."
+    },
+    "reconocimientos": {
+      "titulo": "Ärztliche Untersuchungen",
+      "descripcion": "Erfassung und Kontrolle der regelmäßig durchgeführten ärztlichen Untersuchungen der Mitarbeiter."
+    },
+    "boton": "Zugreifen"
+  },
+  "fichaje_modal": {
+    "ok": {
+      "titulo": "✅ Buchung erfolgreich",
+      "mensaje": "{nombre} hat sich erfolgreich um {hora} eingestempelt."
+    },
+    "ya_fichado": {
+      "titulo": "❗ Bereits gestempelt",
+      "mensaje": "{nombre}, du hast heute bereits gestempelt. Pro Schicht ist nur eine Buchung erlaubt."
+    },
+    "demasiado_pronto": {
+      "titulo": "⏱️ Zu früh",
+      "mensaje": "{nombre}, es ist noch nicht Zeit zum Stempeln. Versuche es später."
+    },
+    "demasiado_tarde": {
+      "titulo": "⌛ Außerhalb der Zeit",
+      "mensaje": "{nombre}, deine Stempelzeit ist bereits vorbei."
+    },
+    "limite_turnos": {
+      "titulo": "🚫 Limit erreicht",
+      "mensaje": "{nombre}, du hast dein Schichtlimit für heute erreicht."
+    },
+    "segundo_turno": {
+      "titulo": "🔁 Zweite Schicht",
+      "mensaje": "{nombre}, die zweite Schicht wurde erfolgreich um {hora} registriert."
+    },
+    "error": {
+      "titulo": "❌ Fehler",
+      "mensaje": "Der Stempelvorgang konnte nicht durchgeführt werden. Überprüfe deine PIN."
+    }
+  },
+  "reconocimientos": {
+    "titulo_general": "Ärztliche Untersuchungen",
+    "titulo_individual": "Ärztliche Untersuchungen - {nombre}",
+    "filtro_label": "Nach Zentrum filtern:",
+    "filtro_todos": "-- Alle Zentren --",
+    "tabla": {
+      "trabajador": "Mitarbeiter",
+      "dni": "DNI/NIE",
+      "centro": "Zentrum",
+      "ultimo": "Letzte Untersuchung",
+      "accion": "Aktion",
+      "fecha": "Datum",
+      "observaciones": "Bemerkungen",
+      "sin_resultados": "Keine Untersuchungen registriert."
+    },
+    "boton_abrir_modal": "Hinzufügen",
+    "modal": {
+      "titulo": "Ärztliche Untersuchung registrieren",
+      "trabajador": "Mitarbeiter:",
+      "fecha": "Datum:",
+      "observaciones": "Bemerkungen:",
+      "cancelar": "Abbrechen",
+      "guardar": "Speichern"
+    },
+    "volver": "← Zurück zur Liste",
+    "error_guardar": "Fehler beim Speichern der Untersuchung."
+  },
+  "formacion": {
+    "titulo": "Schulung und Kurse",
+    "filtro_label": "Nach Zentrum filtern:",
+    "filtro_todos": "-- Alle Zentren --",
+    "tabla": {
+      "trabajador": "Mitarbeiter",
+      "dni": "DNI/NIE",
+      "email": "E-Mail",
+      "centro": "Zentrum",
+      "cursos": "Kurse"
+    },
+    "tooltip": {
+      "asignado": "Zugewiesen am {fecha}"
+    },
+    "modal": {
+      "titulo": "Kurse zuweisen",
+      "cancelar": "Abbrechen",
+      "guardar": "Speichern",
+      "error_cargar": "Fehler beim Laden der Kurse",
+      "error_guardar": "Fehler beim Speichern der Kurse"
+    },
+    "errores": {
+      "cargar": "Fehler beim Laden der Kurse",
+      "guardar": "Fehler beim Speichern der Kurse"
+    }
+  }
+}

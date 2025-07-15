@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block title %}<span data-i18n="trabajadores.listado.titulo">Trabajadores</span>{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-semibold mb-6" data-i18n="trabajadores.sin_centro.titulo">
+  Trabajadores sin centro
+</h2>
+
+<form id="filtros-trabajadores" method="get" action="{{ url_for('trabajadores.lista_trabajadores') }}">
+  <div class="flex flex-wrap justify-between items-center mb-4 gap-4">
+    <div class="flex items-center gap-4">
+      <button onclick="mostrarModalCrear()" type="button"
+        class="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700" data-i18n="trabajadores.listado.nuevo">
+        + Nuevo trabajador
+      </button>
+
+      {% if current_user.rol == 'admin' %}
+      <div class="flex items-center gap-2 text-sm">
+        <span data-i18n="trabajadores.listado.filtro_centro">Centro:</span>
+        <select name="centro_filtro" onchange="this.form.submit()"
+          class="p-1 border rounded dark:bg-gray-700 dark:border-gray-600">
+          <option value="" data-i18n="trabajadores.listado.todos_centros">Todos</option>
+          {% for centro in centros %}
+          <option value="{{ centro.id }}" {% if centro.id==centro_filtro_id %}selected{% endif %}>
+            {{ centro.nombre }}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="flex items-center gap-2 text-sm">
+        <input type="text" id="buscador-trabajador" placeholder="Buscar trabajador..."
+          class="p-1 border rounded dark:bg-gray-700 dark:border-gray-600" oninput="filtrarTrabajadores()">
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="flex items-center gap-4">
+      <a href="{{ url_for('trabajadores.lista_trabajadores') }}"
+        class="inline-block mt-4 text-blue-600 hover:underline text-sm" data-i18n="trabajadores.listado.volver_activos">
+        ← Volver a trabajadores
+      </a>
+      <label class="flex items-center gap-1 text-sm">
+        <input type="checkbox" name="eliminados" value="1" onchange="this.form.submit()">
+        <span data-i18n="trabajadores.listado.mostrar_eliminados">Mostrar eliminados</span>
+      </label>
+      <label class="flex items-center gap-1 text-sm">
+        <input type="checkbox" name="huerfanos" value="1" onchange="this.form.submit()" checked>
+        <span data-i18n="trabajadores.listado.solo_sin_centro">Solo sin centro</span>
+      </label>
+    </div>
+  </div>
+</form>
+
+<!-- Tabla -->
+<div class="overflow-x-auto">
+  <table class="min-w-full bg-white dark:bg-gray-800 rounded shadow text-sm">
+    <thead class="bg-white dark:bg-gray-800">
+      {% set sort = request.args.get('sort') %}
+      {% set order = request.args.get('order', 'asc') %}
+
+
+      {% macro sort_icon(col) -%}
+      {% if sort == col %}
+      {% if order == 'asc' %}▲{% else %}▼{% endif %}
+      {% endif %}
+      {%- endmacro %}
+
+      <tr>
+        <th class="px-4 py-2 text-left">
+          <a href="{{ url_for('trabajadores.trabajadores_sin_centro', sort='nombre', order='desc' if sort == 'nombre' and order == 'asc' else 'asc') }}"
+            class="flex items-center gap-1">
+            <span data-i18n="trabajadores.tabla.nombre">Nombre</span>
+            {{ sort_icon('nombre') }}
+          </a>
+        </th>
+        <th class="px-4 py-2 text-left">
+          <a href="{{ url_for('trabajadores.trabajadores_sin_centro', sort='email', order='desc' if sort == 'email' and order == 'asc' else 'asc') }}"
+            class="flex items-center gap-1">
+            <span data-i18n="trabajadores.tabla.email">Email</span>
+            {{ sort_icon('email') }}
+          </a>
+        </th>
+        <th class="px-4 py-2 text-left">
+          <a href="{{ url_for('trabajadores.trabajadores_sin_centro', sort='telefono', order='desc' if sort == 'telefono' and order == 'asc' else 'asc') }}"
+            class="flex items-center gap-1">
+            <span data-i18n="trabajadores.tabla.telefono">Teléfono</span>
+            {{ sort_icon('telefono') }}
+          </a>
+        </th>
+        <th class="px-4 py-2 text-left">
+          <a href="{{ url_for('trabajadores.trabajadores_sin_centro', sort='centro', order='desc' if sort == 'centro' and order == 'asc' else 'asc') }}"
+            class="flex items-center gap-1">
+            <span data-i18n="trabajadores.tabla.centro">Centro</span>
+            {{ sort_icon('centro') }}
+          </a>
+        </th>
+        <th class="px-4 py-2 text-left" data-i18n="trabajadores.sin_centro.asignar">Asignar a centro</th>
+      </tr>
+    </thead>
+
+    <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+      {% for t in trabajadores %}
+      <tr>
+        <td class="px-4 py-2">{{ t.nombre }}</td>
+        <td class="px-4 py-2">{{ t.email }}</td>
+        <td class="px-4 py-2">{{ t.telefono }}</td>
+        <td class="px-4 py-2">
+          {% if t.centro and not t.centro.activo %}
+          <span class="line-through text-red-500" title="Centro inactivo">{{ t.centro.nombre }}</span>
+          {% else %}
+          -
+          {% endif %}
+        </td>
+        <td class="px-4 py-2">
+          <form method="POST" action="{{ url_for('trabajadores.reasignar', trabajador_id=t.id) }}"
+            class="flex items-center gap-2">
+            <select name="centro_id" class="p-1 border border-gray-300 dark:border-gray-600 rounded dark:bg-gray-700">
+              {% for centro in centros if centro.activo %}
+              <option value="{{ centro.id }}">{{ centro.nombre }}</option>
+              {% endfor %}
+            </select>
+            <button type="submit" class="px-2 py-1 bg-green-600 hover:bg-green-700 text-white rounded text-xs"
+              data-i18n="trabajadores.sin_centro.asignar">
+              Asignar a centro
+            </button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+
+      {% if trabajadores|length == 0 %}
+      <tr>
+        <td colspan="5" class="text-center text-gray-500 py-4" data-i18n="trabajadores.sin_centro.sin_resultados">
+          No hay trabajadores sin centro asignado.
+        </td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

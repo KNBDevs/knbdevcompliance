@@ -1,0 +1,407 @@
+{
+  "login": {
+    "title": "Giriş",
+    "dni_label": "DNI/NIE son 5 hanesini girin",
+    "dni_placeholder": "_____",
+    "admin_toggle": "Yönetici Girişi",
+    "email_label": "E‑posta",
+    "email_placeholder": "email@ornek.com",
+    "password_label": "Şifre",
+    "password_placeholder": "••••••••",
+    "submit": "Giriş Yap",
+    "ok": "Tamam"
+  },
+  "sidebar": {
+    "dashboard": "Gösterge Paneli",
+    "empresas": "Şirketler",
+    "centros": "Merkezler",
+    "trabajadores": "Çalışanlar",
+    "otras_opciones": "⚙️ Diğer seçenekler",
+    "horarios": "📅 Çizelgeler",
+    "fichajes": "📌 Zaman kayıtları",
+    "permisos": "🌴 İzinler",
+    "prevencion": "⚠️ Önleme",
+    "importar_trabajadores": "📥 İçe aktar",
+    "exportar": "📤 Dışa aktar",
+    "salir": "🚪 Çıkış"
+  },
+  "header": {
+    "title": "Zaman Takibi"
+  },
+  "dashboard": {
+    "titulo": "Kontrol Paneli",
+    "empresas": "Kayıtlı Şirketler",
+    "centros": "Aktif Merkezler",
+    "trabajadores": "Kayıtlı Çalışanlar",
+    "usuarios": "Yönetici Kullanıcılar",
+    "hoy": {
+      "titulo": "Bugünkü Giriş/Çıkışlar",
+      "hechos": "Yapılanlar:",
+      "pendientes": "Bekleyenler:"
+    },
+    "chart": {
+      "label_fichajes": "Giriş/Çıkış"
+    },
+    "top_puntualidad": "Haftanın En Dakik 3'ü",
+    "puntuales": "dakik işlemler",
+    "fichajes_recientes": "Son işlemleriniz",
+    "sin_horario": "Programı olmayan çalışanlar",
+    "grafico_titulo": "Son 7 Gün İşlemleri"
+  },
+  "empresas": {
+    "listado": {
+      "titulo": "Kayıtlı Şirketler",
+      "eliminadas": "Silinmiş Şirketler",
+      "nueva": "+ Yeni Şirket",
+      "mostrar_eliminadas": "Silinmişleri Göster"
+    },
+    "tabla": {
+      "nombre": "İsim",
+      "cif": "CIF",
+      "ccc": "CCC"
+    },
+    "acciones": {
+      "restaurar": "♻️ Geri Yükle",
+      "eliminar_def": "❌ Kesin Sil",
+      "eliminar": "🗑️ Sil",
+      "editar": "✏️ Düzenle"
+    },
+    "drawer": {
+      "nombre": "İsim",
+      "titulo": "Şirketi Düzenle",
+      "contacto": "İletişim",
+      "administrador": "Yönetici",
+      "telefono": "Telefon",
+      "email": "E-posta",
+      "sede_fiscal": "Mali Merkez",
+      "codigo_postal": "Posta Kodu",
+      "iban": "IBAN",
+      "guardar": "Kaydet",
+      "cancelar": "İptal"
+    },
+    "modal": {
+      "titulo": "Yeni Şirket Kaydı"
+    }
+  },
+  "centros": {
+    "listado": {
+      "titulo": "Çalışma Merkezleri",
+      "eliminadas": "Silinmiş Merkezler",
+      "volver_activos": "← Aktif Merkezlere Dön",
+      "mostrar_eliminados": "Silinmişleri Göster",
+      "filtro_empresa": "Şirket",
+      "todas": "Tümü",
+      "nuevo": "+ Yeni Merkez",
+      "vacio": "Bu şirket için kayıtlı merkez yok."
+    },
+    "tabla": {
+      "nombre": "Merkez Adı",
+      "empresa": "Şirket",
+      "acciones": "İşlemler",
+      "ver_plantilla": "Şablonu Gör"
+    },
+    "acciones": {
+      "restaurar": "♻️ Geri Yükle",
+      "eliminar_def": "❌ Kesin Sil",
+      "eliminar": "🗑️ Sil",
+      "editar": "✏️ Düzenle"
+    },
+    "modal": {
+      "titulo": "Yeni Merkez",
+      "cancelar": "İptal",
+      "guardar": "Kaydet"
+    },
+    "drawer": {
+      "titulo": "Merkezi Düzenle",
+      "nombre": "İsim",
+      "empresa": "Şirket",
+      "email": "E-posta",
+      "telefono": "Telefon",
+      "direccion": "Adres",
+      "codigo_postal": "Posta Kodu",
+      "ccc": "CCC",
+      "cif": "CIF",
+      "responsable": "Merkez Sorumlusu",
+      "sector": "Faaliyet Sektörü",
+      "fecha": "Oluşturulma Tarihi",
+      "cancelar": "İptal",
+      "guardar": "Değişiklikleri Kaydet",
+      "select": "Seçiniz...",
+      "sector_hosteleria": "Konaklama",
+      "sector_textil": "Tekstil Ticareti",
+      "sector_construccion": "İnşaat",
+      "sector_panaderia": "Fırın"
+    }
+  },
+  "trabajadores": {
+    "listado": {
+      "titulo": "Çalışanlar",
+      "eliminados": "Silinmiş çalışanlar",
+      "nuevo": "+ Yeni çalışan",
+      "volver_activos": "← Çalışanlara geri dön",
+      "mostrar_eliminados": "Silinenleri göster",
+      "solo_sin_centro": "Sadece merkezsiz",
+      "filtro_centro": "Merkez:",
+      "todos_centros": "Hepsi",
+      "buscar_placeholder": "Çalışan ara...",
+      "vacio": "Kayıtlı çalışan yok."
+    },
+    "tabla": {
+      "nombre": "İsim",
+      "email": "E‑posta",
+      "telefono": "Telefon",
+      "centro": "Merkez",
+      "pin": "PIN",
+      "acciones": "İşlemler",
+      "horario": "Çalışma Takvimi"
+    },
+    "acciones": {
+      "seleccionar": "-- Seç --",
+      "horario": "📅 Program",
+      "fichajes": "📌 Zaman kayıtları",
+      "permiso": "🌴 İzin",
+      "formacion": "📚 Eğitim",
+      "reconocimiento": "🩺 Sağlık kontrolü",
+      "eliminar": "🗑️ Sil",
+      "restaurar": "♻️ Geri yükle",
+      "borrar_def": "🗑️ Kalıcı sil",
+      "editar": "✏️ Düzenle"
+    },
+    "drawer": {
+      "titulo": "Çalışanı Düzenle",
+      "nombre": "İsim",
+      "dni": "DNI / NIE",
+      "nass": "Sosyal Güvenlik No",
+      "nacionalidad": "Ülke",
+      "genero": "Cinsiyet",
+      "iban": "IBAN",
+      "email": "E-posta",
+      "telefono": "Telefon",
+      "centro": "Merkez",
+      "cancelar": "İptal",
+      "guardar": "Kaydet",
+      "select": "Seçiniz...",
+      "masculino": "Erkek",
+      "femenino": "Kadın"
+    },
+    "modal": {
+      "titulo": "Yeni Çalışan"
+    },
+    "sin_centro": {
+      "asignar": "Merkez Ata",
+      "sin_resultados": "Merkez atanmamış çalışan yok."
+    }
+  },
+  "horarios": {
+    "titulo": "{name} programı",
+    "subtitulo": "Her gün için çalışanın saat dilimlerini düzenleyin.",
+    "horas_label": "Haftalık saat",
+    "horas_hint": "Aşılırsa fazla mesai olarak gösterilir.",
+    "copiar_label": "Pazartesi programını diğer günlere kopya et:",
+    "boton_copiar": "Kopyala",
+    "vista_mensual": "Aylık görünüm",
+    "editar_dia": "Düzenle",
+    "turno_partido": "Bölünmüş vardiya",
+    "borrar_dia": "Günü Sil",
+    "tramo": "Dilim",
+    "entrada": "Giriş",
+    "salida": "Çıkış",
+    "guardar": "Programı Kaydet",
+    "advertencia": "Saat aşım uyarısı",
+    "mensaje_exceso": "Program haftalık saat sınırını aşıyor.",
+    "entendido": "Anladım",
+    "campo_obligatorio_titulo": "Zorunlu alan",
+    "campo_obligatorio_texto": "Kaydetmeden önce saat sayısını belirtmelisiniz."
+  },
+  "dias": {
+    "lunes": "Pazartesi",
+    "martes": "Salı",
+    "miércoles": "Çarşamba",
+    "jueves": "Perşembe",
+    "viernes": "Cuma",
+    "sábado": "Cumartesi",
+    "domingo": "Pazar"
+  },
+  "fichajes": {
+    "titulo_general": "📌 Giriş/Çıkış Listesi",
+    "titulo_individual": "📌 {nombre} işlemleri",
+    "exportar_todos": "📤 Tümünü Dışa Aktar (CSV)",
+    "exportar_individual": "📤 {nombre} işlemlerini Dışa Aktar (CSV)",
+    "vacio": "Kayıtlı işlem yok.",
+    "historial": "İşlem Geçmişi",
+    "tabla": {
+      "fecha": "Tarih",
+      "hora": "Saat",
+      "tipo": "Tür",
+      "trabajador": "Çalışan",
+      "centro": "Merkez"
+    },
+    "tipos": {
+      "Entrada": "Giriş",
+      "Salida": "Çıkış"
+    }
+  },
+  "permisos": {
+    "titulo_nuevo": "Yeni İzin",
+    "titulo_nuevo_para": "{name} için yeni izin",
+    "form": {
+      "inicio": "Başlangıç tarihi",
+      "fin": "Bitiş tarihi",
+      "justificacion": "Gerekçe",
+      "boton": "İzin Oluştur"
+    },
+    "titulo_gestion": "İzin Yönetimi",
+    "titulo_lista": "İzinler ve Tatiller",
+    "solicitudes": "İzin Talepleri",
+    "historial": "Tatiller Geçmişi",
+    "tabla": {
+      "trabajador": "Çalışan",
+      "desde": "Başlangıç",
+      "hasta": "Bitiş",
+      "justificacion": "Gerekçe",
+      "estado": "Durum",
+      "acciones": "İşlemler"
+    },
+    "acciones": {
+      "aprobar": "Onayla",
+      "rechazar": "Reddet",
+      "no_disponible": "Mevcut değil"
+    },
+    "estados": {
+      "pendiente": "Beklemede",
+      "aceptada": "Kabul edildi",
+      "rechazada": "Reddedildi"
+    }
+  },
+  "importar_trabajadores": {
+    "titulo": "Çalışanları İçe Aktar",
+    "archivo": "Excel Dosyası",
+    "ayuda_archivo": "Yalnızca geçerli sütunlara sahip .xlsx formatı kabul edilir.",
+    "centro": "Çalışma merkezi",
+    "boton_importar": "İçe Aktar",
+    "descargar_plantilla": "Şablonu indir"
+  },
+  "exportar": {
+    "titulo": "Dışa Aktar",
+    "titulo_pagina": "📤 Verileri Dışa Aktar",
+    "fechas": {
+      "desde": "Başlangıç:",
+      "hasta": "Bitiş:",
+      "centro": "Çalışma Merkezi:"
+    },
+    "fichajes": {
+      "titulo": "📌 İşlemleri Dışa Aktar",
+      "boton": "CSV İşlemleri İndir"
+    },
+    "horarios": {
+      "titulo": "📅 Çalışma Saatleri Dışa Aktar",
+      "boton": "CSV Programları İndir"
+    },
+    "permisos": {
+      "titulo": "🌴 İzinleri Dışa Aktar",
+      "boton": "CSV İzinleri İndir"
+    },
+    "selector": {
+      "opcional": "İsteğe bağlı"
+    }
+  },
+  "prevencion": {
+    "titulo": "Risk Önleme Paneli",
+    "alimentos": {
+      "titulo": "Gıda İşleyici",
+      "descripcion": "Gıdaların güvenli bir şekilde işlenmesi için geçerli sertifikaya sahip çalışanların kontrolü."
+    },
+    "riesgos": {
+      "titulo": "İş Sağlığı ve Güvenliği",
+      "descripcion": "Çalışanların görevlerine göre zorunlu iş sağlığı ve güvenliği eğitimlerinin takibi."
+    },
+    "reconocimientos": {
+      "titulo": "Sağlık Muayeneleri",
+      "descripcion": "Çalışanlara yapılan periyodik sağlık kontrollerinin kaydı ve takibi."
+    },
+    "boton": "Giriş"
+  },
+  "fichaje_modal": {
+    "ok": {
+      "titulo": "✅ Giriş başarılı",
+      "mensaje": "{nombre}, {hora} saatinde başarıyla giriş yaptınız."
+    },
+    "ya_fichado": {
+      "titulo": "❗ Zaten giriş yapıldı",
+      "mensaje": "{nombre}, bugün zaten giriş yaptınız. Her vardiya için yalnızca bir girişe izin verilir."
+    },
+    "demasiado_pronto": {
+      "titulo": "⏱️ Çok erken",
+      "mensaje": "{nombre}, giriş yapmak için henüz vakit değil. Lütfen daha sonra tekrar deneyin."
+    },
+    "demasiado_tarde": {
+      "titulo": "⌛ Zaman aşımı",
+      "mensaje": "{nombre}, giriş saatiniz geçti."
+    },
+    "limite_turnos": {
+      "titulo": "🚫 Limit aşıldı",
+      "mensaje": "{nombre}, bugün vardiya limitine ulaştınız."
+    },
+    "segundo_turno": {
+      "titulo": "🔁 İkinci vardiya",
+      "mensaje": "{nombre}, ikinci vardiya {hora} saatinde başarıyla kaydedildi."
+    },
+    "error": {
+      "titulo": "❌ Hata",
+      "mensaje": "Giriş yapılamadı. PIN'inizi kontrol edin."
+    }
+  },
+  "reconocimientos": {
+    "titulo_general": "Sağlık Muayeneleri",
+    "titulo_individual": "Sağlık Muayeneleri - {nombre}",
+    "filtro_label": "Merkeze göre filtrele:",
+    "filtro_todos": "-- Tüm merkezler --",
+    "tabla": {
+      "trabajador": "Çalışan",
+      "dni": "DNI/NIE",
+      "centro": "Merkez",
+      "ultimo": "Son Muayene",
+      "accion": "İşlem",
+      "fecha": "Tarih",
+      "observaciones": "Gözlemler",
+      "sin_resultados": "Kayıtlı muayene yok."
+    },
+    "boton_abrir_modal": "Ekle",
+    "modal": {
+      "titulo": "Sağlık Muayenesi Kaydet",
+      "trabajador": "Çalışan:",
+      "fecha": "Tarih:",
+      "observaciones": "Gözlemler:",
+      "cancelar": "İptal",
+      "guardar": "Kaydet"
+    },
+    "volver": "← Listeye geri dön",
+    "error_guardar": "Muayene kaydedilemedi."
+  },
+  "formacion": {
+    "titulo": "Eğitim ve Kurslar",
+    "filtro_label": "Merkeze göre filtrele:",
+    "filtro_todos": "-- Tüm merkezler --",
+    "tabla": {
+      "trabajador": "Çalışan",
+      "dni": "DNI/NIE",
+      "email": "E-posta",
+      "centro": "Merkez",
+      "cursos": "Kurslar"
+    },
+    "tooltip": {
+      "asignado": "{fecha} tarihinde atandı"
+    },
+    "modal": {
+      "titulo": "Kursları Ata",
+      "cancelar": "İptal",
+      "guardar": "Kaydet",
+      "error_cargar": "Kurslar yüklenirken hata oluştu",
+      "error_guardar": "Kurslar kaydedilirken hata oluştu"
+    },
+    "errores": {
+      "cargar": "Kurslar yüklenirken hata oluştu",
+      "guardar": "Kurslar kaydedilirken hata oluştu"
+    }
+  }
+}

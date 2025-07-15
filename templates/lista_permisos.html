@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ _('permisos.titulo_lista') }}
+{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-semibold mb-6" data-i18n="permisos.historial">Solicitudes de vacaciones</h2>
+
+{% set sort = request.args.get('sort') %}
+{% set order = request.args.get('order', 'desc') %}
+
+{% macro sort_icon(col) -%}
+  {% if sort == col %}
+    {% if order == 'asc' %}▲{% else %}▼{% endif %}
+  {% endif %}
+{%- endmacro %}
+
+<table class="min-w-full bg-white dark:bg-gray-800 shadow rounded">
+  <thead>
+    <tr class="bg-gray-100 dark:bg-gray-700 text-left text-sm font-semibold text-gray-700 dark:text-gray-200">
+      <th class="py-3 px-4">
+        <a href="{{ url_for('permisos.lista_permisos', sort='trabajador', order='asc' if sort == 'trabajador' and order == 'desc' else 'desc') }}"
+           class="flex items-center gap-1">
+          <span data-i18n="permisos.tabla.trabajador">Trabajador</span> {{ sort_icon('trabajador') }}
+        </a>
+      </th>
+      <th class="py-3 px-4">
+        <a href="{{ url_for('permisos.lista_permisos', sort='desde', order='asc' if sort == 'desde' and order == 'desc' else 'desc') }}"
+           class="flex items-center gap-1">
+          <span data-i18n="permisos.tabla.desde">Desde</span> {{ sort_icon('desde') }}
+        </a>
+      </th>
+      <th class="py-3 px-4">
+        <a href="{{ url_for('permisos.lista_permisos', sort='hasta', order='asc' if sort == 'hasta' and order == 'desc' else 'desc') }}"
+           class="flex items-center gap-1">
+          <span data-i18n="permisos.tabla.hasta">Hasta</span> {{ sort_icon('hasta') }}
+        </a>
+      </th>
+      <th class="py-3 px-4">
+        <a href="{{ url_for('permisos.lista_permisos', sort='estado', order='asc' if sort == 'estado' and order == 'desc' else 'desc') }}"
+           class="flex items-center gap-1">
+          <span data-i18n="permisos.tabla.estado">Estado</span> {{ sort_icon('estado') }}
+        </a>
+      </th>
+      <th class="py-3 px-4">
+        <a href="{{ url_for('permisos.lista_permisos', sort='justificacion', order='asc' if sort == 'justificacion' and order == 'desc' else 'desc') }}"
+           class="flex items-center gap-1">
+          <span data-i18n="permisos.tabla.justificacion">Justificación</span> {{ sort_icon('justificacion') }}
+        </a>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="text-sm divide-y divide-gray-200 dark:divide-gray-700">
+    {% for v in permisos %}
+    <tr>
+      <td class="py-3 px-4">{{ v.trabajador.nombre }}</td>
+      <td class="py-3 px-4">{{ v.fecha_inicio.strftime('%d/%m/%Y') }}</td>
+      <td class="py-3 px-4">{{ v.fecha_fin.strftime('%d/%m/%Y') }}</td>
+      <td class="py-3 px-4">
+        <span class="text-green-600" data-i18n="permisos.estados.{{ v.estado }}">{{ v.estado }}</span>
+      </td>
+      <td class="py-3 px-4">{{ v.justificacion or '—' }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

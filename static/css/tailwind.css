@@ -1,0 +1,59 @@
+#popupTramos {
+    min-width: 200px;
+  }
+
+:root {
+  --font-size: 16px;
+}
+
+
+
+/* === Modo vista cansada (cálido suave) === */
+.tired-mode {
+  background-color: #f4ece2;   /* Fondo general: beige sepia suave */
+  color: #5a3e2b;              /* Texto: marrón medio */
+}
+
+/* Simula .dark:bg-gray-800 */
+.tired-mode .dark\:bg-gray-800 {
+  background-color: #e8ddce;   /* Fondo de tarjetas: cálido claro */
+}
+
+/* Simula .dark:text-gray-100 */
+.tired-mode .dark\:text-gray-100 {
+  color: #4b3624;              /* Texto cálido oscuro */
+}
+
+/* Simula .dark:border-gray-600 */
+.tired-mode .dark\:border-gray-600 {
+  border-color: #c4b5a2;
+}
+
+/* Simula .dark:hover:bg-gray-700 */
+.tired-mode .dark\:hover\:bg-gray-700:hover {
+  background-color: #f0e3d0;
+}
+
+/* Elementos base blancos */
+.tired-mode .bg-white,
+.tired-mode .dark\:bg-white {
+  background-color: #f0e7dc;
+}
+
+/* Inputs, selects, botones */
+.tired-mode input,
+.tired-mode select,
+.tired-mode textarea {
+  background-color: #f9f3eb;
+  color: #4b3a28;
+  border-color: #d3c2a8;
+}
+
+.tired-mode button {
+  background-color: #d9b99b;
+  color: #3a2a1e;
+}
+
+.tired-mode button:hover {
+  background-color: #cfae91;
+}

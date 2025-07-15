@@ -1,0 +1,407 @@
+{
+  "login": {
+    "title": "Accesso",
+    "dni_label": "Inserisci le ultime 5 cifre di DNI/NIE",
+    "dni_placeholder": "_____",
+    "admin_toggle": "Login Amministratore",
+    "email_label": "Email",
+    "email_placeholder": "email@esempio.com",
+    "password_label": "Password",
+    "password_placeholder": "••••••••",
+    "submit": "Accedi",
+    "ok": "OK"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "empresas": "Aziende",
+    "centros": "Centri",
+    "trabajadores": "Lavoratori",
+    "otras_opciones": "⚙️ Altre opzioni",
+    "horarios": "📅 Orari",
+    "fichajes": "📌 Registrazioni",
+    "permisos": "🌴 Permessi",
+    "prevencion": "⚠️ Prevenzione",
+    "importar_trabajadores": "📥 Importa",
+    "exportar": "📤 Esporta",
+    "salir": "🚪 Esci"
+  },
+  "header": {
+    "title": "Controllo Orario"
+  },
+  "dashboard": {
+    "titulo": "Pannello di Controllo",
+    "empresas": "Aziende registrate",
+    "centros": "Centri attivi",
+    "trabajadores": "Lavoratori registrati",
+    "usuarios": "Utenti amministratori",
+    "hoy": {
+      "titulo": "Presenze di oggi",
+      "hechos": "Effettuate:",
+      "pendientes": "In sospeso:"
+    },
+    "chart": {
+      "label_fichajes": "Presenze"
+    },
+    "top_puntualidad": "Top 3 Puntualità (settimana)",
+    "puntuales": "presenze puntuali",
+    "fichajes_recientes": "Le tue ultime presenze",
+    "sin_horario": "Lavoratori senza orario assegnato",
+    "grafico_titulo": "Presenze ultimi 7 giorni"
+  },
+  "empresas": {
+    "listado": {
+      "titulo": "Aziende Registrate",
+      "eliminadas": "Aziende eliminate",
+      "nueva": "+ Nuova azienda",
+      "mostrar_eliminadas": "Mostra aziende eliminate"
+    },
+    "tabla": {
+      "nombre": "Nome",
+      "cif": "CIF",
+      "ccc": "CCC"
+    },
+    "acciones": {
+      "restaurar": "♻️ Ripristina",
+      "eliminar_def": "❌ Elimina definitivamente",
+      "eliminar": "🗑️ Elimina",
+      "editar": "✏️ Modifica"
+    },
+    "drawer": {
+      "nombre": "Nome",
+      "titulo": "Modifica Azienda",
+      "contacto": "Contatto",
+      "administrador": "Amministratore",
+      "telefono": "Telefono",
+      "email": "Email",
+      "sede_fiscal": "Sede Fiscale",
+      "codigo_postal": "CAP",
+      "iban": "IBAN",
+      "guardar": "Salva",
+      "cancelar": "Annulla"
+    },
+    "modal": {
+      "titulo": "Registra nuova azienda"
+    }
+  },
+  "centros": {
+    "listado": {
+      "titulo": "Centri di Lavoro",
+      "eliminados": "Centri eliminati",
+      "volver_activos": "← Torna ai centri attivi",
+      "mostrar_eliminados": "Mostra eliminati",
+      "filtro_empresa": "Azienda",
+      "todas": "Tutte",
+      "nuevo": "+ Nuovo centro",
+      "vacio": "Nessun centro registrato per questa azienda."
+    },
+    "tabla": {
+      "nombre": "Nome del Centro",
+      "empresa": "Azienda",
+      "acciones": "Azioni",
+      "ver_plantilla": "Vedi team"
+    },
+    "acciones": {
+      "restaurar": "♻️ Ripristina",
+      "eliminar_def": "❌ Elimina definitivamente",
+      "eliminar": "🗑️ Elimina",
+      "editar": "✏️ Modifica"
+    },
+    "modal": {
+      "titulo": "Nuovo Centro",
+      "cancelar": "Annulla",
+      "guardar": "Salva"
+    },
+    "drawer": {
+      "titulo": "Modifica Centro",
+      "nombre": "Nome",
+      "empresa": "Azienda",
+      "email": "Email",
+      "telefono": "Telefono",
+      "direccion": "Indirizzo",
+      "codigo_postal": "CAP",
+      "ccc": "CCC",
+      "cif": "CIF",
+      "responsable": "Responsabile",
+      "sector": "Settore attività",
+      "fecha": "Data di creazione",
+      "cancelar": "Annulla",
+      "guardar": "Salva modifiche",
+      "select": "Seleziona...",
+      "sector_hosteleria": "Ristorazione",
+      "sector_textil": "Commercio tessile",
+      "sector_construccion": "Costruzione",
+      "sector_panaderia": "Panetteria"
+    }
+  },
+  "trabajadores": {
+    "listado": {
+      "titulo": "Lavoratori",
+      "eliminados": "Lavoratori eliminati",
+      "nuevo": "+ Nuovo lavoratore",
+      "volver_activos": "← Torna ai lavoratori",
+      "mostrar_eliminados": "Mostra eliminati",
+      "solo_sin_centro": "Solo senza centro",
+      "filtro_centro": "Centro:",
+      "todos_centros": "Tutti",
+      "buscar_placeholder": "Cerca lavoratore...",
+      "vacio": "Nessun lavoratore registrato."
+    },
+    "tabla": {
+      "nombre": "Nome",
+      "email": "Email",
+      "telefono": "Telefono",
+      "centro": "Centro",
+      "pin": "PIN",
+      "acciones": "Azioni",
+      "horario": "Orario"
+    },
+    "acciones": {
+      "seleccionar": "-- Seleziona --",
+      "horario": "📅 Orario",
+      "fichajes": "📌 Registrazioni",
+      "permiso": "🌴 Permesso",
+      "formacion": "📚 Formazione",
+      "reconocimiento": "🩺 Visita medica",
+      "eliminar": "🗑️ Elimina",
+      "restaurar": "♻️ Ripristina",
+      "borrar_def": "🗑️ Elimina permanentemente",
+      "editar": "✏️ Modifica"
+    },
+    "drawer": {
+      "titulo": "Modifica Lavoratore",
+      "nombre": "Nome",
+      "dni": "DNI / NIE",
+      "nass": "N° Sicurezza Sociale (NASS)",
+      "nacionalidad": "Paese",
+      "genero": "Genere",
+      "iban": "IBAN",
+      "email": "Email",
+      "telefono": "Telefono",
+      "centro": "Centro",
+      "cancelar": "Annulla",
+      "guardar": "Salva modifiche",
+      "select": "Seleziona...",
+      "masculino": "Maschile",
+      "femenino": "Femminile"
+    },
+    "modal": {
+      "titulo": "Nuovo Lavoratore"
+    },
+    "sin_centro": {
+      "asignar": "Assegna a centro",
+      "sin_resultados": "Nessun lavoratore senza centro assegnato."
+    }
+  },
+  "horarios": {
+    "titulo": "Orario di {name}",
+    "subtitulo": "Modifica le fasce orarie del lavoratore per ogni giorno della settimana.",
+    "horas_label": "Ore settimanali",
+    "horas_hint": "Le ore extra saranno considerate straordinari.",
+    "copiar_label": "Copia orario di lunedì in altri giorni:",
+    "boton_copiar": "Copia",
+    "vista_mensual": "Vista mensile",
+    "editar_dia": "Modifica",
+    "turno_partido": "Turno spezzato",
+    "borrar_dia": "Elimina orario del giorno",
+    "tramo": "Fascia",
+    "entrada": "Entrata",
+    "salida": "Uscita",
+    "guardar": "Salva orari",
+    "advertencia": "Avviso di ore extra",
+    "mensaje_exceso": "L'orario supera il massimo di ore settimanali.",
+    "entendido": "Capito",
+    "campo_obligatorio_titulo": "Campo obbligatorio",
+    "campo_obligatorio_texto": "Specificare le ore settimanali prima di salvare."
+  },
+  "dias": {
+    "lunes": "Lunedì",
+    "martes": "Martedì",
+    "miércoles": "Mercoledì",
+    "jueves": "Giovedì",
+    "viernes": "Venerdì",
+    "sábado": "Sabato",
+    "domingo": "Domenica"
+  },
+  "fichajes": {
+    "titulo_general": "📌 Elenco Presenze",
+    "titulo_individual": "📌 Presenze di {nombre}",
+    "exportar_todos": "📤 Esporta tutto (CSV)",
+    "exportar_individual": "📤 Esporta di {nombre} (CSV)",
+    "vacio": "Nessuna presenza registrata.",
+    "historial": "Storico presenze",
+    "tabla": {
+      "fecha": "Data",
+      "hora": "Ora",
+      "tipo": "Tipo",
+      "trabajador": "Lavoratore",
+      "centro": "Centro"
+    },
+    "tipos": {
+      "Entrada": "Entrata",
+      "Salida": "Uscita"
+    }
+  },
+  "permisos": {
+    "titulo_nuevo": "Nuovo permesso",
+    "titulo_nuevo_para": "Nuovo permesso per {name}",
+    "form": {
+      "inicio": "Data inizio",
+      "fin": "Data fine",
+      "justificacion": "Giustificazione",
+      "boton": "Crea permesso"
+    },
+    "titulo_gestion": "Gestione Permessi",
+    "titulo_lista": "Permessi e Vacanze",
+    "solicitudes": "Richieste di permesso",
+    "historial": "Richieste ferie",
+    "tabla": {
+      "trabajador": "Lavoratore",
+      "desde": "Da",
+      "hasta": "A",
+      "justificacion": "Giustificazione",
+      "estado": "Stato",
+      "acciones": "Azioni"
+    },
+    "acciones": {
+      "aprobar": "Approva",
+      "rechazar": "Rifiuta",
+      "no_disponible": "Non disponibile"
+    },
+    "estados": {
+      "pendiente": "In attesa",
+      "aceptada": "Approvata",
+      "rechazada": "Rifiutata"
+    }
+  },
+  "importar_trabajadores": {
+    "titulo": "Importa Lavoratori",
+    "archivo": "File Excel",
+    "ayuda_archivo": "Sono accettati solo file in formato .xlsx con colonne valide.",
+    "centro": "Centro di lavoro",
+    "boton_importar": "Importa",
+    "descargar_plantilla": "Scarica modello"
+  },
+  "exportar": {
+    "titulo": "Esporta",
+    "titulo_pagina": "📤 Esporta Dati",
+    "fechas": {
+      "desde": "Da:",
+      "hasta": "A:",
+      "centro": "Centro di lavoro:"
+    },
+    "fichajes": {
+      "titulo": "📌 Esporta Presenze",
+      "boton": "Scarica CSV Presenze"
+    },
+    "horarios": {
+      "titulo": "📅 Esporta Orari",
+      "boton": "Scarica CSV Orari"
+    },
+    "permisos": {
+      "titulo": "🌴 Esporta Permessi",
+      "boton": "Scarica CSV Permessi"
+    },
+    "selector": {
+      "opcional": "Opzionale"
+    }
+  },
+  "prevencion": {
+    "titulo": "Pannello di Prevenzione Rischi",
+    "alimentos": {
+      "titulo": "Manipolatore di Alimenti",
+      "descripcion": "Controllo dei lavoratori con certificato valido per la manipolazione sicura degli alimenti."
+    },
+    "riesgos": {
+      "titulo": "Prevenzione dei Rischi Professionali",
+      "descripcion": "Monitoraggio della formazione obbligatoria sulla prevenzione per ciascun lavoratore in base alla sua mansione."
+    },
+    "reconocimientos": {
+      "titulo": "Visite Mediche",
+      "descripcion": "Registrazione e controllo delle visite mediche periodiche effettuate ai lavoratori."
+    },
+    "boton": "Accedi"
+  },
+  "fichaje_modal": {
+    "ok": {
+      "titulo": "✅ Registrazione riuscita",
+      "mensaje": "{nombre} ha registrato l'orario correttamente alle {hora}."
+    },
+    "ya_fichado": {
+      "titulo": "❗ Già registrato",
+      "mensaje": "{nombre}, hai già registrato l'orario oggi. Permesso un solo timbro per turno."
+    },
+    "demasiado_pronto": {
+      "titulo": "⏱️ Troppo presto",
+      "mensaje": "{nombre}, non è ancora il momento di timbrare. Riprova più tardi."
+    },
+    "demasiado_tarde": {
+      "titulo": "⌛ Fuori orario",
+      "mensaje": "{nombre}, il tuo orario di timbratura è già passato."
+    },
+    "limite_turnos": {
+      "titulo": "🚫 Limite raggiunto",
+      "mensaje": "{nombre}, hai raggiunto il limite di turni per oggi."
+    },
+    "segundo_turno": {
+      "titulo": "🔁 Secondo turno",
+      "mensaje": "{nombre}, il secondo turno è stato registrato correttamente alle {hora}."
+    },
+    "error": {
+      "titulo": "❌ Errore",
+      "mensaje": "Impossibile effettuare la registrazione. Verifica il tuo PIN."
+    }
+  },
+  "reconocimientos": {
+    "titulo_general": "Visite Mediche",
+    "titulo_individual": "Visite Mediche - {nombre}",
+    "filtro_label": "Filtra per centro:",
+    "filtro_todos": "-- Tutti i centri --",
+    "tabla": {
+      "trabajador": "Lavoratore",
+      "dni": "DNI/NIE",
+      "centro": "Centro",
+      "ultimo": "Ultima Visita",
+      "accion": "Azione",
+      "fecha": "Data",
+      "observaciones": "Osservazioni",
+      "sin_resultados": "Nessuna visita registrata."
+    },
+    "boton_abrir_modal": "Aggiungi",
+    "modal": {
+      "titulo": "Registra Visita Medica",
+      "trabajador": "Lavoratore:",
+      "fecha": "Data:",
+      "observaciones": "Osservazioni:",
+      "cancelar": "Annulla",
+      "guardar": "Salva"
+    },
+    "volver": "← Torna all’elenco",
+    "error_guardar": "Errore nel salvare la visita."
+  },
+  "formacion": {
+    "titulo": "Formazione e Corsi",
+    "filtro_label": "Filtra per centro:",
+    "filtro_todos": "-- Tutti i centri --",
+    "tabla": {
+      "trabajador": "Lavoratore",
+      "dni": "DNI/NIE",
+      "email": "Email",
+      "centro": "Centro",
+      "cursos": "Corsi"
+    },
+    "tooltip": {
+      "asignado": "Assegnato il {fecha}"
+    },
+    "modal": {
+      "titulo": "Assegna Corsi",
+      "cancelar": "Annulla",
+      "guardar": "Salva",
+      "error_cargar": "Errore durante il caricamento dei corsi",
+      "error_guardar": "Errore durante il salvataggio dei corsi"
+    },
+    "errores": {
+      "cargar": "Errore durante il caricamento dei corsi",
+      "guardar": "Errore durante il salvataggio dei corsi"
+    }
+  }
+}

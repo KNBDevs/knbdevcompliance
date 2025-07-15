@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}{{ _('reconocimientos.titulo_individual', nombre=trabajador.nombre) }}{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-6" data-i18n="reconocimientos.titulo_individual" data-i18n-params='{"nombre": "{{ trabajador.nombre }}"}'>
+    {{ _('reconocimientos.titulo_individual', nombre=trabajador.nombre) }}
+</h2>
+
+<table class="min-w-full bg-white dark:bg-gray-800 rounded shadow text-sm">
+    <thead class="bg-gray-100 dark:bg-gray-700">
+        <tr>
+            <th class="px-4 py-2 text-left" data-i18n="reconocimientos.tabla.fecha">
+                {{ _('reconocimientos.tabla.fecha') }}
+            </th>
+            <th class="px-4 py-2 text-left" data-i18n="reconocimientos.tabla.observaciones">
+                {{ _('reconocimientos.tabla.observaciones') }}
+            </th>
+        </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+        {% for r in reconocimientos %}
+        <tr>
+            <td class="px-4 py-2">{{ r.fecha.strftime('%d/%m/%Y') }}</td>
+            <td class="px-4 py-2">{{ r.observaciones or '-' }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="2" class="px-4 py-2 text-gray-500" data-i18n="reconocimientos.vacio">
+                {{ _('reconocimientos.vacio') }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{{ url_for('trabajadores.lista_trabajadores') }}"
+   class="mt-6 inline-block text-blue-600 hover:underline text-sm"
+   data-i18n="reconocimientos.volver">
+   {{ _('reconocimientos.volver') }}
+</a>
+{% endblock %}

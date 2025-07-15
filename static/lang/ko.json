@@ -1,0 +1,407 @@
+{
+  "login": {
+    "title": "로그인",
+    "dni_label": "DNI/NIE 마지막 5자리 입력",
+    "dni_placeholder": "_____",
+    "admin_toggle": "관리자 로그인",
+    "email_label": "이메일 주소",
+    "email_placeholder": "email@예시.com",
+    "password_label": "비밀번호",
+    "password_placeholder": "••••••••",
+    "submit": "로그인",
+    "ok": "확인"
+  },
+  "sidebar": {
+    "dashboard": "대시보드",
+    "empresas": "회사",
+    "centros": "센터",
+    "trabajadores": "직원",
+    "otras_opciones": "⚙️ 기타 옵션",
+    "horarios": "📅 일정",
+    "fichajes": "📌 출퇴근 기록",
+    "permisos": "🌴 권한",
+    "prevencion": "⚠️ 예방",
+    "importar_trabajadores": "📥 가져오기",
+    "exportar": "📤 내보내기",
+    "salir": "🚪 로그아웃"
+  },
+  "header": {
+    "title": "근무 시간 관리"
+  },
+  "dashboard": {
+    "titulo": "대시보드",
+    "empresas": "등록된 회사",
+    "centros": "활성 지점",
+    "trabajadores": "등록된 직원",
+    "usuarios": "관리자 사용자",
+    "hoy": {
+      "titulo": "오늘의 기록",
+      "hechos": "완료:",
+      "pendientes": "대기:"
+    },
+    "chart": {
+      "label_fichajes": "기록"
+    },
+    "top_puntualidad": "Top 3 정확도 (주간)",
+    "puntuales": "정시 기록",
+    "fichajes_recientes": "최근 기록",
+    "sin_horario": "일정이 없는 직원",
+    "grafico_titulo": "최근 7일 기록"
+  },
+  "empresas": {
+    "listado": {
+      "titulo": "등록된 회사",
+      "eliminadas": "삭제된 회사",
+      "nueva": "+ 새 회사",
+      "mostrar_eliminadas": "삭제된 항목 보기"
+    },
+    "tabla": {
+      "nombre": "이름",
+      "cif": "CIF",
+      "ccc": "CCC"
+    },
+    "acciones": {
+      "restaurar": "♻️ 복원",
+      "eliminar_def": "❌ 완전 삭제",
+      "eliminar": "🗑️ 삭제",
+      "editar": "✏️ 편집"
+    },
+    "drawer": {
+      "nombre": "이름",
+      "titulo": "회사 편집",
+      "contacto": "연락처",
+      "administrador": "관리자",
+      "telefono": "전화번호",
+      "email": "이메일",
+      "sede_fiscal": "본사",
+      "codigo_postal": "우편번호",
+      "iban": "IBAN",
+      "guardar": "저장",
+      "cancelar": "취소"
+    },
+    "modal": {
+      "titulo": "새 회사 등록"
+    }
+  },
+  "centros": {
+    "listado": {
+      "titulo": "근무 지점",
+      "eliminados": "삭제된 지점",
+      "volver_activos": "← 활성 지점으로 돌아가기",
+      "mostrar_eliminados": "삭제된 항목 보기",
+      "filtro_empresa": "회사",
+      "todas": "전체",
+      "nuevo": "+ 새 지점",
+      "vacio": "이 회사에 등록된 지점이 없습니다."
+    },
+    "tabla": {
+      "nombre": "지점 이름",
+      "empresa": "회사",
+      "acciones": "동작",
+      "ver_plantilla": "템플릿 보기"
+    },
+    "acciones": {
+      "restaurar": "♻️ 복원",
+      "eliminar_def": "❌ 완전 삭제",
+      "eliminar": "🗑️ 삭제",
+      "editar": "✏️ 편집"
+    },
+    "modal": {
+      "titulo": "새 지점",
+      "cancelar": "취소",
+      "guardar": "저장"
+    },
+    "drawer": {
+      "titulo": "지점 편집",
+      "nombre": "이름",
+      "empresa": "회사",
+      "email": "이메일",
+      "telefono": "전화번호",
+      "direccion": "주소",
+      "codigo_postal": "우편번호",
+      "ccc": "CCC",
+      "cif": "CIF",
+      "responsable": "지점 책임자",
+      "sector": "업종",
+      "fecha": "생성일",
+      "cancelar": "취소",
+      "guardar": "변경사항 저장",
+      "select": "선택...",
+      "sector_hosteleria": "호스피탤러티",
+      "sector_textil": "섬유 유통",
+      "sector_construccion": "건설",
+      "sector_panaderia": "제과점"
+    }
+  },
+  "trabajadores": {
+    "listado": {
+      "titulo": "직원",
+      "eliminados": "삭제된 직원",
+      "nuevo": "+ 새 직원",
+      "volver_activos": "← 직원 목록으로 돌아가기",
+      "mostrar_eliminados": "삭제된 항목 표시",
+      "solo_sin_centro": "센터 없는 항목만",
+      "filtro_centro": "센터:",
+      "todos_centros": "모두",
+      "buscar_placeholder": "직원 검색...",
+      "vacio": "등록된 직원이 없습니다."
+    },
+    "tabla": {
+      "nombre": "이름",
+      "email": "이메일",
+      "telefono": "전화",
+      "centro": "센터",
+      "pin": "PIN",
+      "acciones": "작업",
+      "horario": "근무 일정"
+    },
+    "acciones": {
+      "seleccionar": "-- 선택 --",
+      "horario": "📅 일정",
+      "fichajes": "📌 출퇴근 기록",
+      "permiso": "🌴 휴가",
+      "formacion": "📚 교육",
+      "reconocimiento": "🩺 건강검진",
+      "eliminar": "🗑️ 삭제",
+      "restaurar": "♻️ 복원",
+      "borrar_def": "🗑️ 영구 삭제",
+      "editar": "✏️ 편집"
+    },
+    "drawer": {
+      "titulo": "직원 편집",
+      "nombre": "이름",
+      "dni": "DNI / NIE",
+      "nass": "사회보장번호",
+      "nacionalidad": "국적",
+      "genero": "성별",
+      "iban": "IBAN",
+      "email": "이메일",
+      "telefono": "전화번호",
+      "centro": "지점",
+      "cancelar": "취소",
+      "guardar": "변경사항 저장",
+      "select": "선택...",
+      "masculino": "남성",
+      "femenino": "여성"
+    },
+    "modal": {
+      "titulo": "새 직원"
+    },
+    "sin_centro": {
+      "asignar": "지점 할당",
+      "sin_resultados": "지점이 없는 직원이 없습니다."
+    }
+  },
+  "horarios": {
+    "titulo": "{name}님의 일정",
+    "subtitulo": "요일별 근무 시간을 편집하세요.",
+    "horas_label": "주간 근무 시간",
+    "horas_hint": "초과 시간은 초과 근무로 표시됩니다.",
+    "copiar_label": "월요일 일정 복사 → 다른 요일:",
+    "boton_copiar": "복사",
+    "vista_mensual": "월별 보기",
+    "editar_dia": "편집",
+    "turno_partido": "분할 교대",
+    "borrar_dia": "하루 일정 삭제",
+    "tramo": "구간",
+    "entrada": "입실",
+    "salida": "퇴실",
+    "guardar": "일정 저장",
+    "advertencia": "시간 초과 경고",
+    "mensaje_exceso": "일정이 주간 최대 시간을 초과합니다.",
+    "entendido": "확인",
+    "campo_obligatorio_titulo": "필수 필드",
+    "campo_obligatorio_texto": "저장하려면 주간 근무 시간을 지정하세요."
+  },
+  "dias": {
+    "lunes": "월요일",
+    "martes": "화요일",
+    "miércoles": "수요일",
+    "jueves": "목요일",
+    "viernes": "금요일",
+    "sábado": "토요일",
+    "domingo": "일요일"
+  },
+  "fichajes": {
+    "titulo_general": "📌 기록 목록",
+    "titulo_individual": "📌 {nombre}님의 기록",
+    "exportar_todos": "📤 전체 내보내기 (CSV)",
+    "exportar_individual": "📤 {nombre} 내보내기 (CSV)",
+    "vacio": "기록이 없습니다.",
+    "historial": "기록 내역",
+    "tabla": {
+      "fecha": "날짜",
+      "hora": "시간",
+      "tipo": "유형",
+      "trabajador": "직원",
+      "centro": "지점"
+    },
+    "tipos": {
+      "Entrada": "입장",
+      "Salida": "퇴장"
+    }
+  },
+  "permisos": {
+    "titulo_nuevo": "새 승인",
+    "titulo_nuevo_para": "{name}님을 위한 새 승인",
+    "form": {
+      "inicio": "시작 날짜",
+      "fin": "종료 날짜",
+      "justificacion": "사유",
+      "boton": "승인 생성"
+    },
+    "titulo_gestion": "승인 관리",
+    "titulo_lista": "승인 및 휴가",
+    "solicitudes": "승인 요청",
+    "historial": "휴가 요청",
+    "tabla": {
+      "trabajador": "직원",
+      "desde": "부터",
+      "hasta": "까지",
+      "justificacion": "사유",
+      "estado": "상태",
+      "acciones": "동작"
+    },
+    "acciones": {
+      "aprobar": "승인",
+      "rechazar": "거부",
+      "no_disponible": "사용불가"
+    },
+    "estados": {
+      "pendiente": "대기 중",
+      "aceptada": "승인됨",
+      "rechazada": "거부됨"
+    }
+  },
+  "importar_trabajadores": {
+    "titulo": "직원 가져오기",
+    "archivo": "엑셀 파일",
+    "ayuda_archivo": ".xlsx 형식의 유효한 열이 포함된 파일만 허용됩니다.",
+    "centro": "작업 센터",
+    "boton_importar": "가져오기",
+    "descargar_plantilla": "템플릿 다운로드"
+  },
+  "exportar": {
+    "titulo": "내보내기",
+    "titulo_pagina": "📤 데이터 내보내기",
+    "fechas": {
+      "desde": "시작:",
+      "hasta": "끝:",
+      "centro": "근무 지점:"
+    },
+    "fichajes": {
+      "titulo": "📌 기록 내보내기",
+      "boton": "CSV 다운로드"
+    },
+    "horarios": {
+      "titulo": "📅 일정 내보내기",
+      "boton": "CSV 다운로드"
+    },
+    "permisos": {
+      "titulo": "🌴 승인 내보내기",
+      "boton": "CSV 다운로드"
+    },
+    "selector": {
+      "opcional": "선택 사항"
+    }
+  },
+  "prevencion": {
+    "titulo": "위험 예방 패널",
+    "alimentos": {
+      "titulo": "식품 취급자",
+      "descripcion": "식품을 안전하게 취급하기 위한 유효한 자격증을 소지한 근로자 관리."
+    },
+    "riesgos": {
+      "titulo": "산업재해 예방 교육",
+      "descripcion": "각 근로자의 직무에 따른 의무 예방 교육 추적."
+    },
+    "reconocimientos": {
+      "titulo": "건강 검진",
+      "descripcion": "근로자에게 실시된 정기 건강 검진의 기록 및 관리."
+    },
+    "boton": "접속"
+  },
+  "fichaje_modal": {
+    "ok": {
+      "titulo": "✅ 출근 완료",
+      "mensaje": "{nombre}님이 {hora}에 정상적으로 출근 처리되었습니다."
+    },
+    "ya_fichado": {
+      "titulo": "❗ 이미 출근함",
+      "mensaje": "{nombre}님, 오늘 이미 출근 처리하셨습니다. 한 교대당 한 번만 허용됩니다."
+    },
+    "demasiado_pronto": {
+      "titulo": "⏱️ 너무 이릅니다",
+      "mensaje": "{nombre}님, 아직 출근할 시간이 아닙니다. 나중에 다시 시도해주세요."
+    },
+    "demasiado_tarde": {
+      "titulo": "⌛ 시간 초과",
+      "mensaje": "{nombre}님, 출근 시간이 지났습니다."
+    },
+    "limite_turnos": {
+      "titulo": "🚫 한도 도달",
+      "mensaje": "{nombre}님, 오늘 근무 교대 한도에 도달했습니다."
+    },
+    "segundo_turno": {
+      "titulo": "🔁 두 번째 교대",
+      "mensaje": "{nombre}님, 두 번째 교대가 {hora}에 정상적으로 등록되었습니다."
+    },
+    "error": {
+      "titulo": "❌ 오류",
+      "mensaje": "출근 처리가 실패했습니다. PIN을 확인하세요."
+    }
+  },
+  "reconocimientos": {
+    "titulo_general": "건강 검진",
+    "titulo_individual": "건강 검진 - {nombre}",
+    "filtro_label": "센터로 필터링:",
+    "filtro_todos": "-- 모든 센터 --",
+    "tabla": {
+      "trabajador": "직원",
+      "dni": "DNI/NIE",
+      "centro": "센터",
+      "ultimo": "마지막 검진",
+      "accion": "작업",
+      "fecha": "날짜",
+      "observaciones": "비고",
+      "sin_resultados": "등록된 검진이 없습니다."
+    },
+    "boton_abrir_modal": "추가",
+    "modal": {
+      "titulo": "건강 검진 등록",
+      "trabajador": "직원:",
+      "fecha": "날짜:",
+      "observaciones": "비고:",
+      "cancelar": "취소",
+      "guardar": "저장"
+    },
+    "volver": "← 목록으로 돌아가기",
+    "error_guardar": "검진 저장에 실패했습니다."
+  },
+  "formacion": {
+    "titulo": "トレーニングとコース",
+    "filtro_label": "センターでフィルター:",
+    "filtro_todos": "-- すべてのセンター --",
+    "tabla": {
+      "trabajador": "従業員",
+      "dni": "DNI/NIE",
+      "email": "メール",
+      "centro": "センター",
+      "cursos": "コース"
+    },
+    "tooltip": {
+      "asignado": "{fecha} に割り当てられました"
+    },
+    "modal": {
+      "titulo": "コースを割り当てる",
+      "cancelar": "キャンセル",
+      "guardar": "保存",
+      "error_cargar": "コースの読み込みエラー",
+      "error_guardar": "コースの保存エラー"
+    },
+    "errores": {
+      "cargar": "コースの読み込みエラー",
+      "guardar": "コースの保存エラー"
+    }
+  }
+}

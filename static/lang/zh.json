@@ -1,0 +1,407 @@
+{
+  "login": {
+    "title": "登录",
+    "dni_label": "请输入 DNI/NIE 的后 5 位数字",
+    "dni_placeholder": "_____",
+    "admin_toggle": "管理员登录",
+    "email_label": "电子邮件",
+    "email_placeholder": "email@示例.com",
+    "password_label": "密码",
+    "password_placeholder": "••••••••",
+    "submit": "登录",
+    "ok": "确定"
+  },
+  "sidebar": {
+    "dashboard": "仪表板",
+    "empresas": "公司",
+    "centros": "中心",
+    "trabajadores": "员工",
+    "otras_opciones": "⚙️ 其他选项",
+    "horarios": "📅 日程",
+    "fichajes": "📌 打卡记录",
+    "permisos": "🌴 权限",
+    "prevencion": "⚠️ 预防",
+    "importar_trabajadores": "📥 导入",
+    "exportar": "📤 导出",
+    "salir": "🚪 登出"
+  },
+  "header": {
+    "title": "工时管理"
+  },
+  "dashboard": {
+    "titulo": "仪表板",
+    "empresas": "注册公司",
+    "centros": "活跃分支",
+    "trabajadores": "注册员工",
+    "usuarios": "管理员用户",
+    "hoy": {
+      "titulo": "今日打卡",
+      "hechos": "已打卡：",
+      "pendientes": "待打卡："
+    },
+    "chart": {
+      "label_fichajes": "打卡"
+    },
+    "top_puntualidad": "准时率前三（本周）",
+    "puntuales": "准时打卡次数",
+    "fichajes_recientes": "你的最新打卡",
+    "sin_horario": "未分配排班的员工",
+    "grafico_titulo": "过去7天打卡情况"
+  },
+  "empresas": {
+    "listado": {
+      "titulo": "注册公司",
+      "eliminadas": "已删除公司",
+      "nueva": "+ 新建公司",
+      "mostrar_eliminadas": "显示已删除"
+    },
+    "tabla": {
+      "nombre": "名称",
+      "cif": "CIF",
+      "ccc": "CCC"
+    },
+    "acciones": {
+      "restaurar": "♻️ 恢复",
+      "eliminar_def": "❌ 永久删除",
+      "eliminar": "🗑️ 删除",
+      "editar": "✏️ 编辑"
+    },
+    "drawer": {
+      "nombre": "名称",
+      "titulo": "编辑公司",
+      "contacto": "联系方式",
+      "administrador": "管理员",
+      "telefono": "电话",
+      "email": "电子邮件",
+      "sede_fiscal": "注册地址",
+      "codigo_postal": "邮政编码",
+      "iban": "IBAN",
+      "guardar": "保存",
+      "cancelar": "取消"
+    },
+    "modal": {
+      "titulo": "注册新公司"
+    }
+  },
+  "centros": {
+    "listado": {
+      "titulo": "工作分支",
+      "eliminados": "已删除分支",
+      "volver_activos": "← 返回活跃分支",
+      "mostrar_eliminados": "显示已删除",
+      "filtro_empresa": "公司",
+      "todas": "全部",
+      "nuevo": "+ 新分支",
+      "vacio": "该公司暂无分支。"
+    },
+    "tabla": {
+      "nombre": "分支名称",
+      "empresa": "所属公司",
+      "acciones": "操作",
+      "ver_plantilla": "查看模板"
+    },
+    "acciones": {
+      "restaurar": "♻️ 恢复",
+      "eliminar_def": "❌ 永久删除",
+      "eliminar": "🗑️ 删除",
+      "editar": "✏️ 编辑"
+    },
+    "modal": {
+      "titulo": "新增分支",
+      "cancelar": "取消",
+      "guardar": "保存"
+    },
+    "drawer": {
+      "titulo": "编辑分支",
+      "nombre": "名称",
+      "empresa": "所属公司",
+      "email": "电子邮件",
+      "telefono": "电话",
+      "direccion": "地址",
+      "codigo_postal": "邮政编码",
+      "ccc": "CCC",
+      "cif": "CIF",
+      "responsable": "负责人",
+      "sector": "行业",
+      "fecha": "创建日期",
+      "cancelar": "取消",
+      "guardar": "保存修改",
+      "select": "请选择…",
+      "sector_hosteleria": "酒店业",
+      "sector_textil": "纺织贸易",
+      "sector_construccion": "建筑业",
+      "sector_panaderia": "面包店"
+    }
+  },
+  "trabajadores": {
+    "listado": {
+      "titulo": "员工",
+      "eliminados": "已删除员工",
+      "nuevo": "+ 新员工",
+      "volver_activos": "← 返回员工",
+      "mostrar_eliminados": "显示已删除",
+      "solo_sin_centro": "仅无中心",
+      "filtro_centro": "中心：",
+      "todos_centros": "全部",
+      "buscar_placeholder": "搜索员工...",
+      "vacio": "没有已注册的员工。"
+    },
+    "tabla": {
+      "nombre": "姓名",
+      "email": "电子邮件",
+      "telefono": "电话",
+      "centro": "中心",
+      "pin": "PIN",
+      "acciones": "操作",
+      "horario": "工作时间表"
+    },
+    "acciones": {
+      "seleccionar": "-- 选择 --",
+      "horario": "📅 日程",
+      "fichajes": "📌 行为记录",
+      "permiso": "🌴 请假",
+      "formacion": "📚 培训",
+      "reconocimiento": "🩺 体检",
+      "eliminar": "🗑️ 删除",
+      "restaurar": "♻️ 恢复",
+      "borrar_def": "🗑️ 永久删除",
+      "editar": "✏️ 编辑"
+    },
+    "drawer": {
+      "titulo": "编辑员工",
+      "nombre": "姓名",
+      "dni": "DNI / NIE",
+      "nass": "社保号",
+      "nacionalidad": "国籍",
+      "genero": "性别",
+      "iban": "IBAN",
+      "email": "电子邮件",
+      "telefono": "电话",
+      "centro": "所属分支",
+      "cancelar": "取消",
+      "guardar": "保存修改",
+      "select": "请选择…",
+      "masculino": "男性",
+      "femenino": "女性"
+    },
+    "modal": {
+      "titulo": "新增员工"
+    },
+    "sin_centro": {
+      "asignar": "分配分支",
+      "sin_resultados": "没有未分配分支的员工。"
+    }
+  },
+  "horarios": {
+    "titulo": "{name} 的排班",
+    "subtitulo": "编辑该员工每周每日的工作时段。",
+    "horas_label": "每周工时",
+    "horas_hint": "超出部分将显示为加班。",
+    "copiar_label": "将周一的排班复制至其他日：",
+    "boton_copiar": "复制",
+    "vista_mensual": "月视图",
+    "editar_dia": "编辑",
+    "turno_partido": "分班",
+    "borrar_dia": "删除当天排班",
+    "tramo": "时段",
+    "entrada": "上班",
+    "salida": "下班",
+    "guardar": "保存排班",
+    "advertencia": "超时警告",
+    "mensaje_exceso": "该排班超出每周最大时数。",
+    "entendido": "已了解",
+    "campo_obligatorio_titulo": "必填字段",
+    "campo_obligatorio_texto": "请指定每周工时后再保存。"
+  },
+  "dias": {
+    "lunes": "星期一",
+    "martes": "星期二",
+    "miércoles": "星期三",
+    "jueves": "星期四",
+    "viernes": "星期五",
+    "sábado": "星期六",
+    "domingo": "星期日"
+  },
+  "fichajes": {
+    "titulo_general": "📌 打卡列表",
+    "titulo_individual": "📌 {nombre} 的打卡记录",
+    "exportar_todos": "📤 导出全部 (CSV)",
+    "exportar_individual": "📤 导出 {nombre} 的记录 (CSV)",
+    "vacio": "暂无打卡记录。",
+    "historial": "打卡历史",
+    "tabla": {
+      "fecha": "日期",
+      "hora": "时间",
+      "tipo": "类型",
+      "trabajador": "员工",
+      "centro": "分支"
+    },
+    "tipos": {
+      "Entrada": "进入",
+      "Salida": "退出"
+    }
+  },
+  "permisos": {
+    "titulo_nuevo": "新请假",
+    "titulo_nuevo_para": "为 {name} 新建请假",
+    "form": {
+      "inicio": "开始日期",
+      "fin": "结束日期",
+      "justificacion": "理由",
+      "boton": "提交请假"
+    },
+    "titulo_gestion": "请假管理",
+    "titulo_lista": "请假 & 假期",
+    "solicitudes": "请假申请",
+    "historial": "假期申请",
+    "tabla": {
+      "trabajador": "员工",
+      "desde": "从",
+      "hasta": "至",
+      "justificacion": "理由",
+      "estado": "状态",
+      "acciones": "操作"
+    },
+    "acciones": {
+      "aprobar": "批准",
+      "rechazar": "拒绝",
+      "no_disponible": "不可用"
+    },
+    "estados": {
+      "pendiente": "待审核",
+      "aceptada": "已批准",
+      "rechazada": "已拒绝"
+    }
+  },
+  "importar_trabajadores": {
+    "titulo": "导入员工",
+    "archivo": "Excel 文件",
+    "ayuda_archivo": "仅接受包含有效列的 .xlsx 格式。",
+    "centro": "工作中心",
+    "boton_importar": "导入",
+    "descargar_plantilla": "下载模板"
+  },
+  "exportar": {
+    "titulo": "导出",
+    "titulo_pagina": "📤 导出数据",
+    "fechas": {
+      "desde": "从：",
+      "hasta": "至：",
+      "centro": "工作分支："
+    },
+    "fichajes": {
+      "titulo": "📌 导出打卡记录",
+      "boton": "下载 CSV"
+    },
+    "horarios": {
+      "titulo": "📅 导出排班",
+      "boton": "下载 CSV"
+    },
+    "permisos": {
+      "titulo": "🌴 导出请假",
+      "boton": "下载 CSV"
+    },
+    "selector": {
+      "opcional": "可选"
+    }
+  },
+  "prevencion": {
+    "titulo": "风险预防面板",
+    "alimentos": {
+      "titulo": "食品处理员",
+      "descripcion": "控制持有有效食品安全处理证书的员工。"
+    },
+    "riesgos": {
+      "titulo": "职业风险预防",
+      "descripcion": "根据每位员工的岗位跟踪强制性职业安全培训。"
+    },
+    "reconocimientos": {
+      "titulo": "健康体检",
+      "descripcion": "记录和管理员工的定期健康体检。"
+    },
+    "boton": "进入"
+  },
+  "fichaje_modal": {
+    "ok": {
+      "titulo": "✅ 打卡成功",
+      "mensaje": "{nombre} 已于 {hora} 成功打卡。"
+    },
+    "ya_fichado": {
+      "titulo": "❗ 已打卡",
+      "mensaje": "{nombre}，您今天已打卡。每班只允许一次。"
+    },
+    "demasiado_pronto": {
+      "titulo": "⏱️ 太早了",
+      "mensaje": "{nombre}，现在还不是打卡时间。请稍后再试。"
+    },
+    "demasiado_tarde": {
+      "titulo": "⌛ 超出时间",
+      "mensaje": "{nombre}，您的打卡时间已过。"
+    },
+    "limite_turnos": {
+      "titulo": "🚫 达到上限",
+      "mensaje": "{nombre}，您已达到今天的轮班上限。"
+    },
+    "segundo_turno": {
+      "titulo": "🔁 第二次打卡",
+      "mensaje": "{nombre}，第二次打卡已于 {hora} 成功登记。"
+    },
+    "error": {
+      "titulo": "❌ 错误",
+      "mensaje": "打卡失败。请检查您的 PIN。"
+    }
+  },
+  "reconocimientos": {
+    "titulo_general": "体检记录",
+    "titulo_individual": "体检记录 - {nombre}",
+    "filtro_label": "按中心筛选：",
+    "filtro_todos": "-- 所有中心 --",
+    "tabla": {
+      "trabajador": "员工",
+      "dni": "DNI/NIE",
+      "centro": "中心",
+      "ultimo": "上次体检",
+      "accion": "操作",
+      "fecha": "日期",
+      "observaciones": "备注",
+      "sin_resultados": "暂无体检记录。"
+    },
+    "boton_abrir_modal": "添加",
+    "modal": {
+      "titulo": "登记体检记录",
+      "trabajador": "员工：",
+      "fecha": "日期：",
+      "observaciones": "备注：",
+      "cancelar": "取消",
+      "guardar": "保存"
+    },
+    "volver": "← 返回列表",
+    "error_guardar": "保存体检记录时出错。"
+  },
+  "formacion": {
+    "titulo": "培训与课程",
+    "filtro_label": "按中心筛选：",
+    "filtro_todos": "-- 所有中心 --",
+    "tabla": {
+      "trabajador": "员工",
+      "dni": "DNI/NIE",
+      "email": "电子邮件",
+      "centro": "中心",
+      "cursos": "课程"
+    },
+    "tooltip": {
+      "asignado": "{fecha} 分配"
+    },
+    "modal": {
+      "titulo": "分配课程",
+      "cancelar": "取消",
+      "guardar": "保存",
+      "error_cargar": "加载课程时出错",
+      "error_guardar": "保存课程时出错"
+    },
+    "errores": {
+      "cargar": "加载课程时出错",
+      "guardar": "保存课程时出错"
+    }
+  }
+}

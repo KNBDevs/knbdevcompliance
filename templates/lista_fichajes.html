@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ _('sidebar.fichajes') }}
+{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-semibold mb-6" data-i18n="fichajes.historial">Historial de fichajes</h2>
+
+{% set sort = request.args.get('sort') %}
+{% set order = request.args.get('order', 'desc') %}
+
+{% macro sort_icon(col) -%}
+{% if sort == col %}
+{% if order == 'asc' %}▲{% else %}▼{% endif %}
+{% endif %}
+{%- endmacro %}
+
+<table class="min-w-full bg-white dark:bg-gray-800 shadow rounded">
+  <thead>
+    <tr class="bg-gray-100 dark:bg-gray-700 text-left text-sm font-semibold text-gray-700 dark:text-gray-200">
+      <th class="py-3 px-4">
+        <a href="{{ url_for('fichajes.lista_fichajes', sort='fecha', order='asc' if sort == 'fecha' and order == 'desc' else 'desc') }}"
+          class="flex items-center gap-1">
+          <span data-i18n="fichajes.tabla.fecha">Fecha</span> {{ sort_icon('fecha') }}
+        </a>
+      </th>
+      <th class="py-3 px-4">
+        <a href="{{ url_for('fichajes.lista_fichajes', sort='hora', order='asc' if sort == 'hora' and order == 'desc' else 'desc') }}"
+          class="flex items-center gap-1">
+          <span data-i18n="fichajes.tabla.hora">Hora</span> {{ sort_icon('hora') }}
+        </a>
+      </th>
+      <th class="py-3 px-4">
+        <a href="{{ url_for('fichajes.lista_fichajes', sort='tipo', order='asc' if sort == 'tipo' and order == 'desc' else 'desc') }}"
+          class="flex items-center gap-1" data-i18n-title="fichajes.tabla.tipo_title">
+          <span data-i18n="fichajes.tabla.tipo">Tipo</span> {{ sort_icon('tipo') }}
+        </a>
+      </th>
+      <th class="py-3 px-4">
+        <a href="{{ url_for('fichajes.lista_fichajes', sort='trabajador', order='asc' if sort == 'trabajador' and order == 'desc' else 'desc') }}"
+          class="flex items-center gap-1">
+          <span data-i18n="fichajes.tabla.trabajador">Trabajador</span> {{ sort_icon('trabajador') }}
+        </a>
+      </th>
+      <th class="py-3 px-4">
+        <a href="{{ url_for('fichajes.lista_fichajes', sort='centro', order='asc' if sort == 'centro' and order == 'desc' else 'desc') }}"
+          class="flex items-center gap-1">
+          <span data-i18n="fichajes.tabla.centro">Centro</span> {{ sort_icon('centro') }}
+        </a>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="text-sm divide-y divide-gray-200 dark:divide-gray-700">
+    {% for f in fichajes %}
+    <tr>
+      <td class="py-3 px-4">{{ f.fecha.strftime('%d/%m/%Y') }}</td>
+      <td class="py-3 px-4">{{ f.hora.strftime('%H:%M') }}</td>
+      <td class="py-3 px-4" data-i18n="fichajes.tipos.{{ f.tipo|capitalize }}">...</td>
+      <td class="py-3 px-4">{{ f.trabajador.nombre }}</td>
+      <td class="py-3 px-4">{{ f.trabajador.centro.nombre if f.trabajador.centro else '—' }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

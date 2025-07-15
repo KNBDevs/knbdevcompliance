@@ -1,0 +1,407 @@
+{
+  "login": {
+    "title": "Connexion",
+    "dni_label": "Entrez les 5 derniers chiffres du DNI/NIE",
+    "dni_placeholder": "_____",
+    "admin_toggle": "Connexion Admin",
+    "email_label": "Adresse e‑mail",
+    "email_placeholder": "email@exemple.com",
+    "password_label": "Mot de passe",
+    "password_placeholder": "••••••••",
+    "submit": "Se connecter",
+    "ok": "OK"
+  },
+  "sidebar": {
+    "dashboard": "Tableau de bord",
+    "empresas": "Entreprises",
+    "centros": "Centres",
+    "trabajadores": "Employés",
+    "otras_opciones": "⚙️ Autres options",
+    "horarios": "📅 Horaires",
+    "fichajes": "📌 Pointages",
+    "permisos": "🌴 Permissions",
+    "prevencion": "⚠️ Prévention",
+    "importar_trabajadores": "📥 Importer",
+    "exportar": "📤 Exporter",
+    "salir": "🚪 Déconnexion"
+  },
+  "header": {
+    "title": "Contrôle du Temps"
+  },
+  "dashboard": {
+    "titulo": "Tableau de bord",
+    "empresas": "Entreprises enregistrées",
+    "centros": "Centres actifs",
+    "trabajadores": "Employés enregistrés",
+    "usuarios": "Utilisateurs administrateurs",
+    "hoy": {
+      "titulo": "Pointages du jour",
+      "hechos": "Effectués :",
+      "pendientes": "En attente :"
+    },
+    "chart": {
+      "label_fichajes": "Pointages"
+    },
+    "top_puntualidad": "Top 3 Ponctualité (semaine)",
+    "puntuales": "pointages ponctuels",
+    "fichajes_recientes": "Vos derniers pointages",
+    "sin_horario": "Employés sans horaire attribué",
+    "grafico_titulo": "Pointages des 7 derniers jours"
+  },
+  "empresas": {
+    "listado": {
+      "titulo": "Entreprises enregistrées",
+      "eliminadas": "Entreprises supprimées",
+      "nueva": "+ Nouvelle entreprise",
+      "mostrar_eliminadas": "Afficher supprimées"
+    },
+    "tabla": {
+      "nombre": "Nom",
+      "cif": "CIF",
+      "ccc": "CCC"
+    },
+    "acciones": {
+      "restaurar": "♻️ Restaurer",
+      "eliminar_def": "❌ Supprimer définitivement",
+      "eliminar": "🗑️ Supprimer",
+      "editar": "✏️ Éditer"
+    },
+    "drawer": {
+      "nombre": "Nom",
+      "titulo": "Modifier l’entreprise",
+      "contacto": "Contact",
+      "administrador": "Administrateur",
+      "telefono": "Téléphone",
+      "email": "E‑mail",
+      "sede_fiscal": "Siège social",
+      "codigo_postal": "Code postal",
+      "iban": "IBAN",
+      "guardar": "Enregistrer",
+      "cancelar": "Annuler"
+    },
+    "modal": {
+      "titulo": "Enregistrer une nouvelle entreprise"
+    }
+  },
+  "centros": {
+    "listado": {
+      "titulo": "Centres de travail",
+      "eliminados": "Centres supprimés",
+      "volver_activos": "← Revenir aux centres actifs",
+      "mostrar_eliminados": "Afficher supprimés",
+      "filtro_empresa": "Entreprise",
+      "todas": "Tout",
+      "nuevo": "+ Nouveau centre",
+      "vacio": "Aucun centre enregistré pour cette entreprise."
+    },
+    "tabla": {
+      "nombre": "Nom du centre",
+      "empresa": "Entreprise",
+      "acciones": "Actions",
+      "ver_plantilla": "Voir modèle"
+    },
+    "acciones": {
+      "restaurar": "♻️ Restaurer",
+      "eliminar_def": "❌ Supprimer définitivement",
+      "eliminar": "🗑️ Supprimer",
+      "editar": "✏️ Éditer"
+    },
+    "modal": {
+      "titulo": "Nouveau centre",
+      "cancelar": "Annuler",
+      "guardar": "Enregistrer"
+    },
+    "drawer": {
+      "titulo": "Modifier le centre",
+      "nombre": "Nom",
+      "empresa": "Entreprise",
+      "email": "E‑mail",
+      "telefono": "Téléphone",
+      "direccion": "Adresse",
+      "codigo_postal": "Code postal",
+      "ccc": "CCC",
+      "cif": "CIF",
+      "responsable": "Responsable du centre",
+      "sector": "Secteur d’activité",
+      "fecha": "Date de création",
+      "cancelar": "Annuler",
+      "guardar": "Enregistrer les modifications",
+      "select": "Sélectionner...",
+      "sector_hosteleria": "Hôtellerie",
+      "sector_textil": "Commerce textile",
+      "sector_construccion": "Construction",
+      "sector_panaderia": "Boulangerie"
+    }
+  },
+  "trabajadores": {
+    "listado": {
+      "titulo": "Travailleurs",
+      "eliminados": "Travailleurs supprimés",
+      "nuevo": "+ Nouvel employé",
+      "volver_activos": "← Retour aux travailleurs",
+      "mostrar_eliminados": "Afficher les supprimés",
+      "solo_sin_centro": "Seulement sans centre",
+      "filtro_centro": "Centre :",
+      "todos_centros": "Tous",
+      "buscar_placeholder": "Rechercher un employé...",
+      "vacio": "Aucun employé enregistré."
+    },
+    "tabla": {
+      "nombre": "Nom",
+      "email": "E‑mail",
+      "telefono": "Téléphone",
+      "centro": "Centre",
+      "pin": "PIN",
+      "acciones": "Actions",
+      "horario": "Emploi du temps"
+    },
+    "acciones": {
+      "seleccionar": "-- Sélectionner --",
+      "horario": "📅 Horaire",
+      "fichajes": "📌 Pointages",
+      "permiso": "🌴 Congé",
+      "formacion": "📚 Formation",
+      "reconocimiento": "🩺 Examen médical",
+      "eliminar": "🗑️ Supprimer",
+      "restaurar": "♻️ Restaurer",
+      "borrar_def": "🗑️ Suppression définitive",
+      "editar": "✏️ Éditer"
+    },
+    "drawer": {
+      "titulo": "Modifier l’employé",
+      "nombre": "Nom",
+      "dni": "DNI / NIE",
+      "nass": "Numéro sécurité sociale",
+      "nacionalidad": "Nationalité",
+      "genero": "Genre",
+      "iban": "IBAN",
+      "email": "E‑mail",
+      "telefono": "Téléphone",
+      "centro": "Centre",
+      "cancelar": "Annuler",
+      "guardar": "Enregistrer les modifications",
+      "select": "Sélectionner...",
+      "masculino": "Masculin",
+      "femenino": "Féminin"
+    },
+    "modal": {
+      "titulo": "Nouvel employé"
+    },
+    "sin_centro": {
+      "asignar": "Affecter à un centre",
+      "sin_resultados": "Aucun employé sans centre."
+    }
+  },
+  "horarios": {
+    "titulo": "Horaire de {name}",
+    "subtitulo": "Éditez les plages horaires par jour de la semaine.",
+    "horas_label": "Heures hebdomadaires",
+    "horas_hint": "Les heures excédentaires seront indiquées comme supplémentaires.",
+    "copiar_label": "Copier le lundi vers les autres jours :",
+    "boton_copiar": "Copier",
+    "vista_mensual": "Vue mensuelle",
+    "editar_dia": "Éditer",
+    "turno_partido": "Poste partagé",
+    "borrar_dia": "Supprimer le jour",
+    "tramo": "Plage",
+    "entrada": "Entrée",
+    "salida": "Sortie",
+    "guardar": "Enregistrer les horaires",
+    "advertencia": "Avertissement dépassement",
+    "mensaje_exceso": "L’horaire dépasse les heures hebdomadaires maximales.",
+    "entendido": "Compris",
+    "campo_obligatorio_titulo": "Champ requis",
+    "campo_obligatorio_texto": "Veuillez préciser les heures hebdomadaires avant d’enregistrer."
+  },
+  "dias": {
+    "lunes": "Lundi",
+    "martes": "Mardi",
+    "miércoles": "Mercredi",
+    "jueves": "Jeudi",
+    "viernes": "Vendredi",
+    "sábado": "Samedi",
+    "domingo": "Dimanche"
+  },
+  "fichajes": {
+    "titulo_general": "📌 Liste des pointages",
+    "titulo_individual": "📌 Pointages de {nombre}",
+    "exportar_todos": "📤 Tout exporter (CSV)",
+    "exportar_individual": "📤 Exporter {nombre} (CSV)",
+    "vacio": "Aucun pointage enregistré.",
+    "historial": "Historique des pointages",
+    "tabla": {
+      "fecha": "Date",
+      "hora": "Heure",
+      "tipo": "Type",
+      "trabajador": "Employé",
+      "centro": "Centre"
+    },
+    "tipos": {
+      "Entrada": "Entrée",
+      "Salida": "Sortie"
+    }
+  },
+  "permisos": {
+    "titulo_nuevo": "Nouvelle permission",
+    "titulo_nuevo_para": "Nouvelle permission pour {name}",
+    "form": {
+      "inicio": "Date de début",
+      "fin": "Date de fin",
+      "justificacion": "Justification",
+      "boton": "Créer la permission"
+    },
+    "titulo_gestion": "Gestion des permissions",
+    "titulo_lista": "Permissions & congés",
+    "solicitudes": "Demandes de permission",
+    "historial": "Demandes de congés",
+    "tabla": {
+      "trabajador": "Employé",
+      "desde": "Depuis",
+      "hasta": "Jusqu’à",
+      "justificacion": "Justification",
+      "estado": "État",
+      "acciones": "Actions"
+    },
+    "acciones": {
+      "aprobar": "Approuver",
+      "rechazar": "Refuser",
+      "no_disponible": "Indisponible"
+    },
+    "estados": {
+      "pendiente": "En attente",
+      "aceptada": "Acceptée",
+      "rechazada": "Refusée"
+    }
+  },
+  "importar_trabajadores": {
+    "titulo": "Importer des travailleurs",
+    "archivo": "Fichier Excel",
+    "ayuda_archivo": "Seul le format .xlsx avec des colonnes valides est accepté.",
+    "centro": "Centre de travail",
+    "boton_importar": "Importer",
+    "descargar_plantilla": "Télécharger le modèle"
+  },
+  "exportar": {
+    "titulo": "Exporter",
+    "titulo_pagina": "📤 Exporter les données",
+    "fechas": {
+      "desde": "Depuis :",
+      "hasta": "Jusqu’à :",
+      "centro": "Centre de travail :"
+    },
+    "fichajes": {
+      "titulo": "📌 Exporter les pointages",
+      "boton": "Télécharger CSV"
+    },
+    "horarios": {
+      "titulo": "📅 Exporter les horaires",
+      "boton": "Télécharger le CSV"
+    },
+    "permisos": {
+      "titulo": "🌴 Exporter les permissions",
+      "boton": "Télécharger CSV"
+    },
+    "selector": {
+      "opcional": "Facultatif"
+    }
+  },
+  "prevencion": {
+    "titulo": "Panneau de Prévention des Risques",
+    "alimentos": {
+      "titulo": "Manipulateur d'Aliments",
+      "descripcion": "Contrôle des travailleurs disposant d'un certificat valide pour la manipulation sécurisée des aliments."
+    },
+    "riesgos": {
+      "titulo": "Prévention des Risques Professionnels",
+      "descripcion": "Suivi de la formation obligatoire à la prévention des risques pour chaque travailleur selon son poste."
+    },
+    "reconocimientos": {
+      "titulo": "Examens Médicaux",
+      "descripcion": "Enregistrement et contrôle des examens médicaux périodiques réalisés pour les travailleurs."
+    },
+    "boton": "Accéder"
+  },
+  "fichaje_modal": {
+    "ok": {
+      "titulo": "✅ Pointage réussi",
+      "mensaje": "{nombre} a pointé avec succès à {hora}."
+    },
+    "ya_fichado": {
+      "titulo": "❗ Déjà pointé",
+      "mensaje": "{nombre}, vous avez déjà pointé aujourd'hui. Un seul pointage par poste est autorisé."
+    },
+    "demasiado_pronto": {
+      "titulo": "⏱️ Trop tôt",
+      "mensaje": "{nombre}, il n’est pas encore l’heure de pointer. Réessayez plus tard."
+    },
+    "demasiado_tarde": {
+      "titulo": "⌛ Hors horaire",
+      "mensaje": "{nombre}, votre heure de pointage est dépassée."
+    },
+    "limite_turnos": {
+      "titulo": "🚫 Limite atteinte",
+      "mensaje": "{nombre}, vous avez atteint la limite de postes pour aujourd’hui."
+    },
+    "segundo_turno": {
+      "titulo": "🔁 Deuxième poste",
+      "mensaje": "{nombre}, le deuxième poste a été enregistré avec succès à {hora}."
+    },
+    "error": {
+      "titulo": "❌ Erreur",
+      "mensaje": "Le pointage n’a pas pu être effectué. Vérifiez votre code PIN."
+    }
+  },
+  "reconocimientos": {
+    "titulo_general": "Examens médicaux",
+    "titulo_individual": "Examens médicaux - {nombre}",
+    "filtro_label": "Filtrer par centre :",
+    "filtro_todos": "-- Tous les centres --",
+    "tabla": {
+      "trabajador": "Employé",
+      "dni": "DNI/NIE",
+      "centro": "Centre",
+      "ultimo": "Dernier examen",
+      "accion": "Action",
+      "fecha": "Date",
+      "observaciones": "Remarques",
+      "sin_resultados": "Aucun examen enregistré."
+    },
+    "boton_abrir_modal": "Ajouter",
+    "modal": {
+      "titulo": "Enregistrer un examen médical",
+      "trabajador": "Employé :",
+      "fecha": "Date :",
+      "observaciones": "Remarques :",
+      "cancelar": "Annuler",
+      "guardar": "Enregistrer"
+    },
+    "volver": "← Retour à la liste",
+    "error_guardar": "Erreur lors de l'enregistrement de l'examen."
+  },
+  "formacion": {
+    "titulo": "Formation et Cours",
+    "filtro_label": "Filtrer par centre :",
+    "filtro_todos": "-- Tous les centres --",
+    "tabla": {
+      "trabajador": "Travailleur",
+      "dni": "DNI/NIE",
+      "email": "Email",
+      "centro": "Centre",
+      "cursos": "Cours"
+    },
+    "tooltip": {
+      "asignado": "Assigné le {fecha}"
+    },
+    "modal": {
+      "titulo": "Assigner des Cours",
+      "cancelar": "Annuler",
+      "guardar": "Enregistrer",
+      "error_cargar": "Erreur lors du chargement des cours",
+      "error_guardar": "Erreur lors de l'enregistrement des cours"
+    },
+    "errores": {
+      "cargar": "Erreur lors du chargement des cours",
+      "guardar": "Erreur lors de l'enregistrement des cours"
+    }
+  }
+}

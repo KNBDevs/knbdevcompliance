@@ -1,0 +1,409 @@
+{
+    "login": {
+        "title": "Fichaje",
+        "dni_label": "Introduce tus 5 dígitos del DNI/NIE",
+        "dni_placeholder": "_____",
+        "admin_toggle": "Login Administración",
+        "email_label": "Correo electrónico",
+        "email_placeholder": "email@ejemplo.com",
+        "password_label": "Contraseña",
+        "password_placeholder": "••••••••",
+        "submit": "Entrar",
+        "ok": "OK"
+    },
+    "sidebar": {
+        "dashboard": "Panel Inicio",
+        "empresas": "Empresas",
+        "centros": "Centros",
+        "trabajadores": "Trabajadores",
+        "otras_opciones": "⚙️ Otras opciones",
+        "horarios": "📅 Horarios",
+        "fichajes": "📌 Fichajes",
+        "permisos": "🌴 Permisos",
+        "prevencion": "⚠️ Prevención",
+        "importar_trabajadores": "📥 Importar",
+        "exportar": "📤 Exportar",
+        "salir": "🚪 Salir"
+    },
+    "header": {
+        "title": "Control Horario"
+    },
+    "dashboard": {
+        "titulo": "Panel de Control",
+        "empresas": "Empresas registradas",
+        "centros": "Centros activos",
+        "trabajadores": "Trabajadores registrados",
+        "usuarios": "Usuarios administradores",
+        "hoy": {
+            "titulo": "Fichajes de hoy",
+            "hechos": "Hechos:",
+            "pendientes": "Pendientes:"
+        },
+        "chart": {
+            "label_fichajes": "Fichajes"
+        },
+        "top_puntualidad": "Top 3 Puntualidad (semana)",
+        "puntuales": "fichajes puntuales",
+        "fichajes_recientes": "Tus últimos fichajes",
+        "sin_horario": "Trabajadores sin horario asignado",
+        "grafico_titulo": "Fichajes últimos 7 días"
+    },
+    "empresas": {
+        "listado": {
+            "titulo": "Empresas Registradas",
+            "eliminadas": "Empresas Eliminadas",
+            "nueva": "+ Nueva empresa",
+            "mostrar_eliminadas": "Mostrar empresas eliminadas"
+        },
+        "tabla": {
+            "nombre": "Nombre",
+            "cif": "CIF",
+            "ccc": "CCC"
+        },
+        "acciones": {
+            "restaurar": "♻️ Restaurar",
+            "eliminar_def": "❌ Eliminar definitivamente",
+            "eliminar": "🗑️ Eliminar",
+            "editar": "✏️ Editar"
+        },
+        "drawer": {
+            "nombre": "Nombre",
+            "titulo": "Editar Empresa",
+            "contacto": "Contacto",
+            "administrador": "Administrador",
+            "telefono": "Teléfono",
+            "email": "Email",
+            "sede_fiscal": "Sede Fiscal",
+            "codigo_postal": "Código Postal",
+            "iban": "IBAN",
+            "guardar": "Guardar",
+            "cancelar": "Cancelar"
+        },
+        "modal": {
+            "titulo": "Registrar nueva empresa"
+        }
+    },
+    "centros": {
+        "listado": {
+            "titulo": "Centros de Trabajo",
+            "eliminados": "Centros eliminados",
+            "volver_activos": "← Volver a centros activos",
+            "mostrar_eliminados": "Mostrar eliminados",
+            "filtro_empresa": "Empresa",
+            "todas": "Todas",
+            "nuevo": "+ Nuevo centro",
+            "vacio": "No hay centros registrados para esta empresa."
+        },
+        "tabla": {
+            "nombre": "Nombre del Centro",
+            "empresa": "Empresa",
+            "acciones": "Acciones",
+            "ver_plantilla": "Ver plantilla"
+        },
+        "acciones": {
+            "restaurar": "♻️ Restaurar",
+            "eliminar_def": "❌ Eliminar definitivamente",
+            "eliminar": "🗑️ Eliminar",
+            "editar": "✏️ Editar"
+        },
+        "modal": {
+            "titulo": "Nuevo Centro",
+            "cancelar": "Cancelar",
+            "guardar": "Guardar"
+        },
+        "drawer": {
+            "titulo": "Editar Centro",
+            "nombre": "Nombre",
+            "empresa": "Empresa",
+            "email": "Email",
+            "telefono": "Teléfono",
+            "direccion": "Dirección",
+            "codigo_postal": "Código Postal",
+            "ccc": "CCC",
+            "cif": "CIF",
+            "responsable": "Responsable del centro",
+            "sector": "Sector de actividad",
+            "fecha": "Fecha de creación",
+            "cancelar": "Cancelar",
+            "guardar": "Guardar cambios",
+            "select": "Selecciona...",
+            "sector_hosteleria": "Hostelería",
+            "sector_textil": "Comercio textil",
+            "sector_construccion": "Construcción",
+            "sector_panaderia": "Panadería"
+        }
+    },
+    "trabajadores": {
+        "listado": {
+            "titulo": "Trabajadores",
+            "eliminados": "Trabajadores eliminados",
+            "nuevo": "+ Nuevo trabajador",
+            "volver_activos": "← Volver a trabajadores",
+            "mostrar_eliminados": "Mostrar eliminados",
+            "solo_sin_centro": "Solo sin centro",
+            "filtro_centro": "Centro:",
+            "todos_centros": "Todos",
+            "buscar_placeholder": "Buscar trabajador...",
+            "vacio": "No hay trabajadores registrados."
+        },
+        "tabla": {
+            "nombre": "Nombre",
+            "email": "Email",
+            "telefono": "Teléfono",
+            "centro": "Centro",
+            "pin": "PIN",
+            "acciones": "Acciones",
+            "horario": "Horario"
+        },
+        "acciones": {
+            "seleccionar": "-- Seleccionar --",
+            "horario": "📅 Horario",
+            "fichajes": "📌 Fichajes",
+            "permiso": "🌴 Permiso",
+            "formacion": "📚 Formación",
+            "reconocimiento": "🩺 Reconocimiento Médico",
+            "eliminar": "🗑️ Eliminar",
+            "restaurar": "♻️ Restaurar",
+            "borrar_def": "🗑️ Borrar permanente",
+            "editar": "✏️ Editar"
+        },
+        "drawer": {
+            "titulo": "Editar Trabajador",
+            "nombre": "Nombre",
+            "dni": "DNI / NIE",
+            "nass": "Nº Seguridad Social (NASS)",
+            "nacionalidad": "País",
+            "genero": "Género",
+            "iban": "IBAN",
+            "email": "Email",
+            "telefono": "Teléfono",
+            "centro": "Centro",
+            "cancelar": "Cancelar",
+            "guardar": "Guardar cambios",
+            "select": "Selecciona...",
+            "masculino": "Masculino",
+            "femenino": "Femenino"
+        },
+        "modal": {
+            "titulo": "Nuevo Trabajador"
+        },
+        "sin_centro": {
+            "asignar": "Asignar a centro",
+            "sin_resultados": "No hay trabajadores sin centro asignado."
+        }
+    },
+    "horarios": {
+        "titulo": "Horario de {name}",
+        "subtitulo": "Edita los tramos horarios del trabajador para cada día de la semana.",
+        "horas_label": "Horas semanales",
+        "horas_hint": "Si se superan las horas, se mostrarán como extras.",
+        "copiar_label": "Copiar horario del lunes a otros días:",
+        "boton_copiar": "Copiar",
+        "vista_mensual": "Vista mensual del horario",
+        "editar_dia": "Editar",
+        "turno_partido": "Turno partido",
+        "borrar_dia": "Borrar horario del día",
+        "tramo": "Tramo",
+        "entrada": "Entrada",
+        "salida": "Salida",
+        "guardar": "Guardar horarios",
+        "advertencia": "Advertencia de exceso de horas",
+        "mensaje_exceso": "El horario supera el máximo de horas semanales asignadas.",
+        "entendido": "Entendido",
+        "campo_obligatorio_titulo": "Campo obligatorio",
+        "campo_obligatorio_texto": "Debes especificar un número de horas semanales antes de guardar."
+    },
+    "dias": {
+        "lunes": "Lunes",
+        "martes": "Martes",
+        "miércoles": "Miércoles",
+        "jueves": "Jueves",
+        "viernes": "Viernes",
+        "sábado": "Sábado",
+        "domingo": "Domingo"
+    },
+    "fichajes": {
+        "titulo_general": "📌 Lista de Fichajes",
+        "titulo_individual": "📌 Fichajes de {nombre}",
+        "exportar_todos": "📤 Exportar todos (CSV)",
+        "exportar_individual": "📤 Exportar de {nombre} (CSV)",
+        "vacio": "No hay fichajes registrados.",
+        "historial": "Historial de fichajes",
+        "tabla": {
+            "fecha": "Fecha",
+            "hora": "Hora",
+            "tipo": "Tipo",
+            "trabajador": "Trabajador",
+            "centro": "Centro"
+        },
+        "tipos": {
+            "Entrada": "Entrada",
+            "Salida": "Salida"
+        }
+    },
+    "permisos": {
+        "titulo_nuevo": "Nuevo permiso",
+        "titulo_nuevo_para": "Nuevo permiso para {name}",
+        "form": {
+            "inicio": "Fecha de inicio",
+            "fin": "Fecha de fin",
+            "justificacion": "Justificación",
+            "boton": "Crear permiso"
+        },
+        "titulo_gestion": "Gestión de Permisos",
+        "titulo_lista": "Permisos y Vacaciones",
+        "solicitudes": "Solicitudes de permisos",
+        "historial": "Solicitudes de vacaciones",
+        "tabla": {
+            "trabajador": "Trabajador",
+            "desde": "Desde",
+            "hasta": "Hasta",
+            "justificacion": "Justificación",
+            "estado": "Estado",
+            "acciones": "Acciones"
+        },
+        "acciones": {
+            "aprobar": "Aprobar",
+            "rechazar": "Rechazar",
+            "no_disponible": "No disponible"
+        },
+        "estados": {
+            "pendiente": "Pendiente",
+            "aceptada": "Aceptada",
+            "rechazada": "Rechazada"
+        }
+    },
+    "importar_trabajadores": {
+        "titulo": "Importar Trabajadores",
+        "archivo": "Archivo Excel",
+        "ayuda_archivo": "Solo se acepta formato .xlsx con columnas válidas.",
+        "centro": "Centro de trabajo",
+        "boton_importar": "Importar",
+        "descargar_plantilla": "Descargar plantilla",
+        "boton_archivo": "Seleccionar archivo",
+        "no_seleccionado": "Ningún archivo seleccionado"
+    },
+    "exportar": {
+        "titulo": "Exportar",
+        "titulo_pagina": "📤 Exportar Datos",
+        "fechas": {
+            "desde": "Desde:",
+            "hasta": "Hasta:",
+            "centro": "Centro de trabajo:"
+        },
+        "fichajes": {
+            "titulo": "📌 Exportar Fichajes",
+            "boton": "Descargar CSV de Fichajes"
+        },
+        "horarios": {
+            "titulo": "📅 Exportar Horarios",
+            "boton": "Descargar CSV de Horarios"
+        },
+        "permisos": {
+            "titulo": "🌴 Exportar Permisos",
+            "boton": "Descargar CSV de Permisos"
+        },
+        "selector": {
+            "opcional": "Opcional"
+        }
+    },
+    "prevencion": {
+        "titulo": "Panel de Prevención de Riesgos",
+        "alimentos": {
+            "titulo": "Manipulador de Alimentos",
+            "descripcion": "Control de trabajadores con el certificado vigente para la manipulación segura de alimentos."
+        },
+        "riesgos": {
+            "titulo": "Prevención de Riesgos Laborales",
+            "descripcion": "Seguimiento de formación obligatoria en prevención para cada trabajador según su puesto."
+        },
+        "reconocimientos": {
+            "titulo": "Reconocimientos Médicos",
+            "descripcion": "Registro y control de los reconocimientos médicos periódicos realizados a los trabajadores."
+        },
+        "boton": "Acceder"
+    },
+    "fichaje_modal": {
+        "ok": {
+            "titulo": "✅ Fichaje correcto",
+            "mensaje": "{nombre} ha fichado correctamente a las {hora}."
+        },
+        "ya_fichado": {
+            "titulo": "❗ Ya fichado",
+            "mensaje": "{nombre}, ya has fichado hoy. Solo se permite un fichaje por turno."
+        },
+        "demasiado_pronto": {
+            "titulo": "⏱️ Demasiado pronto",
+            "mensaje": "{nombre}, todavía no es hora de fichar. Intenta más tarde."
+        },
+        "demasiado_tarde": {
+            "titulo": "⌛ Fuera de horario",
+            "mensaje": "{nombre}, ya ha pasado tu horario de fichaje."
+        },
+        "limite_turnos": {
+            "titulo": "🚫 Límite alcanzado",
+            "mensaje": "{nombre}, has alcanzado el límite de turnos para hoy."
+        },
+        "segundo_turno": {
+            "titulo": "🔁 Segundo turno",
+            "mensaje": "{nombre}, se ha registrado el segundo turno correctamente a las {hora}."
+        },
+        "error": {
+            "titulo": "❌ Error",
+            "mensaje": "No se pudo realizar el fichaje. Verifica tu PIN."
+        }
+    },
+    "reconocimientos": {
+        "titulo_general": "Reconocimientos Médicos",
+        "titulo_individual": "Reconocimientos Médicos - {nombre}",
+        "filtro_label": "Filtrar por centro:",
+        "filtro_todos": "-- Todos los centros --",
+        "tabla": {
+            "trabajador": "Trabajador",
+            "dni": "DNI/NIE",
+            "centro": "Centro",
+            "ultimo": "Último Reconocimiento",
+            "accion": "Acción",
+            "fecha": "Fecha",
+            "observaciones": "Observaciones",
+            "sin_resultados": "Sin reconocimientos registrados."
+        },
+        "boton_abrir_modal": "Añadir",
+        "modal": {
+            "titulo": "Registrar Reconocimiento Médico",
+            "trabajador": "Trabajador:",
+            "fecha": "Fecha:",
+            "observaciones": "Observaciones:",
+            "cancelar": "Cancelar",
+            "guardar": "Guardar"
+        },
+        "volver": "← Volver al listado",
+        "error_guardar": "Error al guardar el reconocimiento."
+    },
+    "formacion": {
+        "titulo": "Formación y Cursos",
+        "filtro_label": "Filtrar por centro:",
+        "filtro_todos": "-- Todos los centros --",
+        "tabla": {
+            "trabajador": "Trabajador",
+            "dni": "DNI/NIE",
+            "email": "Email",
+            "centro": "Centro",
+            "cursos": "Cursos"
+        },
+        "tooltip": {
+            "asignado": "Asignado el {fecha}"
+        },
+        "modal": {
+            "titulo": "Asignar Cursos",
+            "cancelar": "Cancelar",
+            "guardar": "Guardar",
+            "error_cargar": "Error al cargar los cursos",
+            "error_guardar": "Error al guardar los cursos"
+        },
+        "errores": {
+            "cargar": "Error al cargar los cursos",
+            "guardar": "Error al guardar los cursos"
+        }
+    }
+}

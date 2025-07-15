@@ -1,0 +1,407 @@
+{
+    "login": {
+        "title": "Login",
+        "dni_label": "Enter the last 5 digits of your DNI/NIE",
+        "dni_placeholder": "_____",
+        "admin_toggle": "Admin Login",
+        "email_label": "Email address",
+        "email_placeholder": "email@example.com",
+        "password_label": "Password",
+        "password_placeholder": "••••••••",
+        "submit": "Login",
+        "ok": "OK"
+    },
+    "sidebar": {
+        "dashboard": "Dashboard",
+        "empresas": "Companies",
+        "centros": "Centers",
+        "trabajadores": "Workers",
+        "otras_opciones": "⚙️ Other options",
+        "horarios": "📅 Schedules",
+        "fichajes": "📌 Time entries",
+        "permisos": "🌴 Permissions",
+        "prevencion": "⚠️ Prevention",
+        "importar_trabajadores": "📥 Import",
+        "exportar": "📤 Export",
+        "salir": "🚪 Logout"
+    },
+    "header": {
+        "title": "Time Control"
+    },
+    "dashboard": {
+        "titulo": "Dashboard",
+        "empresas": "Registered Companies",
+        "centros": "Active Work Centers",
+        "trabajadores": "Registered Employees",
+        "usuarios": "Admin Users",
+        "hoy": {
+            "titulo": "Today's Clock-ins",
+            "hechos": "Completed:",
+            "pendientes": "Pending:"
+        },
+        "chart": {
+            "label_fichajes": "Clock-ins"
+        },
+        "top_puntualidad": "Top 3 Punctual (Weekly)",
+        "puntuales": "on-time clock-ins",
+        "fichajes_recientes": "Your Latest Clock-ins",
+        "sin_horario": "Employees Without Assigned Schedule",
+        "grafico_titulo": "Clock-ins Over the Last 7 Days"
+    },
+    "empresas": {
+        "listado": {
+            "titulo": "Registered Companies",
+            "eliminadas": "Deleted Companies",
+            "nueva": "+ New Company",
+            "mostrar_eliminadas": "Show deleted companies"
+        },
+        "tabla": {
+            "nombre": "Name",
+            "cif": "CIF",
+            "ccc": "CCC"
+        },
+        "acciones": {
+            "restaurar": "♻️ Restore",
+            "eliminar_def": "❌ Permanently Delete",
+            "eliminar": "🗑️ Delete",
+            "editar": "✏️ Edit"
+        },
+        "drawer": {
+            "nombre": "Name",
+            "titulo": "Edit Company",
+            "contacto": "Contact",
+            "administrador": "Administrator",
+            "telefono": "Phone",
+            "email": "Email",
+            "sede_fiscal": "Tax Address",
+            "codigo_postal": "Postal Code",
+            "iban": "IBAN",
+            "guardar": "Save Changes",
+            "cancelar": "Cancel"
+        },
+        "modal": {
+            "titulo": "Register New Company"
+        }
+    },
+    "centros": {
+        "listado": {
+            "titulo": "Work Centers",
+            "eliminados": "Deleted Centers",
+            "volver_activos": "← Back to Active Centers",
+            "mostrar_eliminados": "Show Deleted",
+            "filtro_empresa": "Company",
+            "todas": "All",
+            "nuevo": "+ New Center",
+            "vacio": "No centers registered for this company."
+        },
+        "tabla": {
+            "nombre": "Center Name",
+            "empresa": "Company",
+            "acciones": "Actions",
+            "ver_plantilla": "View Template"
+        },
+        "acciones": {
+            "restaurar": "♻️ Restore",
+            "eliminar_def": "❌ Permanently Delete",
+            "eliminar": "🗑️ Delete",
+            "editar": "✏️ Edit"
+        },
+        "modal": {
+            "titulo": "New Center",
+            "cancelar": "Cancel",
+            "guardar": "Save"
+        },
+        "drawer": {
+            "titulo": "Edit Center",
+            "nombre": "Name",
+            "empresa": "Company",
+            "email": "Email",
+            "telefono": "Phone",
+            "direccion": "Address",
+            "codigo_postal": "Postal Code",
+            "ccc": "CCC",
+            "cif": "CIF",
+            "responsable": "Center Manager",
+            "sector": "Activity Sector",
+            "fecha": "Creation Date",
+            "cancelar": "Cancel",
+            "guardar": "Save Changes",
+            "select": "Select...",
+            "sector_hosteleria": "Hospitality",
+            "sector_textil": "Textile Commerce",
+            "sector_construccion": "Construction",
+            "sector_panaderia": "Bakery"
+        }
+    },
+    "trabajadores": {
+        "listado": {
+            "titulo": "Workers",
+            "eliminados": "Deleted workers",
+            "nuevo": "+ New worker",
+            "volver_activos": "← Back to workers",
+            "mostrar_eliminados": "Show deleted",
+            "solo_sin_centro": "Only without center",
+            "filtro_centro": "Center:",
+            "todos_centros": "All",
+            "buscar_placeholder": "Search worker...",
+            "vacio": "No workers registered."
+        },
+        "tabla": {
+            "nombre": "Name",
+            "email": "Email",
+            "telefono": "Phone",
+            "centro": "Center",
+            "pin": "PIN",
+            "acciones": "Actions",
+            "horario": "Schedule"
+        },
+        "acciones": {
+            "seleccionar": "-- Select --",
+            "horario": "📅 Schedule",
+            "fichajes": "📌 Time logs",
+            "permiso": "🌴 Leave",
+            "formacion": "📚 Training",
+            "reconocimiento": "🩺 Medical Checkup",
+            "eliminar": "🗑️ Delete",
+            "restaurar": "♻️ Restore",
+            "borrar_def": "🗑️ Delete permanently",
+            "editar": "✏️ Edit"
+        },
+        "drawer": {
+            "titulo": "Edit Employee",
+            "nombre": "Name",
+            "dni": "DNI / NIE",
+            "nass": "Social Security Number (NASS)",
+            "nacionalidad": "Country",
+            "genero": "Gender",
+            "iban": "IBAN",
+            "email": "Email",
+            "telefono": "Phone",
+            "centro": "Work Center",
+            "cancelar": "Cancel",
+            "guardar": "Save Changes",
+            "select": "Select...",
+            "masculino": "Male",
+            "femenino": "Female"
+        },
+        "modal": {
+            "titulo": "New Employee"
+        },
+        "sin_centro": {
+            "asignar": "Assign to center",
+            "sin_resultados": "There are no employees without an assigned center."
+        }
+    },
+    "horarios": {
+        "titulo": "{name}'s Schedule",
+        "subtitulo": "Edit the employee's schedule slots for each day of the week.",
+        "horas_label": "Weekly Hours",
+        "horas_hint": "If the limit is exceeded, the extra hours will be shown.",
+        "copiar_label": "Copy Monday's schedule to other days:",
+        "boton_copiar": "Copy",
+        "vista_mensual": "Monthly Schedule View",
+        "editar_dia": "Edit",
+        "turno_partido": "Split Shift",
+        "borrar_dia": "Clear Day's Schedule",
+        "tramo": "Slot",
+        "entrada": "Start",
+        "salida": "End",
+        "guardar": "Save Schedule",
+        "advertencia": "Overtime Warning",
+        "mensaje_exceso": "This schedule exceeds the maximum assigned weekly hours.",
+        "entendido": "Understood",
+        "campo_obligatorio_titulo": "Required Field",
+        "campo_obligatorio_texto": "You must specify the number of weekly hours before saving."
+    },
+    "dias": {
+        "lunes": "Monday",
+        "martes": "Tuesday",
+        "miércoles": "Wednesday",
+        "jueves": "Thursday",
+        "viernes": "Friday",
+        "sábado": "Saturday",
+        "domingo": "Sunday"
+    },
+    "fichajes": {
+        "titulo_general": "📌 Time Logs List",
+        "titulo_individual": "📌 Time Logs of {nombre}",
+        "exportar_todos": "📤 Export All (CSV)",
+        "exportar_individual": "📤 Export for {nombre} (CSV)",
+        "vacio": "No time logs found.",
+        "historial": "Time Log History",
+        "tabla": {
+            "fecha": "Date",
+            "hora": "Time",
+            "tipo": "Type",
+            "trabajador": "Employee",
+            "centro": "Center"
+        },
+        "tipos": {
+            "Entrada": "Check-in",
+            "Salida": "Check-out"
+        }
+    },
+    "permisos": {
+        "titulo_nuevo": "New Leave Request",
+        "titulo_nuevo_para": "New leave for {name}",
+        "form": {
+            "inicio": "Start Date",
+            "fin": "End Date",
+            "justificacion": "Justification",
+            "boton": "Create Leave"
+        },
+        "titulo_gestion": "Leave Management",
+        "titulo_lista": "Leaves and Vacations",
+        "solicitudes": "Leave Requests",
+        "historial": "Vacation Requests",
+        "tabla": {
+            "trabajador": "Employee",
+            "desde": "From",
+            "hasta": "To",
+            "justificacion": "Justification",
+            "estado": "Status",
+            "acciones": "Actions"
+        },
+        "acciones": {
+            "aprobar": "Approve",
+            "rechazar": "Reject",
+            "no_disponible": "Not available"
+        },
+        "estados": {
+            "pendiente": "Pending",
+            "aceptada": "Accepted",
+            "rechazada": "Rejected"
+        }
+    },
+    "importar_trabajadores": {
+        "titulo": "Import Workers",
+        "archivo": "Excel File",
+        "ayuda_archivo": "Only .xlsx format with valid columns is accepted.",
+        "centro": "Workplace",
+        "boton_importar": "Import",
+        "descargar_plantilla": "Download Template"
+    },
+    "exportar": {
+        "titulo": "Export",
+        "titulo_pagina": "📤 Export Data",
+        "fechas": {
+            "desde": "From:",
+            "hasta": "To:",
+            "centro": "Workplace:"
+        },
+        "fichajes": {
+            "titulo": "📌 Export Time Logs",
+            "boton": "Download Time Logs CSV"
+        },
+        "horarios": {
+            "titulo": "📅 Export Schedules",
+            "boton": "Download Schedules CSV"
+        },
+        "permisos": {
+            "titulo": "🌴 Export Leaves",
+            "boton": "Download Leaves CSV"
+        },
+        "selector": {
+            "opcional": "Optional"
+        }
+    },
+    "prevencion": {
+        "titulo": "Risk Prevention Panel",
+        "alimentos": {
+            "titulo": "Food Handler",
+            "descripcion": "Monitoring of workers with a valid certificate for safe food handling."
+        },
+        "riesgos": {
+            "titulo": "Occupational Risk Prevention",
+            "descripcion": "Tracking of mandatory risk prevention training for each worker based on their position."
+        },
+        "reconocimientos": {
+            "titulo": "Medical Checkups",
+            "descripcion": "Recording and monitoring of periodic medical checkups performed on workers."
+        },
+        "boton": "Access"
+    },
+    "fichaje_modal": {
+        "ok": {
+            "titulo": "✅ Check-in successful",
+            "mensaje": "{nombre} successfully checked in at {hora}."
+        },
+        "ya_fichado": {
+            "titulo": "❗ Already checked in",
+            "mensaje": "{nombre}, you've already checked in today. Only one check-in per shift is allowed."
+        },
+        "demasiado_pronto": {
+            "titulo": "⏱️ Too early",
+            "mensaje": "{nombre}, it's not time to check in yet. Please try again later."
+        },
+        "demasiado_tarde": {
+            "titulo": "⌛ Outside working hours",
+            "mensaje": "{nombre}, your check-in time has already passed."
+        },
+        "limite_turnos": {
+            "titulo": "🚫 Shift limit reached",
+            "mensaje": "{nombre}, you've reached the maximum number of shifts for today."
+        },
+        "segundo_turno": {
+            "titulo": "🔁 Second shift",
+            "mensaje": "{nombre}, your second shift was successfully recorded at {hora}."
+        },
+        "error": {
+            "titulo": "❌ Error",
+            "mensaje": "Check-in failed. Please verify your PIN."
+        }
+    },
+    "reconocimientos": {
+        "titulo_general": "Medical Check-ups",
+        "titulo_individual": "Medical Check-ups - {nombre}",
+        "filtro_label": "Filter by center:",
+        "filtro_todos": "-- All centers --",
+        "tabla": {
+            "trabajador": "Worker",
+            "dni": "DNI/NIE",
+            "centro": "Center",
+            "ultimo": "Last Check-up",
+            "accion": "Action",
+            "fecha": "Date",
+            "observaciones": "Observations",
+            "sin_resultados": "No check-ups recorded."
+        },
+        "boton_abrir_modal": "Add",
+        "modal": {
+            "titulo": "Register Medical Check-up",
+            "trabajador": "Worker:",
+            "fecha": "Date:",
+            "observaciones": "Observations:",
+            "cancelar": "Cancel",
+            "guardar": "Save"
+        },
+        "volver": "← Back to list",
+        "error_guardar": "Error saving the check-up."
+    },
+    "formacion": {
+        "titulo": "Training and Courses",
+        "filtro_label": "Filter by center:",
+        "filtro_todos": "-- All centers --",
+        "tabla": {
+            "trabajador": "Worker",
+            "dni": "DNI/NIE",
+            "email": "Email",
+            "centro": "Center",
+            "cursos": "Courses"
+        },
+        "tooltip": {
+            "asignado": "Assigned on {fecha}"
+        },
+        "modal": {
+            "titulo": "Assign Courses",
+            "cancelar": "Cancel",
+            "guardar": "Save",
+            "error_cargar": "Error loading courses",
+            "error_guardar": "Error saving courses"
+        },
+        "errores": {
+            "cargar": "Error loading courses",
+            "guardar": "Error saving courses"
+        }
+    }
+}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if trabajador %}
+        {{ _('fichajes.titulo_individual', nombre=trabajador.nombre) }}
+    {% else %}
+        {{ _('fichajes.titulo_general') }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-semibold mb-6">
+    {% if trabajador %}
+        <span data-i18n="fichajes.titulo_individual" data-i18n-params='{"nombre": "{{ trabajador.nombre }}"}'>
+            📌 Fichajes de {{ trabajador.nombre }}
+        </span>
+    {% else %}
+        <span data-i18n="fichajes.titulo_general">📌 Lista de Fichajes</span>
+    {% endif %}
+</h2>
+
+<div class="mb-6">
+    {% if not trabajador %}
+        <a href="{{ url_for('fichajes.exportar_fichajes_csv') }}"
+           class="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+           data-i18n="fichajes.exportar_todos">
+           📤 Exportar todos (CSV)
+        </a>
+    {% else %}
+        <a href="{{ url_for('fichajes.exportar_fichajes_trabajador_csv', trabajador_id=trabajador.id) }}"
+           class="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+           data-i18n="fichajes.exportar_individual"
+           data-i18n-params='{"nombre": "{{ trabajador.nombre }}"}'>
+           📤 Exportar de {{ trabajador.nombre }} (CSV)
+        </a>
+    {% endif %}
+</div>
+
+{% if fichajes %}
+<table class="min-w-full bg-white dark:bg-gray-800 rounded shadow text-sm">
+    <thead class="bg-gray-100 dark:bg-gray-700">
+        <tr>
+            <th class="px-4 py-2 text-left" data-i18n="fichajes.tabla.fecha">📅 Fecha</th>
+            <th class="px-4 py-2 text-left" data-i18n="fichajes.tabla.hora">⏰ Hora</th>
+            <th class="px-4 py-2 text-left" data-i18n="fichajes.tabla.tipo">🔁 Tipo</th>
+            {% if not trabajador %}
+                <th class="px-4 py-2 text-left" data-i18n="fichajes.tabla.trabajador">👤 Trabajador</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+        {% for f in fichajes %}
+        <tr>
+            <td class="px-4 py-2">{{ f.fecha.strftime('%d/%m/%Y') }}</td>
+            <td class="px-4 py-2">{{ f.hora.strftime('%H:%M') }}</td>
+            <td class="px-4 py-2">{{ f.tipo }}</td>
+            {% if not trabajador %}
+                <td class="px-4 py-2">{{ f.trabajador.nombre }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p class="text-gray-500" data-i18n="fichajes.vacio">No hay fichajes registrados.</p>
+{% endif %}
+{% endblock %}

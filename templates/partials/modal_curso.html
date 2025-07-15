@@ -1,0 +1,29 @@
+<div id="modal-curso" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center px-4">
+  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg w-full max-w-md p-6 sm:p-8">
+    <h3 class="text-lg font-semibold mb-4" data-i18n="formacion.modal.titulo">
+      {{ _('formacion.modal.titulo') }}
+    </h3>
+
+    <form id="form-cursos">
+      <input type="hidden" name="trabajador_id" id="trabajador-id" />
+
+      <div id="lista-cursos" class="space-y-2">
+        <!-- Los cursos se insertan dinámicamente vía JS -->
+      </div>
+
+      <div class="mt-6 flex justify-end gap-2 flex-wrap sm:flex-nowrap">
+        <button type="button"
+                onclick="cerrarModalCursos()"
+                class="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded w-full sm:w-auto"
+                data-i18n="formacion.modal.cancelar">
+          {{ _('formacion.modal.cancelar') }}
+        </button>
+        <button type="submit"
+                class="px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded w-full sm:w-auto"
+                data-i18n="formacion.modal.guardar">
+          {{ _('formacion.modal.guardar') }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

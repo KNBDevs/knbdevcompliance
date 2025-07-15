@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ _('permisos.titulo_gestion') }}
+{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-semibold mb-6" data-i18n="permisos.solicitudes">Solicitudes de permisos</h2>
+
+<table class="min-w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+    <thead class="bg-gray-100 dark:bg-gray-700">
+        <tr>
+            <th class="px-4 py-2 text-left" data-i18n="permisos.tabla.trabajador">Trabajador</th>
+            <th class="px-4 py-2 text-left" data-i18n="permisos.tabla.desde">Desde</th>
+            <th class="px-4 py-2 text-left" data-i18n="permisos.tabla.hasta">Hasta</th>
+            <th class="px-4 py-2 text-left" data-i18n="permisos.tabla.justificacion">Justificación</th>
+            <th class="px-4 py-2 text-left" data-i18n="permisos.tabla.estado">Estado</th>
+            <th class="px-4 py-2 text-left" data-i18n="permisos.tabla.acciones">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for permiso in permisos %}
+        <tr class="border-t border-gray-200 dark:border-gray-700">
+            <td class="px-4 py-2">{{ permiso.trabajador.nombre }}</td>
+            <td class="px-4 py-2">{{ permiso.fecha_inicio.strftime('%Y-%m-%d') }}</td>
+            <td class="px-4 py-2">{{ permiso.fecha_fin.strftime('%Y-%m-%d') }}</td>
+            <td class="px-4 py-2">{{ permiso.justificacion }}</td>
+            <td class="px-4 py-2 capitalize" data-i18n="permisos.estados.{{ permiso.estado }}">{{ permiso.estado }}</td>
+            <td class="px-4 py-2 space-x-2">
+                {% if permiso.estado == 'pendiente' %}
+                    <a href="{{ url_for('permisos.aprobar_permiso', permiso_id=permiso.id) }}"
+                       class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm"
+                       data-i18n="permisos.acciones.aprobar">Aprobar</a>
+                    <a href="{{ url_for('permisos.rechazar_permiso', permiso_id=permiso.id) }}"
+                       class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm"
+                       data-i18n="permisos.acciones.rechazar">Rechazar</a>
+                {% else %}
+                    <span class="text-gray-500 italic" data-i18n="permisos.acciones.no_disponible">No disponible</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

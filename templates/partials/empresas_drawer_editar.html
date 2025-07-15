@@ -1,0 +1,85 @@
+<!-- Drawer editar empresa -->
+<div id="drawerEditarEmpresa"
+    class="fixed top-0 right-0 h-full w-full max-w-md bg-white dark:bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+    <div class="p-6 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold" data-i18n="empresas.drawer.titulo">Editar Empresa</h2>
+            <button onclick="cerrarDrawerEditarEmpresa()">✖️</button>
+        </div>
+        <form method="POST" id="formEditarEmpresa" class="flex flex-col gap-4 flex-grow overflow-y-auto">
+            <input type="hidden" name="id" id="edit-empresa-id">
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="empresas.drawer.nombre">Nombre</label>
+                <input type="text" name="nombre" id="edit-empresa-nombre"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="empresas.drawer.cif">CIF</label>
+                <input type="text" name="cif" id="edit-empresa-cif"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="empresas.drawer.ccc">CCC</label>
+                <input type="text" name="ccc" id="edit-empresa-ccc"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="empresas.drawer.contacto">Contacto</label>
+                <input type="text" name="contacto" id="edit-empresa-contacto"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="empresas.drawer.administrador">Administrador</label>
+                <input type="text" name="administrador" id="edit-empresa-administrador"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="empresas.drawer.telefono">Teléfono</label>
+                <input type="text" name="telefono" id="edit-empresa-telefono"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="empresas.drawer.email">Email</label>
+                <input type="email" name="email" id="edit-empresa-email"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="empresas.drawer.sede_fiscal">Sede Fiscal</label>
+                <input type="text" name="sede_fiscal" id="edit-empresa-sede-fiscal"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="empresas.drawer.codigo_postal">Código Postal</label>
+                <input type="text" name="codigo_postal" id="edit-empresa-codigo-postal"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="empresas.drawer.iban">IBAN</label>
+                <input type="text" name="iban" id="edit-empresa-iban"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div class="flex justify-end gap-2 mt-4">
+                <button type="button" onclick="cerrarDrawerEditarEmpresa()"
+                    class="px-4 py-2 bg-gray-300 dark:bg-gray-700 rounded hover:bg-gray-400 dark:hover:bg-gray-600"
+                    data-i18n="empresas.drawer.cancelar">
+                    Cancelar
+                </button>
+                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    data-i18n="empresas.drawer.guardar">
+                    Guardar cambios
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

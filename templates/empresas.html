@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block title %}Empresas{% endblock %}
+
+{% block content %}
+
+<h2 class="text-2xl font-semibold mb-6"
+  data-i18n="{% if mostrar_inactivas %}empresas.listado.eliminadas{% else %}empresas.listado.titulo{% endif %}">
+  {% if mostrar_inactivas %}
+  Empresas Eliminadas
+  {% else %}
+  Empresas Registradas
+  {% endif %}
+</h2>
+
+<!-- Botón y filtro de eliminadas -->
+<div class="flex justify-between items-center mb-4">
+  <button onclick="mostrarModalEmpresa()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+    data-i18n="empresas.listado.nueva">
+    + Nueva empresa
+  </button>
+  <form method="get" action="{{ url_for('empresas.lista_empresas') }}" class="flex items-center gap-2">
+    <label class="flex items-center gap-1 text-sm">
+      <input type="checkbox" name="inactivas" value="1" onchange="this.form.submit()" {% if mostrar_inactivas
+        %}checked{% endif %}>
+      <span data-i18n="empresas.listado.mostrar_eliminadas">Mostrar empresas eliminadas</span>
+    </label>
+  </form>
+</div>
+
+<!-- Tabla -->
+<div class="overflow-x-auto">
+  <table class="min-w-full bg-white dark:bg-gray-800 rounded shadow">
+    <thead>
+      <tr>
+        {% set sort = request.args.get('sort', 'id') %}
+        {% set order = request.args.get('order', 'asc') %}
+        {% set inactivas_param = 1 if mostrar_inactivas else 0 %}
+
+        {% macro sort_icon(column) -%}
+        {% if sort == column %}
+        {% if order == 'asc' %}
+        ▲
+        {% else %}
+        ▼
+        {% endif %}
+        {% endif %}
+        {%- endmacro %}
+
+        <th class="px-4 py-2 text-left">
+          <a href="{{ url_for('empresas.lista_empresas', sort='nombre', order='desc' if sort == 'nombre' and order == 'asc' else 'asc', inactivas=inactivas_param) }}"
+            class="flex items-center gap-1">
+            <span data-i18n="empresas.tabla.nombre">Nombre</span>
+            {{ sort_icon('nombre') }}
+          </a>
+        </th>
+        <th class="px-4 py-2 text-left">
+          <a href="{{ url_for('empresas.lista_empresas', sort='cif', order='desc' if sort == 'cif' and order == 'asc' else 'asc', inactivas=inactivas_param) }}"
+            class="flex items-center gap-1">
+            <span data-i18n="empresas.tabla.cif">CIF</span>
+            {{ sort_icon('cif') }}
+          </a>
+        </th>
+        <th class="px-4 py-2 text-left">
+          <a href="{{ url_for('empresas.lista_empresas', sort='ccc', order='desc' if sort == 'ccc' and order == 'asc' else 'asc', inactivas=inactivas_param) }}"
+            class="flex items-center gap-1">
+            <span data-i18n="empresas.tabla.ccc">CCC</span>
+            {{ sort_icon('ccc') }}
+          </a>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody class="text-sm divide-y divide-gray-200 dark:divide-gray-700">
+      {% for empresa in empresas %}
+      <tr>
+        <td class="px-4 py-2 text-blue-600 hover:underline cursor-pointer" onclick="toggleAccionesDesdeElemento(this)"
+          data-id="{{ empresa.id }}">
+          {{ empresa.nombre }}
+        </td>
+        <td class="px-4 py-2">{{ empresa.cif }}</td>
+        <td class="px-4 py-2">{{ empresa.ccc }}</td>
+      </tr>
+
+      <!-- Acordeón -->
+      <tr id="acciones-{{ empresa.id }}" class="hidden bg-gray-100 dark:bg-gray-900">
+        <td colspan="3" class="px-4 py-2">
+          <div class="flex gap-4 items-center">
+            {% if mostrar_inactivas %}
+            <form method="POST"
+              action="{{ url_for('empresas.restaurar_empresa', empresa_id=empresa.id, inactivas=1) }}">
+              <button type="submit" class="text-green-600 hover:text-green-800 text-sm flex items-center gap-1"
+                data-i18n="empresas.acciones.restaurar">
+                ♻️ Restaurar
+              </button>
+            </form>
+            <form method="POST" action="{{ url_for('empresas.eliminar_definitiva_empresa', empresa_id=empresa.id) }}"
+              onsubmit="return confirm('¿Eliminar definitivamente esta empresa?');">
+              <button type="submit" class="text-red-800 hover:text-red-900 text-sm flex items-center gap-1 ml-2"
+                data-i18n="empresas.acciones.eliminar_def">
+                ❌ Eliminar definitivamente
+              </button>
+            </form>
+            {% else %}
+            <form method="POST" action="{{ url_for('empresas.borrar_empresa', empresa_id=empresa.id) }}"
+              onsubmit="return confirm('¿Marcar como eliminada esta empresa?');">
+              <button type="submit" class="text-red-600 hover:text-red-800 text-sm flex items-center gap-1"
+                data-i18n="empresas.acciones.eliminar">
+                🗑️ Eliminar
+              </button>
+            </form>
+            <button class="text-blue-600 hover:text-blue-800 text-sm flex items-center gap-1"
+              data-i18n="empresas.acciones.editar" onclick="cargarDatosEditarEmpresa(this)" data-id="{{ empresa.id }}"
+              data-nombre="{{ empresa.nombre }}" data-cif="{{ empresa.cif }}" data-ccc="{{ empresa.ccc }}"
+              data-contacto="{{ empresa.contacto|default('', true) }}"
+              data-administrador="{{ empresa.administrador|default('', true) }}"
+              data-telefono="{{ empresa.telefono|default('', true) }}"
+              data-email="{{ empresa.email|default('', true) }}"
+              data-sede_fiscal="{{ empresa.sede_fiscal|default('', true) }}"
+              data-codigo_postal="{{ empresa.codigo_postal|default('', true) }}"
+              data-iban="{{ empresa.iban|default('', true) }}">
+              ✏️ Editar
+            </button>
+            {% endif %}
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+
+      {% if empresas|length == 0 %}
+      <tr>
+        <td colspan="3" class="text-center text-gray-500 py-4" data-i18n="empresas.listado.vacio">
+          No hay empresas registradas.
+        </td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+
+{% include 'partials/empresas_drawer_editar.html' %}
+{% include 'partials/empresas_modal_crear.html' %}
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/empresas.js') }}"></script>
+{% endblock %}

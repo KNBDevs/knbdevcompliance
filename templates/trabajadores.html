@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+{% block title %}Trabajadores{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-semibold mb-6"
+    data-i18n="{% if ver_eliminados %}trabajadores.listado.eliminados{% else %}trabajadores.listado.titulo{% endif %}">
+    {% if ver_eliminados %}Trabajadores eliminados{% else %}Trabajadores{% endif %}
+</h2>
+
+<form id="filtros-trabajadores" method="get" action="{{ url_for('trabajadores.lista_trabajadores') }}">
+    <div class="flex flex-wrap justify-between items-center mb-4 gap-4">
+        <div class="flex items-center gap-4">
+            <button onclick="mostrarModalCrear()" type="button"
+                class="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700"
+                data-i18n="trabajadores.listado.nuevo">
+                + Nuevo trabajador
+            </button>
+
+            {% if current_user.rol == 'admin' %}
+            <div class="flex items-center gap-2 text-sm">
+                <span data-i18n="trabajadores.listado.filtro_centro">Centro:</span>
+                <select name="centro_filtro" onchange="this.form.submit()"
+                    class="p-1 border rounded dark:bg-gray-700 dark:border-gray-600">
+                    <option value="" data-i18n="trabajadores.listado.todos_centros">Todos</option>
+                    {% for centro in centros %}
+                    <option value="{{ centro.id }}" {% if centro.id==centro_filtro_id %}selected{% endif %}>
+                        {{ centro.nombre }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="flex items-center gap-2 text-sm">
+                <input type="text" id="buscador-trabajador" placeholder="Buscar trabajador..."
+                    data-i18n-placeholder="trabajadores.listado.buscar_placeholder"
+                    class="p-1 border rounded dark:bg-gray-700 dark:border-gray-600" oninput="filtrarTrabajadores()">
+
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="flex items-center gap-4">
+            {% if ver_eliminados %}
+            <a href="{{ url_for('trabajadores.lista_trabajadores') }}"
+                class="inline-block mt-4 text-blue-600 hover:underline text-sm"
+                data-i18n="trabajadores.listado.volver_activos">
+                ← Volver a trabajadores
+            </a>
+            {% endif %}
+
+            <label class="flex items-center gap-1 text-sm">
+                <input type="checkbox" name="eliminados" value="1" onchange="this.form.submit()" {% if ver_eliminados
+                    %}checked{% endif %}>
+                <span data-i18n="trabajadores.listado.mostrar_eliminados">Mostrar eliminados</span>
+            </label>
+            <label class="flex items-center gap-1 text-sm">
+                <input type="checkbox" name="huerfanos" value="1" onchange="this.form.submit()" {% if ver_huerfanos
+                    %}checked{% endif %}>
+                <span data-i18n="trabajadores.listado.solo_sin_centro">Solo sin centro</span>
+            </label>
+        </div>
+    </div>
+</form>
+
+<!-- Tabla -->
+<div class="overflow-x-auto">
+    <table class="min-w-full bg-white dark:bg-gray-800 rounded shadow text-sm">
+        <thead>
+            <tr>
+                {% set sort = request.args.get('sort', 'id') %}
+                {% set order = request.args.get('order', 'asc') %}
+                {% set centro_param = centro_filtro_id if centro_filtro_id else '' %}
+                {% set eliminados_param = 1 if ver_eliminados else 0 %}
+                {% set huerfanos_param = 1 if ver_huerfanos else 0 %}
+
+                {% macro sort_icon(column) -%}
+                {% if sort == column %}
+                {% if order == 'asc' %}▲{% else %}▼{% endif %}
+                {% endif %}
+                {%- endmacro %}
+
+                <th class="px-4 py-2 text-left">
+                    <a href="{{ url_for('trabajadores.lista_trabajadores', sort='nombre', order='desc' if sort == 'nombre' and order == 'asc' else 'asc', centro_filtro=centro_param, eliminados=eliminados_param, huerfanos=huerfanos_param) }}"
+                        class="flex items-center gap-1">
+                        <span data-i18n="trabajadores.tabla.nombre">Nombre</span>
+                        {{ sort_icon('nombre') }}
+                    </a>
+                </th>
+                <th class="px-4 py-2 text-left">
+                    <a href="{{ url_for('trabajadores.lista_trabajadores', sort='email', order='desc' if sort == 'email' and order == 'asc' else 'asc', centro_filtro=centro_param, eliminados=eliminados_param, huerfanos=huerfanos_param) }}"
+                        class="flex items-center gap-1">
+                        <span data-i18n="trabajadores.tabla.email">Email</span>
+                        {{ sort_icon('email') }}
+                    </a>
+                </th>
+                <th class="px-4 py-2 text-left">
+                    <a href="{{ url_for('trabajadores.lista_trabajadores', sort='telefono', order='desc' if sort == 'telefono' and order == 'asc' else 'asc', centro_filtro=centro_param, eliminados=eliminados_param, huerfanos=huerfanos_param) }}"
+                        class="flex items-center gap-1">
+                        <span data-i18n="trabajadores.tabla.telefono">Teléfono</span>
+                        {{ sort_icon('telefono') }}
+                    </a>
+                </th>
+                <th class="px-4 py-2 text-left">
+                    <a href="{{ url_for('trabajadores.lista_trabajadores', sort='centro', order='desc' if sort == 'centro' and order == 'asc' else 'asc', centro_filtro=centro_param, eliminados=eliminados_param, huerfanos=huerfanos_param) }}"
+                        class="flex items-center gap-1">
+                        <span data-i18n="trabajadores.tabla.centro">Centro</span>
+                        {{ sort_icon('centro') }}
+                    </a>
+                </th>
+                <th class="px-4 py-2 text-left">
+                    <a href="{{ url_for('trabajadores.lista_trabajadores', sort='pin', order='desc' if sort == 'pin' and order == 'asc' else 'asc', centro_filtro=centro_param, eliminados=eliminados_param, huerfanos=huerfanos_param) }}"
+                        class="flex items-center gap-1">
+                        <span data-i18n="trabajadores.tabla.pin">PIN</span>
+                        {{ sort_icon('pin') }}
+                    </a>
+                </th>
+                <th class="px-4 py-2 text-left" data-i18n="trabajadores.tabla.acciones">Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+            {% for t in trabajadores %}
+            <tr class="{% if not t.activo and not ver_eliminados %}opacity-50{% endif %}">
+                <td class="px-4 py-2 text-blue-600 hover:underline cursor-pointer" data-id="{{ t.id }}"
+                    onclick="toggleAccionesDesdeElemento(this)">
+                    {{ t.nombre }}
+                </td>
+                <td class="px-4 py-2">{{ t.email }}</td>
+                <td class="px-4 py-2">{{ t.telefono }}</td>
+                <td class="px-4 py-2">
+                    {% if t.centro and t.centro.activo %}
+                    {{ t.centro.nombre }}
+                    {% else %}
+                    -
+                    {% endif %}
+                </td>
+                <td class="px-4 py-2 font-mono">{{ t.pin }}</td>
+                <td class="px-4 py-2">
+                    {% if not ver_eliminados %}
+                    <div class="w-[16rem]">
+                        <select onchange="accionTrabajador(this)" data-trabajador-id="{{ t.id }}"
+                            class="w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-sm rounded px-2 py-1">
+                            <option value="" data-i18n="trabajadores.acciones.seleccionar">-- Seleccionar --</option>
+                            <option value="horario" data-i18n="trabajadores.acciones.horario">📅 Horario</option>
+                            <option value="fichajes" data-i18n="trabajadores.acciones.fichajes">📌 Fichajes</option>
+                            <option value="permiso" data-i18n="trabajadores.acciones.permiso">🌴 Permiso</option>
+                            <option value="formacion" data-i18n="trabajadores.acciones.formacion">📚 Formación</option>
+                            <option value="reconocimiento" data-i18n="trabajadores.acciones.reconocimiento">🩺
+                                Reconocimiento Médico</option>
+                        </select>
+                    </div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <!-- Acordeón acciones -->
+            <tr id="acciones-{{ t.id }}" class="hidden bg-gray-100 dark:bg-gray-900">
+                <td colspan="6" class="px-4 py-2">
+                    <div class="flex gap-4 items-center">
+                        {% if ver_eliminados %}
+                        <form method="POST" action="{{ url_for('trabajadores.restaurar', trabajador_id=t.id) }}">
+                            <button type="submit"
+                                class="text-green-600 hover:text-green-800 text-sm flex items-center gap-1"
+                                data-i18n="trabajadores.acciones.restaurar">
+                                ♻️ Restaurar
+                            </button>
+                        </form>
+                        <form method="POST"
+                            action="{{ url_for('trabajadores.eliminar_definitivo', trabajador_id=t.id) }}"
+                            onsubmit="return confirm('¿Eliminar definitivamente este trabajador?');">
+                            <button type="submit"
+                                class="text-red-700 hover:text-red-900 text-sm flex items-center gap-1"
+                                data-i18n="trabajadores.acciones.borrar_def">
+                                🗑️ Borrar permanente
+                            </button>
+                        </form>
+                        {% else %}
+                        <form method="POST" action="{{ url_for('trabajadores.borrar', trabajador_id=t.id) }}"
+                            onsubmit="return confirm('¿Marcar como eliminado este trabajador?');">
+                            <button type="submit"
+                                class="text-red-600 hover:text-red-800 text-sm flex items-center gap-1"
+                                data-i18n="trabajadores.acciones.eliminar">
+                                🗑️ Eliminar
+                            </button>
+                        </form>
+                        <button class="text-blue-600 hover:text-blue-800 text-sm flex items-center gap-1"
+                            data-id="{{ t.id }}" data-nombre="{{ t.nombre|escape }}" data-email="{{ t.email|escape }}"
+                            data-telefono="{{ t.telefono|escape }}" data-dni="{{ t.dni|escape }}"
+                            data-centro="{{ t.centro_id or '' }}" data-nacionalidad="{{ t.nacionalidad|escape }}"
+                            data-genero="{{ t.genero|escape }}" data-iban="{{ t.iban|escape }}"
+                            data-nass="{{ t.nass|escape }}" onclick="cargarDatosEditar(this)"
+                            data-i18n="trabajadores.acciones.editar">
+                            ✏️ Editar
+                        </button>
+                        {% endif %}
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+
+            {% if trabajadores|length == 0 %}
+            <tr>
+                <td colspan="6" class="text-center text-gray-500 py-4" data-i18n="trabajadores.listado.vacio">
+                    No hay trabajadores registrados.
+                </td>
+            </tr>
+            {% endif %}
+        </tbody>
+
+    </table>
+</div>
+
+{% include 'partials/trabajadores_modal_crear.html' %}
+{% include 'partials/modal_curso.html' %}
+{% include 'partials/trabajadores_drawer_editar.html' %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/trabajadores.js') }}"></script>
+<script src="{{ url_for('static', filename='js/modal_curso.js') }}"></script>
+{% endblock %}

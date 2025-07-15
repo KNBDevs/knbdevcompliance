@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _('prevencion.titulo') }}{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-6 text-center md:text-left" data-i18n="prevencion.titulo">Panel de Prevención de Riesgos</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Manipulador de Alimentos -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 flex flex-col justify-between">
+        <div>
+            <div class="text-4xl mb-2">🍽️</div>
+            <h3 class="text-lg font-semibold mb-2" data-i18n="prevencion.alimentos.titulo">Manipulador de Alimentos</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="prevencion.alimentos.descripcion">
+                Control de trabajadores con el certificado vigente para la manipulación segura de alimentos.
+            </p>
+        </div>
+        <div class="mt-4">
+            <a href="{{ url_for('prevencion.formacion') }}"
+               class="inline-block mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-sm transition">
+                <span data-i18n="prevencion.boton">Acceder</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Curso de Prevención de Riesgos Laborales -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 flex flex-col justify-between">
+        <div>
+            <div class="text-4xl mb-2">⚠️</div>
+            <h3 class="text-lg font-semibold mb-2" data-i18n="prevencion.riesgos.titulo">Prevención de Riesgos Laborales</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="prevencion.riesgos.descripcion">
+                Seguimiento de formación obligatoria en prevención para cada trabajador según su puesto.
+            </p>
+        </div>
+        <div class="mt-4">
+            <a href="#"
+               class="inline-block mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-sm transition">
+                <span data-i18n="prevencion.boton">Acceder</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Reconocimientos Médicos -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 flex flex-col justify-between">
+        <div>
+            <div class="text-4xl mb-2">🩺</div>
+            <h3 class="text-lg font-semibold mb-2" data-i18n="prevencion.reconocimientos.titulo">Reconocimientos Médicos</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="prevencion.reconocimientos.descripcion">
+                Registro y control de los reconocimientos médicos periódicos realizados a los trabajadores.
+            </p>
+        </div>
+        <div class="mt-4">
+            <a href="{{ url_for('prevencion.reconocimientos') }}"
+               class="inline-block mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-sm transition">
+                <span data-i18n="prevencion.boton">Acceder</span>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

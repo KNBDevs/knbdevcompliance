@@ -1,0 +1,407 @@
+{
+  "login": {
+    "title": "ログイン",
+    "dni_label": "DNI/NIEの最後の5桁を入力してください",
+    "dni_placeholder": "_____",
+    "admin_toggle": "管理者ログイン",
+    "email_label": "メールアドレス",
+    "email_placeholder": "email@例.jp",
+    "password_label": "パスワード",
+    "password_placeholder": "••••••••",
+    "submit": "ログイン",
+    "ok": "OK"
+  },
+  "sidebar": {
+    "dashboard": "ダッシュボード",
+    "empresas": "企業",
+    "centros": "センター",
+    "trabajadores": "従業員",
+    "otras_opciones": "⚙️ その他のオプション",
+    "horarios": "📅 スケジュール",
+    "fichajes": "📌 打刻",
+    "permisos": "🌴 許可",
+    "prevencion": "⚠️ 予防",
+    "importar_trabajadores": "📥 インポート",
+    "exportar": "📤 エクスポート",
+    "salir": "🚪 ログアウト"
+  },
+  "header": {
+    "title": "勤務管理"
+  },
+  "dashboard": {
+    "titulo": "ダッシュボード",
+    "empresas": "登録企業数",
+    "centros": "アクティブ拠点",
+    "trabajadores": "登録従業員数",
+    "usuarios": "管理者ユーザー",
+    "hoy": {
+      "titulo": "本日の打刻",
+      "hechos": "実施済み：",
+      "pendientes": "未対応："
+    },
+    "chart": {
+      "label_fichajes": "打刻数"
+    },
+    "top_puntualidad": "今週の早期到着トップ3",
+    "puntuales": "時間通りの打刻",
+    "fichajes_recientes": "最近の打刻",
+    "sin_horario": "シフト未設定の従業員",
+    "grafico_titulo": "過去7日間の打刻"
+  },
+  "empresas": {
+    "listado": {
+      "titulo": "登録企業",
+      "eliminadas": "削除済み企業",
+      "nueva": "+ 企業を追加",
+      "mostrar_eliminadas": "削除済み企業を表示"
+    },
+    "tabla": {
+      "nombre": "名称",
+      "cif": "CIF",
+      "ccc": "CCC"
+    },
+    "acciones": {
+      "restaurar": "♻️ 復元",
+      "eliminar_def": "❌ 完全削除",
+      "eliminar": "🗑️ 削除",
+      "editar": "✏️ 編集"
+    },
+    "drawer": {
+      "nombre": "名称",
+      "titulo": "企業を編集",
+      "contacto": "連絡先",
+      "administrador": "管理者",
+      "telefono": "電話番号",
+      "email": "メール",
+      "sede_fiscal": "本社住所",
+      "codigo_postal": "郵便番号",
+      "iban": "IBAN",
+      "guardar": "保存",
+      "cancelar": "キャンセル"
+    },
+    "modal": {
+      "titulo": "新しい企業を登録"
+    }
+  },
+  "centros": {
+    "listado": {
+      "titulo": "拠点一覧",
+      "eliminados": "削除済み拠点",
+      "volver_activos": "← アクティブ拠点に戻る",
+      "mostrar_eliminados": "削除済みを表示",
+      "filtro_empresa": "企業",
+      "todas": "すべて",
+      "nuevo": "+ 新しい拠点",
+      "vacio": "この企業に登録された拠点はありません。"
+    },
+    "tabla": {
+      "nombre": "拠点名",
+      "empresa": "企業",
+      "acciones": "操作",
+      "ver_plantilla": "メンバーを表示"
+    },
+    "acciones": {
+      "restaurar": "♻️ 復元",
+      "eliminar_def": "❌ 完全削除",
+      "eliminar": "🗑️ 削除",
+      "editar": "✏️ 編集"
+    },
+    "modal": {
+      "titulo": "新しい拠点",
+      "cancelar": "キャンセル",
+      "guardar": "保存"
+    },
+    "drawer": {
+      "titulo": "拠点を編集",
+      "nombre": "名称",
+      "empresa": "企業",
+      "email": "メール",
+      "telefono": "電話番号",
+      "direccion": "住所",
+      "codigo_postal": "郵便番号",
+      "ccc": "CCC",
+      "cif": "CIF",
+      "responsable": "責任者",
+      "sector": "業種",
+      "fecha": "作成日",
+      "cancelar": "キャンセル",
+      "guardar": "変更を保存",
+      "select": "選択...",
+      "sector_hosteleria": "ホスピタリティ",
+      "sector_textil": "繊維販売",
+      "sector_construccion": "建設",
+      "sector_panaderia": "ベーカリー"
+    }
+  },
+  "trabajadores": {
+    "listado": {
+      "titulo": "従業員",
+      "eliminados": "削除された従業員",
+      "nuevo": "+ 新しい従業員",
+      "volver_activos": "← 従業員に戻る",
+      "mostrar_eliminados": "削除済みを表示",
+      "solo_sin_centro": "センターなしのみ",
+      "filtro_centro": "センター：",
+      "todos_centros": "すべて",
+      "buscar_placeholder": "従業員を検索...",
+      "vacio": "登録された従業員がいません。"
+    },
+    "tabla": {
+      "nombre": "名前",
+      "email": "メール",
+      "telefono": "電話",
+      "centro": "センター",
+      "pin": "PIN",
+      "acciones": "操作",
+      "horario": "勤務表"
+    },
+    "acciones": {
+      "seleccionar": "-- 選択 --",
+      "horario": "📅 スケジュール",
+      "fichajes": "📌 勤怠記録",
+      "permiso": "🌴 休暇",
+      "formacion": "📚 研修",
+      "reconocimiento": "🩺 健康診断",
+      "eliminar": "🗑️ 削除",
+      "restaurar": "♻️ 復元",
+      "borrar_def": "🗑️ 完全に削除",
+      "editar": "✏️ 編集"
+    },
+    "drawer": {
+      "titulo": "従業員を編集",
+      "nombre": "氏名",
+      "dni": "DNI / NIE",
+      "nass": "社会保険番号(NASS)",
+      "nacionalidad": "国籍",
+      "genero": "性別",
+      "iban": "IBAN",
+      "email": "メール",
+      "telefono": "電話",
+      "centro": "拠点",
+      "cancelar": "キャンセル",
+      "guardar": "変更を保存",
+      "select": "選択...",
+      "masculino": "男性",
+      "femenino": "女性"
+    },
+    "modal": {
+      "titulo": "新しい従業員"
+    },
+    "sin_centro": {
+      "asignar": "拠点を割り当て",
+      "sin_resultados": "拠点未割当の従業員はいません。"
+    }
+  },
+  "horarios": {
+    "titulo": "{name} の勤務シフト",
+    "subtitulo": "従業員の週間シフトを編集します。",
+    "horas_label": "週間労働時間",
+    "horas_hint": "超過分は残業として表示されます。",
+    "copiar_label": "月曜のスケジュールを他の曜日にコピー：",
+    "boton_copiar": "コピー",
+    "vista_mensual": "月間ビュー",
+    "editar_dia": "編集",
+    "turno_partido": "分割シフト",
+    "borrar_dia": "その日のシフトを削除",
+    "tramo": "区間",
+    "entrada": "出勤",
+    "salida": "退勤",
+    "guardar": "保存",
+    "advertencia": "時間超過アラート",
+    "mensaje_exceso": "週間上限を超えています。",
+    "entendido": "了解",
+    "campo_obligatorio_titulo": "必須項目",
+    "campo_obligatorio_texto": "保存前に週間労働時間を入力してください。"
+  },
+  "dias": {
+    "lunes": "月曜日",
+    "martes": "火曜日",
+    "miércoles": "水曜日",
+    "jueves": "木曜日",
+    "viernes": "金曜日",
+    "sábado": "土曜日",
+    "domingo": "日曜日"
+  },
+  "fichajes": {
+    "titulo_general": "📌 打刻一覧",
+    "titulo_individual": "📌 {nombre} の打刻",
+    "exportar_todos": "📤 全てをエクスポート (CSV)",
+    "exportar_individual": "📤 {nombre} のエクスポート (CSV)",
+    "vacio": "打刻がありません。",
+    "historial": "打刻履歴",
+    "tabla": {
+      "fecha": "日付",
+      "hora": "時間",
+      "tipo": "種類",
+      "trabajador": "従業員",
+      "centro": "拠点"
+    },
+    "tipos": {
+      "Entrada": "入室",
+      "Salida": "退出"
+    }
+  },
+  "permisos": {
+    "titulo_nuevo": "新しい休暇申請",
+    "titulo_nuevo_para": "{name} の休暇申請",
+    "form": {
+      "inicio": "開始日",
+      "fin": "終了日",
+      "justificacion": "理由",
+      "boton": "申請する"
+    },
+    "titulo_gestion": "休暇管理",
+    "titulo_lista": "休暇・休暇申請",
+    "solicitudes": "申請一覧",
+    "historial": "休暇履歴",
+    "tabla": {
+      "trabajador": "従業員",
+      "desde": "開始",
+      "hasta": "終了",
+      "justificacion": "理由",
+      "estado": "ステータス",
+      "acciones": "操作"
+    },
+    "acciones": {
+      "aprobar": "承認",
+      "rechazar": "却下",
+      "no_disponible": "不可"
+    },
+    "estados": {
+      "pendiente": "保留中",
+      "aceptada": "承認済み",
+      "rechazada": "却下済み"
+    }
+  },
+  "importar_trabajadores": {
+    "titulo": "従業員のインポート",
+    "archivo": "Excelファイル",
+    "ayuda_archivo": ".xlsx形式で有効な列が含まれているファイルのみ受け付けます。",
+    "centro": "勤務先",
+    "boton_importar": "インポート",
+    "descargar_plantilla": "テンプレートをダウンロード"
+  },
+  "exportar": {
+    "titulo": "エクスポート",
+    "titulo_pagina": "📤 データをエクスポート",
+    "fechas": {
+      "desde": "開始：",
+      "hasta": "終了：",
+      "centro": "拠点："
+    },
+    "fichajes": {
+      "titulo": "📌 打刻をエクスポート",
+      "boton": "CSVをダウンロード"
+    },
+    "horarios": {
+      "titulo": "📅 スケジュールをエクスポート",
+      "boton": "CSVをダウンロード"
+    },
+    "permisos": {
+      "titulo": "🌴 休暇をエクスポート",
+      "boton": "CSVをダウンロード"
+    },
+    "selector": {
+      "opcional": "オプション"
+    }
+  },
+  "prevencion": {
+    "titulo": "リスク予防パネル",
+    "alimentos": {
+      "titulo": "食品取扱者",
+      "descripcion": "食品の安全な取り扱いのための有効な証明書を持つ従業員の管理。"
+    },
+    "riesgos": {
+      "titulo": "労働災害予防",
+      "descripcion": "各従業員の職務に応じた義務的な予防教育の追跡。"
+    },
+    "reconocimientos": {
+      "titulo": "健康診断",
+      "descripcion": "従業員に対して定期的に行われる健康診断の記録と管理。"
+    },
+    "boton": "アクセス"
+  },
+  "fichaje_modal": {
+    "ok": {
+      "titulo": "✅ 打刻成功",
+      "mensaje": "{nombre}さんは{hora}に正常に打刻しました。"
+    },
+    "ya_fichado": {
+      "titulo": "❗ 既に打刻済み",
+      "mensaje": "{nombre}さん、本日は既に打刻済みです。シフトごとに1回のみ許可されています。"
+    },
+    "demasiado_pronto": {
+      "titulo": "⏱️ 早すぎます",
+      "mensaje": "{nombre}さん、まだ打刻する時間ではありません。後でもう一度試してください。"
+    },
+    "demasiado_tarde": {
+      "titulo": "⌛ 時間外です",
+      "mensaje": "{nombre}さん、打刻時間を過ぎています。"
+    },
+    "limite_turnos": {
+      "titulo": "🚫 上限に達しました",
+      "mensaje": "{nombre}さん、本日のシフト上限に達しています。"
+    },
+    "segundo_turno": {
+      "titulo": "🔁 2回目の打刻",
+      "mensaje": "{nombre}さん、2回目の打刻が{hora}に正常に登録されました。"
+    },
+    "error": {
+      "titulo": "❌ エラー",
+      "mensaje": "打刻できませんでした。PINを確認してください。"
+    }
+  },
+  "reconocimientos": {
+    "titulo_general": "健康診断",
+    "titulo_individual": "健康診断 - {nombre}",
+    "filtro_label": "センターで絞り込む：",
+    "filtro_todos": "-- すべてのセンター --",
+    "tabla": {
+      "trabajador": "従業員",
+      "dni": "DNI/NIE",
+      "centro": "センター",
+      "ultimo": "最終診断日",
+      "accion": "操作",
+      "fecha": "日付",
+      "observaciones": "備考",
+      "sin_resultados": "診断記録がありません。"
+    },
+    "boton_abrir_modal": "追加",
+    "modal": {
+      "titulo": "健康診断を登録",
+      "trabajador": "従業員：",
+      "fecha": "日付：",
+      "observaciones": "備考：",
+      "cancelar": "キャンセル",
+      "guardar": "保存"
+    },
+    "volver": "← 一覧に戻る",
+    "error_guardar": "診断の保存に失敗しました。"
+  },
+  "formacion": {
+    "titulo": "トレーニングとコース",
+    "filtro_label": "センターでフィルター:",
+    "filtro_todos": "-- すべてのセンター --",
+    "tabla": {
+      "trabajador": "従業員",
+      "dni": "DNI/NIE",
+      "email": "メール",
+      "centro": "センター",
+      "cursos": "コース"
+    },
+    "tooltip": {
+      "asignado": "{fecha} に割り当てられました"
+    },
+    "modal": {
+      "titulo": "コースを割り当てる",
+      "cancelar": "キャンセル",
+      "guardar": "保存",
+      "error_cargar": "コースの読み込みエラー",
+      "error_guardar": "コースの保存エラー"
+    },
+    "errores": {
+      "cargar": "コースの読み込みエラー",
+      "guardar": "コースの保存エラー"
+    }
+  }
+}

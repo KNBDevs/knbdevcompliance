@@ -1,0 +1,407 @@
+{
+  "login": {
+    "title": "Login",
+    "dni_label": "Insira os últimos 5 dígitos do DNI/NIE",
+    "dni_placeholder": "_____",
+    "admin_toggle": "Login Administração",
+    "email_label": "E‑mail",
+    "email_placeholder": "email@exemplo.com",
+    "password_label": "Senha",
+    "password_placeholder": "••••••••",
+    "submit": "Entrar",
+    "ok": "OK"
+  },
+  "sidebar": {
+    "dashboard": "Painel",
+    "empresas": "Empresas",
+    "centros": "Centros",
+    "trabajadores": "Trabalhadores",
+    "otras_opciones": "⚙️ Outras opções",
+    "horarios": "📅 Horários",
+    "fichajes": "📌 Registros",
+    "permisos": "🌴 Permissões",
+    "prevencion": "⚠️ Prevenção",
+    "importar_trabajadores": "📥 Importar",
+    "exportar": "📤 Exportar",
+    "salir": "🚪 Sair"
+  },
+  "header": {
+    "title": "Controle Horário"
+  },
+  "dashboard": {
+    "titulo": "Painel de Controlo",
+    "empresas": "Empresas registadas",
+    "centros": "Centros ativos",
+    "trabajadores": "Trabalhadores registados",
+    "usuarios": "Utilizadores administradores",
+    "hoy": {
+      "titulo": "Registos de hoje",
+      "hechos": "Feitos:",
+      "pendientes": "Pendentes:"
+    },
+    "chart": {
+      "label_fichajes": "Registos"
+    },
+    "top_puntualidad": "Top 3 Pontualidade (semana)",
+    "puntuales": "registos pontuais",
+    "fichajes_recientes": "Os teus últimos registos",
+    "sin_horario": "Trabalhadores sem horário",
+    "grafico_titulo": "Registos nos últimos 7 dias"
+  },
+  "empresas": {
+    "listado": {
+      "titulo": "Empresas registadas",
+      "eliminadas": "Empresas eliminadas",
+      "nueva": "+ Nova empresa",
+      "mostrar_eliminadas": "Mostrar eliminadas"
+    },
+    "tabla": {
+      "nombre": "Nome",
+      "cif": "CIF",
+      "ccc": "CCC"
+    },
+    "acciones": {
+      "restaurar": "♻️ Restaurar",
+      "eliminar_def": "❌ Eliminar definitivamente",
+      "eliminar": "🗑️ Eliminar",
+      "editar": "✏️ Editar"
+    },
+    "drawer": {
+      "nombre": "Nome",
+      "titulo": "Editar Empresa",
+      "contacto": "Contacto",
+      "administrador": "Administrador",
+      "telefono": "Telefone",
+      "email": "E‑mail",
+      "sede_fiscal": "Sede Fiscal",
+      "codigo_postal": "Código Postal",
+      "iban": "IBAN",
+      "guardar": "Guardar",
+      "cancelar": "Cancelar"
+    },
+    "modal": {
+      "titulo": "Registar nova empresa"
+    }
+  },
+  "centros": {
+    "listado": {
+      "titulo": "Centros de trabalho",
+      "eliminadas": "Centros eliminados",
+      "volver_activos": "← Voltar a centros ativos",
+      "mostrar_eliminados": "Mostrar eliminados",
+      "filtro_empresa": "Empresa",
+      "todas": "Todas",
+      "nuevo": "+ Novo centro",
+      "vacio": "Não há centros registados para esta empresa."
+    },
+    "tabla": {
+      "nombre": "Nome do centro",
+      "empresa": "Empresa",
+      "acciones": "Ações",
+      "ver_plantilla": "Ver equipa"
+    },
+    "acciones": {
+      "restaurar": "♻️ Restaurar",
+      "eliminar_def": "❌ Eliminar definitivamente",
+      "eliminar": "🗑️ Eliminar",
+      "editar": "✏️ Editar"
+    },
+    "modal": {
+      "titulo": "Novo centro",
+      "cancelar": "Cancelar",
+      "guardar": "Guardar"
+    },
+    "drawer": {
+      "titulo": "Editar Centro",
+      "nombre": "Nome",
+      "empresa": "Empresa",
+      "email": "E‑mail",
+      "telefono": "Telefone",
+      "direccion": "Morada",
+      "codigo_postal": "Código Postal",
+      "ccc": "CCC",
+      "cif": "CIF",
+      "responsable": "Responsável pelo centro",
+      "sector": "Setor de atividade",
+      "fecha": "Data de criação",
+      "cancelar": "Cancelar",
+      "guardar": "Guardar alterações",
+      "select": "Seleciona...",
+      "sector_hosteleria": "Hotelaria",
+      "sector_textil": "Comércio têxtil",
+      "sector_construccion": "Construção",
+      "sector_panaderia": "Padaria"
+    }
+  },
+  "trabajadores": {
+    "listado": {
+      "titulo": "Trabalhadores",
+      "eliminados": "Trabalhadores eliminados",
+      "nuevo": "+ Novo trabalhador",
+      "volver_activos": "← Voltar aos trabalhadores",
+      "mostrar_eliminados": "Mostrar eliminados",
+      "solo_sin_centro": "Apenas sem centro",
+      "filtro_centro": "Centro:",
+      "todos_centros": "Todos",
+      "buscar_placeholder": "Procurar trabalhador...",
+      "vacio": "Nenhum trabalhador registado."
+    },
+    "tabla": {
+      "nombre": "Nome",
+      "email": "E‑mail",
+      "telefono": "Telefone",
+      "centro": "Centro",
+      "pin": "PIN",
+      "acciones": "Ações",
+      "horario": "Horário"
+    },
+    "acciones": {
+      "seleccionar": "-- Selecionar --",
+      "horario": "📅 Agenda",
+      "fichajes": "📌 Registos de tempo",
+      "permiso": "🌴 Licença",
+      "formacion": "📚 Formação",
+      "reconocimiento": "🩺 Exame médico",
+      "eliminar": "🗑️ Eliminar",
+      "restaurar": "♻️ Restaurar",
+      "borrar_def": "🗑️ Eliminar permanentemente",
+      "editar": "✏️ Editar"
+    },
+    "drawer": {
+      "titulo": "Editar Trabalhador",
+      "nombre": "Nome",
+      "dni": "DNI / NIE",
+      "nass": "Nº Segurança Social (NASS)",
+      "nacionalidad": "País",
+      "genero": "Género",
+      "iban": "IBAN",
+      "email": "E‑mail",
+      "telefono": "Telefone",
+      "centro": "Centro",
+      "cancelar": "Cancelar",
+      "guardar": "Guardar alterações",
+      "select": "Seleciona...",
+      "masculino": "Masculino",
+      "femenino": "Feminino"
+    },
+    "modal": {
+      "titulo": "Novo Trabalhador"
+    },
+    "sin_centro": {
+      "asignar": "Atribuir a centro",
+      "sin_resultados": "Não existem trabalhadores sem centro."
+    }
+  },
+  "horarios": {
+    "titulo": "Horário de {name}",
+    "subtitulo": "Editar os períodos de trabalho do trabalhador para cada dia da semana.",
+    "horas_label": "Horas semanais",
+    "horas_hint": "Se ultrapassadas, serão mostradas como extras.",
+    "copiar_label": "Copiar o horário de segunda para os outros dias:",
+    "boton_copiar": "Copiar",
+    "vista_mensual": "Vista mensal do horário",
+    "editar_dia": "Editar",
+    "turno_partido": "Turno partido",
+    "borrar_dia": "Apagar horário do dia",
+    "tramo": "Período",
+    "entrada": "Entrada",
+    "salida": "Saída",
+    "guardar": "Guardar horário",
+    "advertencia": "Aviso de excesso de horas",
+    "mensaje_exceso": "O horário ultrapassa o máximo de horas semanais.",
+    "entendido": "Percebi",
+    "campo_obligatorio_titulo": "Campo obrigatório",
+    "campo_obligatorio_texto": "Deves especificar um número de horas semanais antes de guardar."
+  },
+  "dias": {
+    "lunes": "Segunda‑feira",
+    "martes": "Terça‑feira",
+    "miércoles": "Quarta‑feira",
+    "jueves": "Quinta‑feira",
+    "viernes": "Sexta‑feira",
+    "sábado": "Sábado",
+    "domingo": "Domingo"
+  },
+  "fichajes": {
+    "titulo_general": "📌 Lista de Registos",
+    "titulo_individual": "📌 Registos de {nombre}",
+    "exportar_todos": "📤 Exportar tudo (CSV)",
+    "exportar_individual": "📤 Exportar de {nombre} (CSV)",
+    "vacio": "Não há registos.",
+    "historial": "Histórico de registos",
+    "tabla": {
+      "fecha": "Data",
+      "hora": "Hora",
+      "tipo": "Tipo",
+      "trabajador": "Trabalhador",
+      "centro": "Centro"
+    },
+    "tipos": {
+      "Entrada": "Entrada",
+      "Salida": "Saída"
+    }
+  },
+  "permisos": {
+    "titulo_nuevo": "Nova permissão",
+    "titulo_nuevo_para": "Nova permissão para {name}",
+    "form": {
+      "inicio": "Data de início",
+      "fin": "Data de fim",
+      "justificacion": "Justificação",
+      "boton": "Criar permissão"
+    },
+    "titulo_gestion": "Gestão de permissões",
+    "titulo_lista": "Permissões e férias",
+    "solicitudes": "Pedidos de permissão",
+    "historial": "Histórico de férias",
+    "tabla": {
+      "trabajador": "Trabalhador",
+      "desde": "Desde",
+      "hasta": "Até",
+      "justificacion": "Justificação",
+      "estado": "Estado",
+      "acciones": "Ações"
+    },
+    "acciones": {
+      "aprobar": "Aprovar",
+      "rechazar": "Rejeitar",
+      "no_disponible": "Não disponível"
+    },
+    "estados": {
+      "pendiente": "Pendente",
+      "aceptada": "Aceite",
+      "rechazada": "Rejeitada"
+    }
+  },
+  "importar_trabajadores": {
+    "titulo": "Importar Trabalhadores",
+    "arquivo": "Arquivo Excel",
+    "ayuda_archivo": "Apenas é aceito o formato .xlsx com colunas válidas.",
+    "centro": "Centro de trabalho",
+    "boton_importar": "Importar",
+    "descargar_plantilla": "Baixar modelo"
+  },
+  "exportar": {
+    "titulo": "Exportar",
+    "titulo_pagina": "📤 Exportar dados",
+    "fechas": {
+      "desde": "Desde:",
+      "hasta": "Até:",
+      "centro": "Centro de trabalho:"
+    },
+    "fichajes": {
+      "titulo": "📌 Exportar registos",
+      "boton": "Descarregar CSV de registos"
+    },
+    "horarios": {
+      "titulo": "📅 Exportar horários",
+      "boton": "Descarregar CSV de horários"
+    },
+    "permisos": {
+      "titulo": "🌴 Exportar permissões",
+      "boton": "Descarregar CSV de permissões"
+    },
+    "selector": {
+      "opcional": "Opcional"
+    }
+  },
+  "prevencion": {
+    "titulo": "Painel de Prevenção de Riscos",
+    "alimentos": {
+      "titulo": "Manipulador de Alimentos",
+      "descripcion": "Controle de trabalhadores com certificado válido para o manuseio seguro de alimentos."
+    },
+    "riesgos": {
+      "titulo": "Prevenção de Riscos Laborais",
+      "descripcion": "Acompanhamento da formação obrigatória em prevenção conforme o cargo de cada trabalhador."
+    },
+    "reconocimientos": {
+      "titulo": "Exames Médicos",
+      "descripcion": "Registo e controlo dos exames médicos periódicos realizados aos trabalhadores."
+    },
+    "boton": "Aceder"
+  },
+  "fichaje_modal": {
+    "ok": {
+      "titulo": "✅ Registo efetuado",
+      "mensaje": "{nombre} registou com sucesso às {hora}."
+    },
+    "ya_fichado": {
+      "titulo": "❗ Já registado",
+      "mensaje": "{nombre}, já regista hoje. Só é permitida uma marcação por turno."
+    },
+    "demasiado_pronto": {
+      "titulo": "⏱️ Muito cedo",
+      "mensaje": "{nombre}, ainda não é hora de registar. Tente mais tarde."
+    },
+    "demasiado_tarde": {
+      "titulo": "⌛ Fora de hora",
+      "mensaje": "{nombre}, o seu horário de registo já passou."
+    },
+    "limite_turnos": {
+      "titulo": "🚫 Limite atingido",
+      "mensaje": "{nombre}, atingiu o limite de turnos para hoje."
+    },
+    "segundo_turno": {
+      "titulo": "🔁 Segundo turno",
+      "mensaje": "{nombre}, o segundo turno foi registado com sucesso às {hora}."
+    },
+    "error": {
+      "titulo": "❌ Erro",
+      "mensaje": "Não foi possível efetuar o registo. Verifique seu PIN."
+    }
+  },
+  "reconocimientos": {
+    "titulo_general": "건강 검진",
+    "titulo_individual": "건강 검진 - {nombre}",
+    "filtro_label": "센터로 필터링:",
+    "filtro_todos": "-- 모든 센터 --",
+    "tabla": {
+      "trabajador": "직원",
+      "dni": "DNI/NIE",
+      "centro": "센터",
+      "ultimo": "마지막 검진",
+      "accion": "작업",
+      "fecha": "날짜",
+      "observaciones": "비고",
+      "sin_resultados": "등록된 검진이 없습니다."
+    },
+    "boton_abrir_modal": "추가",
+    "modal": {
+      "titulo": "건강 검진 등록",
+      "trabajador": "직원:",
+      "fecha": "날짜:",
+      "observaciones": "비고:",
+      "cancelar": "취소",
+      "guardar": "저장"
+    },
+    "volver": "← 목록으로 돌아가기",
+    "error_guardar": "검진 저장에 실패했습니다."
+  },
+  "formacion": {
+    "titulo": "Formação e Cursos",
+    "filtro_label": "Filtrar por centro:",
+    "filtro_todos": "-- Todos os centros --",
+    "tabla": {
+      "trabajador": "Trabalhador",
+      "dni": "DNI/NIE",
+      "email": "Email",
+      "centro": "Centro",
+      "cursos": "Cursos"
+    },
+    "tooltip": {
+      "asignado": "Atribuído em {fecha}"
+    },
+    "modal": {
+      "titulo": "Atribuir Cursos",
+      "cancelar": "Cancelar",
+      "guardar": "Guardar",
+      "error_cargar": "Erro ao carregar os cursos",
+      "error_guardar": "Erro ao guardar os cursos"
+    },
+    "errores": {
+      "cargar": "Erro ao carregar os cursos",
+      "guardar": "Erro ao guardar os cursos"
+    }
+  }
+}

@@ -1,0 +1,100 @@
+<!-- Drawer editar centro -->
+<div id="drawerEditarCentro"
+    class="fixed top-0 right-0 h-full w-full max-w-md bg-white dark:bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+    <div class="p-6 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold" data-i18n="centros.drawer.titulo">Editar Centro</h2>
+            <button onclick="cerrarDrawerEditarCentro()">✖️</button>
+        </div>
+        <form method="POST" id="formEditarCentro" class="flex flex-col gap-4 flex-grow overflow-y-auto">
+            <input type="hidden" name="id" id="edit-centro-id">
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="centros.drawer.nombre">Nombre</label>
+                <input type="text" name="nombre" id="edit-centro-nombre" required
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="centros.drawer.empresa">Empresa</label>
+                <select name="empresa_id" id="edit-centro-empresa" required
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+                    {% for empresa in empresas %}
+                    <option value="{{ empresa.id }}">{{ empresa.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="centros.drawer.email">Email</label>
+                <input type="email" name="email" id="edit-centro-email"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="centros.drawer.telefono">Teléfono</label>
+                <input type="text" name="telefono" id="edit-centro-telefono"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="centros.drawer.direccion">Dirección</label>
+                <input type="text" name="direccion" id="edit-centro-direccion"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="centros.drawer.codigo_postal">Código Postal</label>
+                <input type="text" name="codigo_postal" id="edit-centro-codigo-postal"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="centros.drawer.ccc">CCC</label>
+                <input type="text" name="ccc" id="edit-centro-ccc"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="centros.drawer.cif">CIF</label>
+                <input type="text" name="cif" id="edit-centro-cif"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="centros.drawer.responsable">Responsable del centro</label>
+                <input type="text" name="responsable" id="edit-centro-responsable"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label class="block text-sm mb-1" data-i18n="centros.drawer.sector">Sector de actividad</label>
+                <select name="sector" id="edit-centro-sector"
+                    class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+                    <option value="" data-i18n="centros.drawer.select">Selecciona...</option>
+                    <option value="hosteleria" data-i18n="centros.drawer.sector_hosteleria">Hostelería</option>
+                    <option value="comercio textil" data-i18n="centros.drawer.sector_textil">Comercio textil</option>
+                    <option value="construccion" data-i18n="centros.drawer.sector_construccion">Construcción</option>
+                    <option value="panaderia" data-i18n="centros.drawer.sector_panaderia">Panadería</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-sm text-gray-500" data-i18n="centros.drawer.fecha">Fecha de creación</label>
+                <p class="text-sm" id="edit-centro-fecha"></p>
+            </div>
+
+            <div class="flex justify-end gap-2 mt-4">
+                <button type="button" onclick="cerrarDrawerEditarCentro()"
+                    class="px-4 py-2 bg-gray-300 dark:bg-gray-700 rounded hover:bg-gray-400 dark:hover:bg-gray-600"
+                    data-i18n="centros.drawer.cancelar">
+                    Cancelar
+                </button>
+                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    data-i18n="centros.drawer.guardar">
+                    Guardar cambios
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

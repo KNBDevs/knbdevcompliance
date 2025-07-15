@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="{{ g.get('lang_code', 'es') }}" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="header.title">{% block title %}Control Horario{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        };
+    </script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+
+</head>
+
+<body id="mainBody"
+    class="h-full bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition duration-300 text-base">
+
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- Sidebar -->
+        <aside id="mobileSidebar" class="fixed inset-0 z-40 bg-white dark:bg-gray-800 p-4 h-full w-full transform transition-transform duration-300
+         -translate-x-full md:translate-x-0 md:relative md:w-80 md:block">
+
+            <!-- Botón cerrar (solo en móvil) -->
+            <div class="flex justify-end md:hidden">
+                <button id="sidebarClose" class="text-2xl text-gray-700 dark:text-gray-300">✕</button>
+            </div>
+
+            <div class="mb-6">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="w-32 mx-auto">
+            </div>
+
+            <nav class="space-y-2 text-sm">
+                {% set endpoint = request.endpoint %}
+
+                <a href="{{ url_for('dashboard.index') }}" class="flex items-center gap-2 whitespace-nowrap p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700
+              {{ 'bg-gray-300 dark:bg-gray-700 font-semibold' if endpoint == 'dashboard.index' }}">
+                    <span class="w-5 text-center">🏠</span>
+                    <span data-i18n="sidebar.dashboard">Panel Inicio</span>
+                </a>
+
+                <a href="{{ url_for('empresas.lista_empresas') }}" class="flex items-center gap-2 whitespace-nowrap p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700
+              {{ 'bg-gray-300 dark:bg-gray-700 font-semibold' if endpoint == 'empresas.lista_empresas' }}">
+                    <span class="w-5 text-center">🏢</span>
+                    <span data-i18n="sidebar.empresas">Empresas</span>
+                </a>
+
+                <a href="{{ url_for('centros.lista_centros') }}" class="flex items-center gap-2 whitespace-nowrap p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700
+              {{ 'bg-gray-300 dark:bg-gray-700 font-semibold' if endpoint == 'centros.lista_centros' }}">
+                    <span class="w-5 text-center">🏬</span>
+                    <span data-i18n="sidebar.centros">Centros</span>
+                </a>
+
+                <a href="{{ url_for('trabajadores.lista_trabajadores') }}" class="flex items-center gap-2 whitespace-nowrap p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700
+              {{ 'bg-gray-300 dark:bg-gray-700 font-semibold' if endpoint == 'trabajadores.lista_trabajadores' }}">
+                    <span class="w-5 text-center">👥</span>
+                    <span data-i18n="sidebar.trabajadores">Trabajadores</span>
+                </a>
+
+                {% set endpoint = request.endpoint %}
+
+                <!-- Acordeón: Otras Opciones -->
+                <div class="border-t pt-2 dark:border-gray-700">
+                    <button id="toggleAccordion"
+                        class="flex items-center justify-between gap-2 whitespace-nowrap w-full p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <span data-i18n="sidebar.otras_opciones">⚙️ Otras opciones</span>
+                        <svg id="accordionIcon" class="w-4 h-4 transition-transform shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+
+                    {% set acordeon_abierto = endpoint.startswith('horarios') or
+                    endpoint.startswith('fichajes') or
+                    endpoint.startswith('permisos') or
+                    endpoint.startswith('prevencion') or
+                    endpoint.startswith('trabajadores.importar_trabajadores') or
+                    endpoint.startswith('exportar') %}
+
+                    <div id="accordionContent"
+                        class="accordion-content pl-4 mt-2 space-y-1 overflow-hidden transition-all duration-300 {{ 'max-h-[1000px]' if acordeon_abierto else 'max-h-0' }}">
+                        <a href="{{ url_for('horarios.lista_horarios') }}"
+                            class="flex items-center gap-2 whitespace-nowrap p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 {{ 'bg-gray-300 dark:bg-gray-700 font-semibold' if endpoint == 'horarios.lista_horarios' }}"
+                            data-i18n="sidebar.horarios">📅 Horarios</a>
+
+                        <a href="{{ url_for('fichajes.lista_fichajes') }}"
+                            class="flex items-center gap-2 whitespace-nowrap p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 {{ 'bg-gray-300 dark:bg-gray-700 font-semibold' if endpoint == 'fichajes.lista_fichajes' }}"
+                            data-i18n="sidebar.fichajes">📌 Fichajes</a>
+
+                        <a href="{{ url_for('permisos.lista_permisos') }}"
+                            class="flex items-center gap-2 whitespace-nowrap p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 {{ 'bg-gray-300 dark:bg-gray-700 font-semibold' if endpoint == 'permisos.lista_permisos' }}"
+                            data-i18n="sidebar.permisos">🌴 Permisos</a>
+
+                        <a href="{{ url_for('prevencion.panel_prevencion') }}"
+                            class="flex items-center gap-2 whitespace-nowrap p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 {{ 'bg-gray-300 dark:bg-gray-700 font-semibold' if endpoint == 'prevencion.panel_prevencion' }}"
+                            data-i18n="sidebar.prevencion">⚠️ Prevención</a>
+
+                        <a href="{{ url_for('trabajadores.importar_trabajadores') }}"
+                            class="flex items-center gap-2 whitespace-nowrap p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 {{ 'bg-gray-300 dark:bg-gray-700 font-semibold' if endpoint == 'trabajadores.importar_trabajadores' }}"
+                            data-i18n="sidebar.importar_trabajadores">📥 Importar</a>
+
+                        <a href="{{ url_for('exportar.panel_exportacion') }}"
+                            class="flex items-center gap-2 whitespace-nowrap p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 {{ 'bg-gray-300 dark:bg-gray-700 font-semibold' if endpoint == 'exportar.panel_exportacion' }}"
+                            data-i18n="sidebar.exportar">📤 Exportar</a>
+                    </div>
+                </div>
+
+
+                <a href="{{ url_for('auth.logout') }}"
+                    class="flex items-center gap-2 whitespace-nowrap p-2 mt-2 rounded hover:bg-red-100 dark:hover:bg-red-800 text-red-600"
+                    data-i18n="sidebar.salir">🚪 Salir</a>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <div class="flex-1 flex flex-col">
+
+            <!-- Header -->
+            <header
+                class="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+                <div class="flex items-center gap-2">
+                    <button id="sidebarToggle" class="md:hidden text-xl">☰</button>
+                    <h1 class="text-lg font-semibold" data-i18n="header.title">Control Horario</h1>
+                </div>
+
+                <div class="flex items-center gap-3 text-sm">
+                    {% include 'partials/language.html' %}
+
+                    <!-- Tamaño de fuente -->
+                    <select id="fontSizeSelector"
+                        class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded px-2 py-1">
+                        <option value="14px" data-i18n="font.small">A-</option>
+                        <option value="16px" selected data-i18n="font.normal">A</option>
+                        <option value="18px" data-i18n="font.large">A+</option>
+                    </select>
+
+
+                    <!-- Tema oscuro -->
+                    <select id="modeSelector"
+                        class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm">
+                        <option value="light" data-i18n="mode.light">☀️</option>
+                        <option value="dark" data-i18n="mode.dark">🌙</option>
+                        <option value="tired" data-i18n="mode.tired">💤</option>
+                    </select>
+
+                </div>
+            </header>
+
+            <!-- Contenido dinámico -->
+            <main class="flex-1 overflow-y-auto p-6">
+
+                <!-- Mensajes flash globales -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <div class="mb-4 space-y-2">
+                    {% for category, message in messages %}
+                    <div class="p-3 rounded text-sm
+                                    {% if category == 'success' %}bg-green-100 text-green-800
+                                    {% elif category == 'danger' %}bg-red-100 text-red-800
+                                    {% elif category == 'warning' %}bg-yellow-100 text-yellow-800
+                                    {% else %}bg-gray-100 text-gray-800{% endif %}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+    </div>
+
+
+
+    {% block scripts %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/lang.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/themeMode.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/aside_acordeon.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/langMenu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/fontSize.js') }}"></script>
+
+    <div class="hidden text-sm text-base text-lg"></div>
+
+</body>
+
+</html>

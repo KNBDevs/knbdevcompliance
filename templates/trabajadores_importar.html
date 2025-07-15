@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}{{ _('importar_trabajadores.titulo') }}{% endblock %}
+
+{% block content %}
+<h2 class="text-xl font-semibold mb-6 text-center md:text-left" data-i18n="importar_trabajadores.titulo"></h2>
+
+<form method="POST" enctype="multipart/form-data" class="space-y-4">
+    <!-- Campo archivo -->
+    <div>
+        <label class="block font-medium mb-1" data-i18n="importar_trabajadores.archivo"></label>
+
+        <input type="file" name="archivo" id="archivo" accept=".xlsx" required class="hidden">
+
+        <label for="archivo" id="archivo-label" data-i18n="importar_trabajadores.boton_archivo"
+            class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded text-sm cursor-pointer">
+            Seleccionar archivo
+        </label>
+
+
+        <p id="archivo-nombre" class="mt-2 text-sm text-gray-600" data-i18n="importar_trabajadores.no_seleccionado"></p>
+
+        <p class="text-sm text-gray-500 mt-1" data-i18n="importar_trabajadores.ayuda_archivo"></p>
+    </div>
+
+    <!-- Centro -->
+    <div>
+        <label class="block font-medium mb-1" data-i18n="importar_trabajadores.centro"></label>
+        <select name="centro_id" required class="border p-2 rounded w-full">
+            {% for centro in centros %}
+            <option value="{{ centro.id }}">{{ centro.nombre }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <!-- Botones -->
+    <div class="flex items-center gap-4">
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+            data-i18n="importar_trabajadores.boton_importar"></button>
+
+        <a href="{{ url_for('trabajadores.descargar_plantilla_csv') }}"
+            class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded text-sm"
+            data-i18n="importar_trabajadores.descargar_plantilla"></a>
+    </div>
+</form>
+{% endblock %}
